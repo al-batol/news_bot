@@ -1,0 +1,22 @@
+# FREE Version Requirements - No external API keys needed
+# Only Telegram Bot Token required
+
+# Core dependencies
+aiohttp==3.9.5
+python-dotenv==1.0.0
+
+# RSS scraping
+feedparser==6.0.10
+brotli==1.1.0
+
+# AI translation
+groq==0.12.0
+deep-translator==1.11.4
+
+# Async support
+APScheduler==3.10.4
+
+# Basic requirements
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==5.1.0 
