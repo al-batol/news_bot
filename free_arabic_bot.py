@@ -539,12 +539,9 @@ class FreeArabicNewsBot:
             return bool(event.actual)  # Fallback to checking actual data existence
     
     async def check_for_news(self):
-        """🚀 ENHANCED: Check for new articles and economic events with professional scraping"""
+        """🚀 ENHANCED: Check for new articles with professional scraping (NEWS ONLY - every 3 minutes)"""
         try:
-            logger.info("⚡ PROFESSIONAL: Checking for breaking financial news and economic events...")
-            
-            # Check economic calendar first (higher priority)
-            await self.check_economic_calendar()
+            logger.info("📰 PROFESSIONAL: Checking for breaking financial news...")
             
             # 🚀 ENHANCED: Get new articles with professional anti-detection scraping
             articles = []
@@ -591,6 +588,23 @@ class FreeArabicNewsBot:
         except Exception as e:
             logger.error(f"💥 Error checking for news: {e}")
     
+
+    async def economic_calendar_task(self):
+        """📊 SEPARATE TASK: Economic calendar checker (every 1 hour 2 minutes)"""
+        while self.running:
+            try:
+                logger.info("📊 ECONOMIC CALENDAR: Checking for economic events...")
+                await self.check_economic_calendar()
+                
+                # Wait 1 hour 2 minutes for next economic calendar check
+                economic_wait = 3720  # 1 hour 2 minutes
+                logger.info(f"📊 ECONOMIC CALENDAR: Waiting {economic_wait} seconds (1h 2m) until next economic calendar check...")
+                await asyncio.sleep(economic_wait)
+                
+            except Exception as e:
+                logger.error(f"💥 Error in economic calendar task: {e}")
+                await asyncio.sleep(60)  # Wait 1 minute before retry
+    
     async def run(self):
         """Main run loop"""
         try:
@@ -630,18 +644,28 @@ class FreeArabicNewsBot:
             else:
                 logger.warning("Failed to send startup message - continuing anyway")
             
-            # Main loop
+            # Start economic calendar task separately
+            economic_task = asyncio.create_task(self.economic_calendar_task())
+            logger.info("📊 ECONOMIC CALENDAR: Started separate task (1h 2m intervals)")
+            
+            # Start economic calendar task separately (1h 2m intervals)
+            economic_task = asyncio.create_task(self.economic_calendar_task())
+            logger.info("📊 ECONOMIC CALENDAR: Started separate task (1h 2m intervals)")
+            
+            # Main loop for NEWS (every 3 minutes as before)
             while self.running:
                 try:
                     await self.check_for_news()
                     
-                    # Wait for next cycle (1 hour 2 minutes as requested by user)
-                    wait_time = 3720  # 1 hour 2 minutes (62 minutes) for economic calendar updates
-                    logger.info(f"⏰ Waiting {wait_time} seconds (1h 2m) until next economic calendar check...")
-                    await asyncio.sleep(wait_time)
+                    # Wait for next NEWS cycle (3 minutes as before)
+                    news_wait = 180  # 3 minutes for news (as requested by user)
+                    logger.info(f"📰 NEWS: Waiting {news_wait} seconds (3m) until next news check...")
+                    await asyncio.sleep(news_wait)
                     
                 except KeyboardInterrupt:
                     logger.info("Bot stopped by user")
+                    if 'economic_task' in locals():
+                        economic_task.cancel()  # Cancel economic task
                     break
                 except Exception as e:
                     logger.error(f"Error in main loop: {e}")
