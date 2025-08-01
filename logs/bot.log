@@ -6173,3 +6173,1060 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2025-07-31 16:31:19,526 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 0 new articles from backup_decrypt
 2025-07-31 16:31:19,527 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ backup_decrypt: Successfully fetched 0 articles
 2025-07-31 16:31:19,700 - __main__ - INFO - run:391 - Free Arabic bot stopped
+2025-07-31 17:16:32,524 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-07-31 17:16:32,524 - database - INFO - load_database:29 - Loaded 60 seen articles from database
+2025-07-31 17:16:32,653 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-07-31 17:16:32,653 - __main__ - INFO - __init__:43 - AI Translator initialized with Groq API (FREE)
+2025-07-31 17:16:32,653 - __main__ - INFO - __init__:53 - Google Translator initialized as fallback
+2025-07-31 17:16:32,654 - __main__ - INFO - __init__:83 - Free Arabic News Bot initialized
+2025-07-31 17:16:32,654 - __main__ - INFO - run:342 - Starting FREE Arabic Financial News Bot...
+2025-07-31 17:16:32,654 - __main__ - INFO - run:353 - Bot configuration: {'environment': 'free', 'channel_id': '-1002294392721', 'scrape_interval': 180, 'ai_translation': True, 'images_enabled': False, 'max_articles': 3, 'news_sources': 5, 'relevant_keywords': 57}
+2025-07-31 17:16:33,576 - __main__ - INFO - send_message:193 - Message sent successfully
+2025-07-31 17:16:33,577 - __main__ - INFO - run:364 - Startup message sent successfully
+2025-07-31 17:16:33,577 - __main__ - INFO - check_for_news:308 - Checking for new financial news...
+2025-07-31 17:16:33,577 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from investing_economic: https://www.investing.com/rss/news_301.rss
+2025-07-31 17:16:33,577 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from investing_rss: https://www.investing.com/rss/news.rss
+2025-07-31 17:16:33,577 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from investing_crypto: https://www.investing.com/rss/news_285.rss
+2025-07-31 17:16:33,577 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from marketwatch: https://feeds.marketwatch.com/marketwatch/realtimeheadlines/
+2025-07-31 17:16:33,578 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from cointelegraph: https://cointelegraph.com/rss
+2025-07-31 17:16:34,009 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in investing_rss feed
+2025-07-31 17:16:34,009 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from investing_rss
+2025-07-31 17:16:34,009 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ investing_rss: Successfully fetched 10 articles
+2025-07-31 17:16:34,378 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in investing_economic feed
+2025-07-31 17:16:34,379 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from investing_economic
+2025-07-31 17:16:34,379 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ investing_economic: Successfully fetched 10 articles
+2025-07-31 17:16:34,512 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in investing_crypto feed
+2025-07-31 17:16:34,513 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from investing_crypto
+2025-07-31 17:16:34,513 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ investing_crypto: Successfully fetched 10 articles
+2025-07-31 17:16:35,436 - rss_scraper - INFO - _parse_rss_content:110 - Found 31 entries in cointelegraph feed
+2025-07-31 17:16:35,436 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 31 new articles from cointelegraph
+2025-07-31 17:16:35,437 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ cointelegraph: Successfully fetched 31 articles
+2025-07-31 17:16:35,875 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in marketwatch feed
+2025-07-31 17:16:35,875 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from marketwatch
+2025-07-31 17:16:35,875 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ marketwatch: Successfully fetched 10 articles
+2025-07-31 17:16:35,876 - rss_scraper - INFO - get_latest_news:192 - ✅ Sources with new articles: investing_economic(10), investing_rss(10), investing_crypto(10), marketwatch(10), cointelegraph(31)
+2025-07-31 17:16:35,876 - rss_scraper - INFO - get_latest_news:249 - Retrieved 3 articles from 5 sources
+2025-07-31 17:16:35,876 - __main__ - INFO - post_articles:263 - Found 2 relevant articles from 3 total
+2025-07-31 17:16:35,876 - __main__ - INFO - check_for_news:324 - Posted 0 new Arabic articles from 3 found
+2025-07-31 17:16:35,876 - __main__ - INFO - run:374 - Waiting 180 seconds until next check...
+2025-07-31 17:16:59,395 - __main__ - INFO - run:391 - Free Arabic bot stopped
+2025-07-31 17:18:03,477 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-07-31 17:18:03,477 - database - INFO - load_database:31 - Database file not found, starting with empty database
+2025-07-31 17:18:03,592 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-07-31 17:18:03,593 - __main__ - INFO - __init__:43 - AI Translator initialized with Groq API (FREE)
+2025-07-31 17:18:03,593 - __main__ - INFO - __init__:53 - Google Translator initialized as fallback
+2025-07-31 17:18:03,593 - __main__ - INFO - __init__:83 - Free Arabic News Bot initialized
+2025-07-31 17:18:03,593 - __main__ - INFO - run:342 - Starting FREE Arabic Financial News Bot...
+2025-07-31 17:18:03,593 - __main__ - INFO - run:353 - Bot configuration: {'environment': 'free', 'channel_id': '-1002294392721', 'scrape_interval': 180, 'ai_translation': True, 'images_enabled': False, 'max_articles': 3, 'news_sources': 5, 'relevant_keywords': 57}
+2025-07-31 17:18:04,320 - __main__ - INFO - send_message:193 - Message sent successfully
+2025-07-31 17:18:04,321 - __main__ - INFO - run:364 - Startup message sent successfully
+2025-07-31 17:18:04,321 - __main__ - INFO - check_for_news:308 - Checking for new financial news...
+2025-07-31 17:18:04,321 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from investing_economic: https://www.investing.com/rss/news_301.rss
+2025-07-31 17:18:04,322 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from investing_rss: https://www.investing.com/rss/news.rss
+2025-07-31 17:18:04,322 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from investing_crypto: https://www.investing.com/rss/news_285.rss
+2025-07-31 17:18:04,322 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from marketwatch: https://feeds.marketwatch.com/marketwatch/realtimeheadlines/
+2025-07-31 17:18:04,323 - rss_scraper - INFO - fetch_rss_feed:70 - Fetching RSS feed from cointelegraph: https://cointelegraph.com/rss
+2025-07-31 17:18:05,094 - rss_scraper - INFO - _parse_rss_content:110 - Found 31 entries in cointelegraph feed
+2025-07-31 17:18:05,094 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 31 new articles from cointelegraph
+2025-07-31 17:18:05,094 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ cointelegraph: Successfully fetched 31 articles
+2025-07-31 17:18:05,099 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in investing_rss feed
+2025-07-31 17:18:05,099 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from investing_rss
+2025-07-31 17:18:05,099 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ investing_rss: Successfully fetched 10 articles
+2025-07-31 17:18:05,108 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in investing_crypto feed
+2025-07-31 17:18:05,108 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from investing_crypto
+2025-07-31 17:18:05,108 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ investing_crypto: Successfully fetched 10 articles
+2025-07-31 17:18:05,111 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in investing_economic feed
+2025-07-31 17:18:05,112 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from investing_economic
+2025-07-31 17:18:05,112 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ investing_economic: Successfully fetched 10 articles
+2025-07-31 17:18:06,739 - rss_scraper - INFO - _parse_rss_content:110 - Found 10 entries in marketwatch feed
+2025-07-31 17:18:06,739 - rss_scraper - INFO - _parse_rss_content:153 - Successfully parsed 10 new articles from marketwatch
+2025-07-31 17:18:06,739 - rss_scraper - INFO - fetch_rss_feed:76 - ✅ marketwatch: Successfully fetched 10 articles
+2025-07-31 17:18:06,739 - rss_scraper - INFO - get_latest_news:192 - ✅ Sources with new articles: investing_economic(10), investing_rss(10), investing_crypto(10), marketwatch(10), cointelegraph(31)
+2025-07-31 17:18:06,740 - rss_scraper - INFO - get_latest_news:249 - Retrieved 3 articles from 5 sources
+2025-07-31 17:18:06,740 - __main__ - INFO - post_articles:263 - Found 2 relevant articles from 3 total
+2025-07-31 17:18:06,794 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-f1bb58b1-bcf9-4d04-8334-e6616d23156b', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nStanford Blockchain Community Hosts BASS SBC25 at Berkeley on August 3'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-07-31 17:18:06,795 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-07-31 17:18:06,800 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-07-31 17:18:07,407 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e1ea570>
+2025-07-31 17:18:07,407 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e0b96d0> server_hostname='api.groq.com' timeout=5.0
+2025-07-31 17:18:07,488 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10e148b90>
+2025-07-31 17:18:07,488 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-07-31 17:18:07,489 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-07-31 17:18:07,489 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-07-31 17:18:07,489 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-07-31 17:18:07,489 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-07-31 17:18:07,779 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 00:18:07 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11819'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'905ms'), (b'x-request-id', b'req_01k1hfwhapeyham3ft8nx95kq6'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=hInPkX9EdQbYB2Fu1l4.HFVr44vve0vql.gCnaxvq7k-1754007487-1.0.1.1-NGtvn_3oM2YsY4OY86ka8edBmz6KBOkYRrxxHtJ68bVHotmZ1zCNbBaLNhTkKi9JJTIqskxwSI8rz_L5vZ3..GiSJXBiiMZaOo47M6EF2S8; path=/; expires=Fri, 01-Aug-25 00:48:07 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9681280e9b2cf9fc-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-31 17:18:07,780 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-07-31 17:18:07,781 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-07-31 17:18:07,781 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-07-31 17:18:07,781 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-07-31 17:18:07,781 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 00:18:07 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '11819', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '905ms', 'x-request-id': 'req_01k1hfwhapeyham3ft8nx95kq6', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=hInPkX9EdQbYB2Fu1l4.HFVr44vve0vql.gCnaxvq7k-1754007487-1.0.1.1-NGtvn_3oM2YsY4OY86ka8edBmz6KBOkYRrxxHtJ68bVHotmZ1zCNbBaLNhTkKi9JJTIqskxwSI8rz_L5vZ3..GiSJXBiiMZaOo47M6EF2S8; path=/; expires=Fri, 01-Aug-25 00:48:07 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'cf-ray': '9681280e9b2cf9fc-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-07-31 17:18:07,783 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-07-31 17:18:07,783 - __main__ - INFO - translate_to_arabic:149 - AI translation successful
+2025-07-31 17:18:08,560 - __main__ - INFO - send_message:193 - Message sent successfully
+2025-07-31 17:18:08,561 - database - DEBUG - save_database:54 - Saved 1 seen articles to database
+2025-07-31 17:18:08,561 - __main__ - INFO - post_articles:292 - Posted Arabic article: Stanford Blockchain Community Hosts BASS SBC25 at ...
+2025-07-31 17:18:12,562 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-b4b0dad2-e46a-41bd-b0a8-60bffbc37247', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nMill City Ventures closes $450 million placement for SUI blockchain strategy'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-07-31 17:18:12,563 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-07-31 17:18:12,563 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-07-31 17:18:12,563 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-07-31 17:18:12,563 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-07-31 17:18:12,564 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-07-31 17:18:12,564 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-07-31 17:18:12,979 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 00:18:13 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11818'), (b'x-ratelimit-reset-requests', b'2m47.722s'), (b'x-ratelimit-reset-tokens', b'910ms'), (b'x-request-id', b'req_01k1hfwp9meyh8x54cpmjd4vc5'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9681282eae6af9fc-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-31 17:18:12,979 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-07-31 17:18:12,979 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-07-31 17:18:12,979 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-07-31 17:18:12,980 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-07-31 17:18:12,980 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 00:18:13 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '998', 'x-ratelimit-remaining-tokens': '11818', 'x-ratelimit-reset-requests': '2m47.722s', 'x-ratelimit-reset-tokens': '910ms', 'x-request-id': 'req_01k1hfwp9meyh8x54cpmjd4vc5', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '9681282eae6af9fc-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-07-31 17:18:12,980 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-07-31 17:18:12,980 - __main__ - INFO - translate_to_arabic:149 - AI translation successful
+2025-07-31 17:18:13,608 - __main__ - INFO - send_message:193 - Message sent successfully
+2025-07-31 17:18:13,615 - database - DEBUG - save_database:54 - Saved 2 seen articles to database
+2025-07-31 17:18:13,616 - __main__ - INFO - post_articles:292 - Posted Arabic article: Mill City Ventures closes $450 million placement f...
+2025-07-31 17:18:16,642 - __main__ - INFO - run:391 - Free Arabic bot stopped
+2025-08-01 08:52:22,023 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-08-01 08:52:22,023 - database - INFO - load_database:29 - Loaded 2 seen articles from database
+2025-08-01 08:52:22,147 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-08-01 08:52:22,147 - __main__ - INFO - __init__:47 - AI Translator initialized with Groq API (FREE)
+2025-08-01 08:52:22,147 - __main__ - INFO - __init__:57 - Google Translator initialized as fallback
+2025-08-01 08:52:22,147 - __main__ - INFO - __init__:87 - Free Arabic News Bot initialized
+2025-08-01 08:52:22,147 - __main__ - INFO - run:447 - Starting FREE Arabic Financial News Bot...
+2025-08-01 08:52:22,147 - __main__ - INFO - run:458 - Bot configuration: {'environment': 'free', 'channel_id': '-1002294392721', 'scrape_interval': 300, 'ai_translation': True, 'images_enabled': False, 'max_articles': 5, 'investing_sections': 6, 'relevant_keywords': 57, 'memory_optimization': True}
+2025-08-01 08:52:22,982 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 08:52:22,982 - __main__ - INFO - run:469 - Startup message sent successfully
+2025-08-01 08:52:22,983 - __main__ - INFO - check_for_news:410 - Checking for new financial news and economic events...
+2025-08-01 08:52:22,983 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 08:52:22,983 - investing_scraper - INFO - _scrape_real_calendar:466 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 08:52:24,565 - investing_scraper - INFO - _fetch_page:214 - ✅ Successfully fetched: https://www.investing.com/economic-calendar/
+2025-08-01 08:52:24,728 - investing_scraper - INFO - _scrape_real_calendar:548 - ✅ Found 0 real economic events
+2025-08-01 08:52:24,729 - investing_scraper - INFO - scrape_economic_calendar:449 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 08:52:24,729 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: معدل البطالة
+2025-08-01 08:52:24,729 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: فرص العمل الأمريكية
+2025-08-01 08:52:24,729 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: مؤشر أسعار المستهلك
+2025-08-01 08:52:25,572 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 08:52:25,579 - database - DEBUG - save_database:54 - Saved 3 seen articles to database
+2025-08-01 08:52:25,579 - __main__ - INFO - check_economic_calendar:345 - Posted economic event: unemployment rate
+2025-08-01 08:52:32,296 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 08:52:32,303 - database - DEBUG - save_database:54 - Saved 4 seen articles to database
+2025-08-01 08:52:32,303 - __main__ - INFO - check_economic_calendar:345 - Posted economic event: non farm payrolls
+2025-08-01 08:52:38,971 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 08:52:38,973 - database - DEBUG - save_database:54 - Saved 5 seen articles to database
+2025-08-01 08:52:38,973 - __main__ - INFO - check_economic_calendar:345 - Posted economic event: cpi
+2025-08-01 08:52:44,974 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 08:52:45,065 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 08:53:15,023 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 08:53:15,262 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 08:53:43,905 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 08:53:44,232 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 08:54:04,161 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 08:54:04,161 - investing_scraper - INFO - _safe_delay:165 - Taking longer break: 16.6s
+2025-08-01 08:54:21,040 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 08:54:38,032 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Cryptocurrency from https://www.investing.com/news/cryptocurrency-news
+2025-08-01 08:54:38,282 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 08:55:04,658 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Economic Indicators from https://www.investing.com/news/economic-indicators
+2025-08-01 08:55:04,917 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 08:55:26,377 - investing_scraper - INFO - _try_direct_scraping:351 - ✅ Direct scraped 0 articles from investing.com
+2025-08-01 08:55:26,377 - investing_scraper - INFO - scrape_investing_news:245 - 🔄 Direct scraping failed, falling back to RSS feeds
+2025-08-01 08:55:26,402 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_general
+2025-08-01 08:55:27,117 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Jefferies upgrades MP Materials, lifts target on S...
+2025-08-01 08:55:27,117 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Earnings call transcript: RBC Bearings Q1 2025 bea...
+2025-08-01 08:55:27,117 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Earnings call transcript: Iradimed Co beats Q2 202...
+2025-08-01 08:55:29,118 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_economic
+2025-08-01 08:55:29,333 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Hamieverse Taps Abstract to Power Its Debut Blockc...
+2025-08-01 08:55:29,333 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Bybit & Block Scholes Report: BTC and ETH Options ...
+2025-08-01 08:55:31,334 - investing_scraper - INFO - _fallback_rss_scraping:426 - ✅ RSS fallback retrieved 5 articles
+2025-08-01 08:55:31,335 - __main__ - INFO - post_articles:258 - Found 3 relevant articles from 5 total
+2025-08-01 08:55:31,382 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-72dd264a-34bc-4007-bf66-e9047c24720d', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nEarnings call transcript: RBC Bearings Q1 2025 beats EPS expectations'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 08:55:31,383 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 08:55:31,388 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 08:55:31,833 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f95e630>
+2025-08-01 08:55:31,834 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 08:55:31,949 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f218470>
+2025-08-01 08:55:31,949 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 08:55:31,950 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 08:55:31,950 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 08:55:31,950 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 08:55:31,950 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 08:55:32,331 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 15:55:32 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11819'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'905ms'), (b'x-request-id', b'req_01k1k5gzd5ef4vx7jqnp1nefnz'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=0_Anut0WYcp5QNBUTWyZGfdLpYK3vtbZhbK803pgq5s-1754063732-1.0.1.1-nAC2waWcXYOAS0YQM1n9nXpxA2jl.iAVYkCeppfFx9n5l2P2h7MCS6EfuOFESIoYxIydzsL8SSimXVph8FVFZcWCgr9UxYYU2H_mAYA9H44; path=/; expires=Fri, 01-Aug-25 16:25:32 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96868535be86f9e9-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 08:55:32,332 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 08:55:32,333 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 08:55:32,333 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 08:55:32,333 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 08:55:32,333 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 15:55:32 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '11819', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '905ms', 'x-request-id': 'req_01k1k5gzd5ef4vx7jqnp1nefnz', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=0_Anut0WYcp5QNBUTWyZGfdLpYK3vtbZhbK803pgq5s-1754063732-1.0.1.1-nAC2waWcXYOAS0YQM1n9nXpxA2jl.iAVYkCeppfFx9n5l2P2h7MCS6EfuOFESIoYxIydzsL8SSimXVph8FVFZcWCgr9UxYYU2H_mAYA9H44; path=/; expires=Fri, 01-Aug-25 16:25:32 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'cf-ray': '96868535be86f9e9-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 08:55:32,335 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 08:55:32,335 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 08:55:33,098 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 08:55:33,098 - database - DEBUG - save_database:54 - Saved 6 seen articles to database
+2025-08-01 08:55:33,098 - __main__ - INFO - post_articles:287 - Posted Arabic article: Earnings call transcript: RBC Bearings Q1 2025 bea...
+2025-08-01 08:55:39,101 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-92168302-2f22-415f-b769-7d1889c9c199', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nEarnings call transcript: Iradimed Co beats Q2 2025 forecasts, stock surges'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 08:55:39,102 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 08:55:39,102 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 08:55:39,103 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 08:55:39,103 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 08:55:39,185 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f995e20>
+2025-08-01 08:55:39,185 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 08:55:39,266 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f995760>
+2025-08-01 08:55:39,266 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 08:55:39,266 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 08:55:39,266 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 08:55:39,267 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 08:55:39,267 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 08:55:39,603 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 15:55:39 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11818'), (b'x-ratelimit-reset-requests', b'2m45.485999999s'), (b'x-ratelimit-reset-tokens', b'910ms'), (b'x-request-id', b'req_01k1k5h6hrekh8131hrxyxt0zg'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'968685637ba2f9f0-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 08:55:39,604 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 08:55:39,604 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 08:55:39,605 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 08:55:39,605 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 08:55:39,605 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 15:55:39 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '998', 'x-ratelimit-remaining-tokens': '11818', 'x-ratelimit-reset-requests': '2m45.485999999s', 'x-ratelimit-reset-tokens': '910ms', 'x-request-id': 'req_01k1k5h6hrekh8131hrxyxt0zg', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '968685637ba2f9f0-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 08:55:39,606 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 08:55:39,606 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 08:55:40,307 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 08:55:40,308 - database - DEBUG - save_database:54 - Saved 7 seen articles to database
+2025-08-01 08:55:40,308 - __main__ - INFO - post_articles:287 - Posted Arabic article: Earnings call transcript: Iradimed Co beats Q2 202...
+2025-08-01 08:55:46,311 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-addda836-aa86-4f02-b384-e9c9f630f6d4', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nBybit & Block Scholes Report: BTC and ETH Options Reflect Bearish Tilt Despite Strong Funding Rates'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 08:55:46,312 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 08:55:46,312 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 08:55:46,312 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 08:55:46,312 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 08:55:46,383 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9974d0>
+2025-08-01 08:55:46,384 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 08:55:46,460 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f997530>
+2025-08-01 08:55:46,460 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 08:55:46,461 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 08:55:46,461 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 08:55:46,461 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 08:55:46,461 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 08:55:46,823 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 15:55:46 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'997'), (b'x-ratelimit-remaining-tokens', b'11812'), (b'x-ratelimit-reset-requests', b'4m11.996s'), (b'x-ratelimit-reset-tokens', b'940ms'), (b'x-request-id', b'req_01k1k5hdjyef591dy8vmhdg8pf'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'968685907dbff9cf-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 08:55:46,824 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 08:55:46,824 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 08:55:46,824 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 08:55:46,824 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 08:55:46,825 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 15:55:46 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '997', 'x-ratelimit-remaining-tokens': '11812', 'x-ratelimit-reset-requests': '4m11.996s', 'x-ratelimit-reset-tokens': '940ms', 'x-request-id': 'req_01k1k5hdjyef591dy8vmhdg8pf', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '968685907dbff9cf-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 08:55:46,825 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 08:55:46,825 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 08:55:47,484 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 08:55:47,485 - database - DEBUG - save_database:54 - Saved 8 seen articles to database
+2025-08-01 08:55:47,485 - __main__ - INFO - post_articles:287 - Posted Arabic article: Bybit & Block Scholes Report: BTC and ETH Options ...
+2025-08-01 08:55:53,487 - __main__ - INFO - check_for_news:429 - Posted 3 new Arabic articles from 5 found
+2025-08-01 08:55:53,487 - investing_scraper - INFO - cleanup_cache:655 - 🧹 Cleaned up memory cache
+2025-08-01 08:55:53,487 - __main__ - INFO - run:479 - Waiting 300 seconds until next check...
+2025-08-01 09:00:53,487 - __main__ - INFO - check_for_news:410 - Checking for new financial news and economic events...
+2025-08-01 09:00:53,488 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 09:00:53,488 - investing_scraper - INFO - _scrape_real_calendar:466 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 09:00:53,488 - investing_scraper - INFO - _safe_delay:171 - Resetting session to avoid detection
+2025-08-01 09:00:53,489 - investing_scraper - ERROR - _fetch_page:230 - 💥 Error fetching https://www.investing.com/economic-calendar/: 'NoneType' object has no attribute 'get'
+2025-08-01 09:00:53,489 - investing_scraper - INFO - scrape_economic_calendar:449 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 09:00:53,489 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: معدل البطالة
+2025-08-01 09:00:53,489 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: فرص العمل الأمريكية
+2025-08-01 09:00:53,489 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: مؤشر أسعار المستهلك
+2025-08-01 09:00:54,575 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:00:54,576 - database - DEBUG - save_database:54 - Saved 9 seen articles to database
+2025-08-01 09:00:54,577 - __main__ - INFO - check_economic_calendar:345 - Posted economic event: unemployment rate
+2025-08-01 09:01:03,588 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:01:03,590 - database - DEBUG - save_database:54 - Saved 10 seen articles to database
+2025-08-01 09:01:03,590 - __main__ - INFO - check_economic_calendar:345 - Posted economic event: non farm payrolls
+2025-08-01 09:01:10,271 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:01:10,273 - database - DEBUG - save_database:54 - Saved 11 seen articles to database
+2025-08-01 09:01:10,273 - __main__ - INFO - check_economic_calendar:345 - Posted economic event: cpi
+2025-08-01 09:01:16,273 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 09:01:16,686 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:01:41,518 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 09:01:41,765 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:01:58,064 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 09:01:58,310 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:02:23,939 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 09:02:24,205 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:02:46,134 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Cryptocurrency from https://www.investing.com/news/cryptocurrency-news
+2025-08-01 09:02:46,134 - investing_scraper - INFO - _safe_delay:165 - Taking longer break: 13.9s
+2025-08-01 09:03:00,260 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:03:21,983 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Economic Indicators from https://www.investing.com/news/economic-indicators
+2025-08-01 09:03:22,265 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:03:38,962 - investing_scraper - INFO - _try_direct_scraping:351 - ✅ Direct scraped 0 articles from investing.com
+2025-08-01 09:03:38,963 - investing_scraper - INFO - scrape_investing_news:245 - 🔄 Direct scraping failed, falling back to RSS feeds
+2025-08-01 09:03:38,963 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_general
+2025-08-01 09:03:41,680 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_economic
+2025-08-01 09:03:41,906 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Pepe Dollar ($PEPD) Presale Picks Up Pace as Ether...
+2025-08-01 09:03:43,908 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_crypto
+2025-08-01 09:03:44,129 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Deutsche Bank forecasts S&P 500 to hit 7000 by end...
+2025-08-01 09:03:44,129 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Trump's tariffs, Fed minutes, Rumble's Bitcoin buy...
+2025-08-01 09:03:44,129 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Bitcoin price today: slips to $94k as risk appetit...
+2025-08-01 09:03:46,131 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from marketwatch
+2025-08-01 09:03:48,112 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Elon Musk in a post on X says some of his Trump po...
+2025-08-01 09:03:50,113 - investing_scraper - INFO - _fallback_rss_scraping:426 - ✅ RSS fallback retrieved 5 articles
+2025-08-01 09:03:50,114 - __main__ - INFO - post_articles:258 - Found 5 relevant articles from 5 total
+2025-08-01 09:03:50,115 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-1a6e5d77-ce45-4ed2-b2cd-a249f094b072', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من cryptocurrency news:\n\nPepe Dollar ($PEPD) Presale Picks Up Pace as Ethereum (ETH) Hovers Over $3,600'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:03:50,116 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:03:50,116 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:03:50,116 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:03:50,116 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:03:50,846 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f994b60>
+2025-08-01 09:03:50,847 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:03:50,952 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f996690>
+2025-08-01 09:03:50,952 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:03:50,952 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:03:50,952 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:03:50,953 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:03:50,953 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:03:51,256 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:03:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11816'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'920ms'), (b'x-request-id', b'req_01k1k606pzeh9sfkbtxk9q6d9e'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'968691647948f9db-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:03:51,257 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:03:51,257 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:03:51,257 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:03:51,258 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:03:51,258 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:03:51 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '11816', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '920ms', 'x-request-id': 'req_01k1k606pzeh9sfkbtxk9q6d9e', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '968691647948f9db-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:03:51,258 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:03:51,259 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:03:52,042 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:03:52,044 - database - DEBUG - save_database:54 - Saved 12 seen articles to database
+2025-08-01 09:03:52,044 - __main__ - INFO - post_articles:287 - Posted Arabic article: Pepe Dollar ($PEPD) Presale Picks Up Pace as Ether...
+2025-08-01 09:03:58,047 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-7be5e033-1daa-45b8-8c22-85ca6f101dde', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nDeutsche Bank forecasts S&P 500 to hit 7000 by end of 2025'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:03:58,047 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:03:58,048 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:03:58,048 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:03:58,048 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:03:58,120 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f943b90>
+2025-08-01 09:03:58,120 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:03:58,205 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f942c30>
+2025-08-01 09:03:58,205 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:03:58,205 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:03:58,205 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:03:58,205 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:03:58,206 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:03:58,451 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:03:58 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11822'), (b'x-ratelimit-reset-requests', b'2m45.555999999s'), (b'x-ratelimit-reset-tokens', b'890ms'), (b'x-request-id', b'req_01k1k60dscefwbw6c8zds26wh1'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96869191bca1f9fc-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:03:58,452 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:03:58,452 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:03:58,452 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:03:58,453 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:03:58,453 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:03:58 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '998', 'x-ratelimit-remaining-tokens': '11822', 'x-ratelimit-reset-requests': '2m45.555999999s', 'x-ratelimit-reset-tokens': '890ms', 'x-request-id': 'req_01k1k60dscefwbw6c8zds26wh1', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96869191bca1f9fc-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:03:58,453 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:03:58,453 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:03:59,128 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:03:59,130 - database - DEBUG - save_database:54 - Saved 13 seen articles to database
+2025-08-01 09:03:59,130 - __main__ - INFO - post_articles:287 - Posted Arabic article: Deutsche Bank forecasts S&P 500 to hit 7000 by end...
+2025-08-01 09:04:05,132 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-b730bd75-0ad0-498d-ab79-f9dd393ba8c2', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': "ترجم هذا النص من cryptocurrency news:\n\nTrump's tariffs, Fed minutes, Rumble's Bitcoin buy - what's moving markets"}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:04:05,133 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:04:05,134 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:04:05,134 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:04:05,134 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:04:05,202 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9ae720>
+2025-08-01 09:04:05,203 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:04:05,287 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9ac5f0>
+2025-08-01 09:04:05,288 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:04:05,288 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:04:05,288 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:04:05,288 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:04:05,288 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:04:05,563 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:04:05 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'997'), (b'x-ratelimit-remaining-tokens', b'11817'), (b'x-ratelimit-reset-requests', b'4m12.117s'), (b'x-ratelimit-reset-tokens', b'915ms'), (b'x-request-id', b'req_01k1k60mpnemhbdb03eevw8rkh'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'968691be0d97f9d1-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:04:05,563 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:04:05,564 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:04:05,564 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:04:05,564 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:04:05,564 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:04:05 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '997', 'x-ratelimit-remaining-tokens': '11817', 'x-ratelimit-reset-requests': '4m12.117s', 'x-ratelimit-reset-tokens': '915ms', 'x-request-id': 'req_01k1k60mpnemhbdb03eevw8rkh', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '968691be0d97f9d1-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:04:05,565 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:04:05,565 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:04:06,240 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:04:06,242 - database - DEBUG - save_database:54 - Saved 14 seen articles to database
+2025-08-01 09:04:06,242 - __main__ - INFO - post_articles:287 - Posted Arabic article: Trump's tariffs, Fed minutes, Rumble's Bitcoin buy...
+2025-08-01 09:04:12,244 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-bcb0d348-ce76-437b-81fc-fe440fb96284', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من cryptocurrency news:\n\nBitcoin price today: slips to $94k as risk appetite sours on Trump tariff threat'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:04:12,245 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:04:12,245 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:04:12,245 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:04:12,245 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:04:12,319 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d42f0>
+2025-08-01 09:04:12,320 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:04:12,409 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9afec0>
+2025-08-01 09:04:12,409 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:04:12,409 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:04:12,409 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:04:12,410 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:04:12,410 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:04:12,731 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:04:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'996'), (b'x-ratelimit-remaining-tokens', b'11815'), (b'x-ratelimit-reset-requests', b'5m38.453999999s'), (b'x-ratelimit-reset-tokens', b'925ms'), (b'x-request-id', b'req_01k1k60vp0eh9r28zd3eyrw9hq'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'968691ea9bc6de53-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:04:12,732 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:04:12,732 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:04:12,732 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:04:12,732 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:04:12,733 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:04:12 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '996', 'x-ratelimit-remaining-tokens': '11815', 'x-ratelimit-reset-requests': '5m38.453999999s', 'x-ratelimit-reset-tokens': '925ms', 'x-request-id': 'req_01k1k60vp0eh9r28zd3eyrw9hq', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '968691ea9bc6de53-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:04:12,733 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:04:12,733 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:04:13,423 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:04:13,424 - database - DEBUG - save_database:54 - Saved 15 seen articles to database
+2025-08-01 09:04:13,424 - __main__ - INFO - post_articles:287 - Posted Arabic article: Bitcoin price today: slips to $94k as risk appetit...
+2025-08-01 09:04:19,434 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-7138b88c-ee59-45db-b6f4-076a53611432', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nElon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:04:19,439 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:04:19,443 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:04:19,443 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:04:19,443 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:04:19,515 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9af8c0>
+2025-08-01 09:04:19,515 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:04:19,600 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ee1aa20>
+2025-08-01 09:04:19,600 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:04:19,600 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:04:19,601 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:04:19,601 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:04:19,601 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:04:19,933 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:04:20 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'995'), (b'x-ratelimit-remaining-tokens', b'11812'), (b'x-ratelimit-reset-requests', b'7m4.831s'), (b'x-ratelimit-reset-tokens', b'940ms'), (b'x-request-id', b'req_01k1k612p0emhs1a36hfgk98ys'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'968692177d86f9d3-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:04:19,934 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:04:19,935 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:04:19,935 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:04:19,935 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:04:19,935 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:04:20 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '995', 'x-ratelimit-remaining-tokens': '11812', 'x-ratelimit-reset-requests': '7m4.831s', 'x-ratelimit-reset-tokens': '940ms', 'x-request-id': 'req_01k1k612p0emhs1a36hfgk98ys', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '968692177d86f9d3-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:04:19,936 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:04:19,936 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:04:20,607 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:04:20,609 - database - DEBUG - save_database:54 - Saved 16 seen articles to database
+2025-08-01 09:04:20,609 - __main__ - INFO - post_articles:287 - Posted Arabic article: Elon Musk in a post on X says some of his Trump po...
+2025-08-01 09:04:26,610 - __main__ - INFO - check_for_news:429 - Posted 5 new Arabic articles from 5 found
+2025-08-01 09:04:26,610 - investing_scraper - INFO - cleanup_cache:655 - 🧹 Cleaned up memory cache
+2025-08-01 09:04:26,610 - __main__ - INFO - run:479 - Waiting 300 seconds until next check...
+2025-08-01 09:09:26,611 - __main__ - INFO - check_for_news:410 - Checking for new financial news and economic events...
+2025-08-01 09:09:26,611 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 09:09:26,611 - investing_scraper - INFO - _scrape_real_calendar:466 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 09:09:26,611 - investing_scraper - INFO - _safe_delay:171 - Resetting session to avoid detection
+2025-08-01 09:09:26,612 - investing_scraper - ERROR - _fetch_page:230 - 💥 Error fetching https://www.investing.com/economic-calendar/: 'NoneType' object has no attribute 'get'
+2025-08-01 09:09:26,612 - investing_scraper - INFO - scrape_economic_calendar:449 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 09:09:26,612 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: معدل البطالة
+2025-08-01 09:09:26,612 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: فرص العمل الأمريكية
+2025-08-01 09:09:26,612 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: مؤشر أسعار المستهلك
+2025-08-01 09:09:26,612 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 09:09:31,609 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:09:58,539 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 09:09:58,872 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:10:14,992 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 09:10:15,227 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:10:42,349 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 09:10:45,449 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:11:04,075 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Cryptocurrency from https://www.investing.com/news/cryptocurrency-news
+2025-08-01 09:11:04,075 - investing_scraper - INFO - _safe_delay:165 - Taking longer break: 15.1s
+2025-08-01 09:11:19,716 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:11:49,145 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Economic Indicators from https://www.investing.com/news/economic-indicators
+2025-08-01 09:11:49,402 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:12:12,819 - investing_scraper - INFO - _try_direct_scraping:351 - ✅ Direct scraped 0 articles from investing.com
+2025-08-01 09:12:12,819 - investing_scraper - INFO - scrape_investing_news:245 - 🔄 Direct scraping failed, falling back to RSS feeds
+2025-08-01 09:12:12,819 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_general
+2025-08-01 09:12:13,886 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Italy stocks lower at close of trade; Investing.co...
+2025-08-01 09:12:13,887 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Global stock index sinks with dollar, bond yields ...
+2025-08-01 09:12:13,887 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Germany stocks lower at close of trade; DAX down 2...
+2025-08-01 09:12:15,887 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_economic
+2025-08-01 09:12:18,332 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_crypto
+2025-08-01 09:12:20,644 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from marketwatch
+2025-08-01 09:12:24,225 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Bank of England decision on Thursday will be at 12...
+2025-08-01 09:12:24,226 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Swiss National Bank cuts interest rates by a half ...
+2025-08-01 09:12:26,226 - investing_scraper - INFO - _fallback_rss_scraping:426 - ✅ RSS fallback retrieved 5 articles
+2025-08-01 09:12:26,227 - __main__ - INFO - post_articles:258 - Found 4 relevant articles from 5 total
+2025-08-01 09:12:26,227 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-eaf5812d-27b8-492c-90ff-746368752f79', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nItaly stocks lower at close of trade; Investing.com Italy 40 down 2.57%'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:12:26,228 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:12:26,228 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:12:26,228 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:12:26,229 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:12:27,099 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f995f40>
+2025-08-01 09:12:27,100 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:12:27,245 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f240e60>
+2025-08-01 09:12:27,245 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:27,246 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:12:27,246 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:12:27,246 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:12:27,246 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:27,602 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:12:27 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11819'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'905ms'), (b'x-request-id', b'req_01k1k6fywrej4a82y3t102jnm6'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=WpVos5gPT14sSaUd3lbZkPHFiCF5PgWNXaNY4Lt5QaU-1754064747-1.0.1.1-plyXDuFlYCgsZirKuUgv2FEBKwSDBIn.VMp1htepvpsZqGVcrk7beHERRrrfqHRxPjJKGmsJNTMUFrR1JKRNmy4nwkXFmiEe_ikgN04XwvU; path=/; expires=Fri, 01-Aug-25 16:42:27 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96869dff2ddff9cd-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:12:27,602 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:12:27,603 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:12:27,603 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:12:27,603 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:12:27,603 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:12:27 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '11819', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '905ms', 'x-request-id': 'req_01k1k6fywrej4a82y3t102jnm6', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=WpVos5gPT14sSaUd3lbZkPHFiCF5PgWNXaNY4Lt5QaU-1754064747-1.0.1.1-plyXDuFlYCgsZirKuUgv2FEBKwSDBIn.VMp1htepvpsZqGVcrk7beHERRrrfqHRxPjJKGmsJNTMUFrR1JKRNmy4nwkXFmiEe_ikgN04XwvU; path=/; expires=Fri, 01-Aug-25 16:42:27 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'cf-ray': '96869dff2ddff9cd-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:12:27,604 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:12:27,605 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:12:28,729 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:12:28,732 - database - DEBUG - save_database:54 - Saved 17 seen articles to database
+2025-08-01 09:12:28,732 - __main__ - INFO - post_articles:287 - Posted Arabic article: Italy stocks lower at close of trade; Investing.co...
+2025-08-01 09:12:34,735 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-8a01bea4-a18b-4172-9094-85b701368468', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nGlobal stock index sinks with dollar, bond yields after weak US jobs data'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:12:34,736 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:12:34,736 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:12:34,737 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:12:34,737 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:12:35,063 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f994980>
+2025-08-01 09:12:35,063 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:12:35,234 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f997ce0>
+2025-08-01 09:12:35,235 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:35,236 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:12:35,236 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:12:35,236 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:12:35,236 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:35,565 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:12:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11818'), (b'x-ratelimit-reset-requests', b'2m44.809999999s'), (b'x-ratelimit-reset-tokens', b'910ms'), (b'x-request-id', b'req_01k1k6g6peej49y9hw496vsj0f'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96869e312f6bf9ec-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:12:35,565 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:12:35,565 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:12:35,565 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:12:35,565 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:12:35,566 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:12:35 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '998', 'x-ratelimit-remaining-tokens': '11818', 'x-ratelimit-reset-requests': '2m44.809999999s', 'x-ratelimit-reset-tokens': '910ms', 'x-request-id': 'req_01k1k6g6peej49y9hw496vsj0f', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96869e312f6bf9ec-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:12:35,566 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:12:35,566 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:12:36,263 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:12:36,265 - database - DEBUG - save_database:54 - Saved 18 seen articles to database
+2025-08-01 09:12:36,265 - __main__ - INFO - post_articles:287 - Posted Arabic article: Global stock index sinks with dollar, bond yields ...
+2025-08-01 09:12:42,266 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-7ced7eeb-43ec-4fb4-86a9-3e17cb0ed1bb', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nGermany stocks lower at close of trade; DAX down 2.47%'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:12:42,266 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:12:42,267 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:12:42,267 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:12:42,267 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:12:42,454 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d64e0>
+2025-08-01 09:12:42,454 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:12:42,642 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d4230>
+2025-08-01 09:12:42,643 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:42,643 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:12:42,643 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:12:42,643 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:12:42,644 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:43,033 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:12:42 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'997'), (b'x-ratelimit-remaining-tokens', b'11823'), (b'x-ratelimit-reset-requests', b'4m11.793s'), (b'x-ratelimit-reset-tokens', b'885ms'), (b'x-request-id', b'req_01k1k6gdxxengrkjwm84ysncer'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96869e5f7d06f9e3-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:12:43,034 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:12:43,034 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:12:43,034 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:12:43,034 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:12:43,034 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:12:42 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '997', 'x-ratelimit-remaining-tokens': '11823', 'x-ratelimit-reset-requests': '4m11.793s', 'x-ratelimit-reset-tokens': '885ms', 'x-request-id': 'req_01k1k6gdxxengrkjwm84ysncer', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96869e5f7d06f9e3-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:12:43,035 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:12:43,035 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:12:43,977 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:12:43,979 - database - DEBUG - save_database:54 - Saved 19 seen articles to database
+2025-08-01 09:12:43,979 - __main__ - INFO - post_articles:287 - Posted Arabic article: Germany stocks lower at close of trade; DAX down 2...
+2025-08-01 09:12:49,980 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-ad77b613-f012-40e9-9443-f34145ff4b1a', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nSwiss National Bank cuts interest rates by a half point to 0.5%'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:12:49,981 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:12:49,982 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:12:49,982 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:12:49,982 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:12:50,127 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f242510>
+2025-08-01 09:12:50,127 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:12:50,265 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f7dcc50>
+2025-08-01 09:12:50,265 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:50,265 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:12:50,265 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:12:50,266 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:12:50,266 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:12:50,497 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:12:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'996'), (b'x-ratelimit-remaining-tokens', b'11821'), (b'x-ratelimit-reset-requests', b'5m37.982999999s'), (b'x-ratelimit-reset-tokens', b'895ms'), (b'x-request-id', b'req_01k1k6gnbyej581ftecc6rymy3'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96869e8f082cde43-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:12:50,497 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:12:50,498 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:12:50,498 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:12:50,498 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:12:50,498 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:12:50 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '996', 'x-ratelimit-remaining-tokens': '11821', 'x-ratelimit-reset-requests': '5m37.982999999s', 'x-ratelimit-reset-tokens': '895ms', 'x-request-id': 'req_01k1k6gnbyej581ftecc6rymy3', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96869e8f082cde43-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:12:50,499 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:12:50,499 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:12:51,811 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:12:51,812 - database - DEBUG - save_database:54 - Saved 20 seen articles to database
+2025-08-01 09:12:51,813 - __main__ - INFO - post_articles:287 - Posted Arabic article: Swiss National Bank cuts interest rates by a half ...
+2025-08-01 09:12:57,813 - __main__ - INFO - check_for_news:429 - Posted 4 new Arabic articles from 5 found
+2025-08-01 09:12:57,813 - investing_scraper - INFO - cleanup_cache:655 - 🧹 Cleaned up memory cache
+2025-08-01 09:12:57,813 - __main__ - INFO - run:479 - Waiting 300 seconds until next check...
+2025-08-01 09:17:57,777 - __main__ - INFO - check_for_news:410 - Checking for new financial news and economic events...
+2025-08-01 09:17:57,777 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 09:17:57,777 - investing_scraper - INFO - _scrape_real_calendar:466 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 09:17:57,777 - investing_scraper - INFO - _safe_delay:171 - Resetting session to avoid detection
+2025-08-01 09:17:57,777 - investing_scraper - ERROR - _fetch_page:230 - 💥 Error fetching https://www.investing.com/economic-calendar/: 'NoneType' object has no attribute 'get'
+2025-08-01 09:17:57,777 - investing_scraper - INFO - scrape_economic_calendar:449 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 09:17:57,777 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: معدل البطالة
+2025-08-01 09:17:57,778 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: فرص العمل الأمريكية
+2025-08-01 09:17:57,778 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: مؤشر أسعار المستهلك
+2025-08-01 09:17:57,778 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 09:18:03,969 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:18:30,833 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 09:18:31,080 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:18:49,988 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 09:18:50,249 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:19:16,272 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 09:19:16,503 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:19:31,553 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Cryptocurrency from https://www.investing.com/news/cryptocurrency-news
+2025-08-01 09:19:31,553 - investing_scraper - INFO - _safe_delay:165 - Taking longer break: 14.6s
+2025-08-01 09:19:46,349 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:20:01,887 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Economic Indicators from https://www.investing.com/news/economic-indicators
+2025-08-01 09:20:02,121 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:20:27,418 - investing_scraper - INFO - _try_direct_scraping:351 - ✅ Direct scraped 0 articles from investing.com
+2025-08-01 09:20:27,419 - investing_scraper - INFO - scrape_investing_news:245 - 🔄 Direct scraping failed, falling back to RSS feeds
+2025-08-01 09:20:27,419 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_general
+2025-08-01 09:20:28,156 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Ghislaine Maxwell moved from Florida prison to low...
+2025-08-01 09:20:28,156 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Earnings call transcript: CubeSmart Q2 2025 sees m...
+2025-08-01 09:20:28,156 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: European shares log biggest daily drop since April...
+2025-08-01 09:20:30,157 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_economic
+2025-08-01 09:20:32,371 - investing_scraper - INFO - _fallback_rss_scraping:378 - 📡 Fetching RSS from investing_crypto
+2025-08-01 09:20:32,613 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Bitcoin price today: down to $117.9k as Fed, tarif...
+2025-08-01 09:20:32,613 - investing_scraper - INFO - _fallback_rss_scraping:418 - 📰 RSS: Fed governors may dissent against Powell amid Trum...
+2025-08-01 09:20:34,614 - investing_scraper - INFO - _fallback_rss_scraping:426 - ✅ RSS fallback retrieved 5 articles
+2025-08-01 09:20:34,614 - __main__ - INFO - post_articles:258 - Found 4 relevant articles from 5 total
+2025-08-01 09:20:34,614 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-20ae2b73-6501-43f7-8f03-60f304f51145', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nEarnings call transcript: CubeSmart Q2 2025 sees mixed results with EPS miss'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:20:34,615 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:20:34,615 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:20:34,616 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:20:34,616 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:20:35,264 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d42c0>
+2025-08-01 09:20:35,264 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:20:35,340 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d6ed0>
+2025-08-01 09:20:35,340 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:35,340 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:20:35,340 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:20:35,341 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:20:35,341 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:35,696 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:20:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11818'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'910ms'), (b'x-request-id', b'req_01k1k6yvjeeh1t96sgqypcna89'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9686a9e9fa5bf9d5-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:20:35,696 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:20:35,696 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:20:35,696 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:20:35,696 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:20:35,697 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:20:35 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '11818', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '910ms', 'x-request-id': 'req_01k1k6yvjeeh1t96sgqypcna89', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '9686a9e9fa5bf9d5-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:20:35,697 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:20:35,697 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:20:36,465 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:20:36,472 - database - DEBUG - save_database:54 - Saved 21 seen articles to database
+2025-08-01 09:20:36,472 - __main__ - INFO - post_articles:287 - Posted Arabic article: Earnings call transcript: CubeSmart Q2 2025 sees m...
+2025-08-01 09:20:42,473 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-31fb607b-b0e7-4b92-995d-4961c0aecbcc', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nEuropean shares log biggest daily drop since April after US tariffs hike'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:20:42,474 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:20:42,474 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:20:42,474 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:20:42,474 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:20:42,555 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d4380>
+2025-08-01 09:20:42,555 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:20:42,646 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d5c40>
+2025-08-01 09:20:42,647 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:42,647 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:20:42,647 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:20:42,647 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:20:42,647 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:42,930 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:20:43 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11819'), (b'x-ratelimit-reset-requests', b'2m45.480999999s'), (b'x-ratelimit-reset-tokens', b'905ms'), (b'x-request-id', b'req_01k1k6z2q2epk9ase5qknd9b71'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9686aa17af8fde5b-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:20:42,931 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:20:42,931 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:20:42,931 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:20:42,931 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:20:42,931 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:20:43 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '998', 'x-ratelimit-remaining-tokens': '11819', 'x-ratelimit-reset-requests': '2m45.480999999s', 'x-ratelimit-reset-tokens': '905ms', 'x-request-id': 'req_01k1k6z2q2epk9ase5qknd9b71', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '9686aa17af8fde5b-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:20:42,932 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:20:42,932 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:20:43,538 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:20:43,540 - database - DEBUG - save_database:54 - Saved 22 seen articles to database
+2025-08-01 09:20:43,540 - __main__ - INFO - post_articles:287 - Posted Arabic article: European shares log biggest daily drop since April...
+2025-08-01 09:20:49,541 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-0267c7c6-c03a-4c96-8f0f-7ba60cec070f', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من cryptocurrency news:\n\nBitcoin price today: down to $117.9k as Fed, tariff caution offsets Strategy buy'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:20:49,542 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:20:49,542 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:20:49,543 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:20:49,543 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:20:49,617 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9aea80>
+2025-08-01 09:20:49,617 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:20:49,695 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9ae6f0>
+2025-08-01 09:20:49,695 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:49,696 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:20:49,696 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:20:49,696 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:20:49,696 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:50,026 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:20:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'997'), (b'x-ratelimit-remaining-tokens', b'11815'), (b'x-ratelimit-reset-requests', b'4m12.168999999s'), (b'x-ratelimit-reset-tokens', b'925ms'), (b'x-request-id', b'req_01k1k6z9jweh1ryrjcqsnv5n9j'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9686aa43afb3fa00-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:20:50,026 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:20:50,027 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:20:50,027 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:20:50,027 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:20:50,027 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:20:50 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '997', 'x-ratelimit-remaining-tokens': '11815', 'x-ratelimit-reset-requests': '4m12.168999999s', 'x-ratelimit-reset-tokens': '925ms', 'x-request-id': 'req_01k1k6z9jweh1ryrjcqsnv5n9j', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '9686aa43afb3fa00-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:20:50,028 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:20:50,028 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:20:50,805 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:20:50,806 - database - DEBUG - save_database:54 - Saved 23 seen articles to database
+2025-08-01 09:20:50,806 - __main__ - INFO - post_articles:287 - Posted Arabic article: Bitcoin price today: down to $117.9k as Fed, tarif...
+2025-08-01 09:20:56,808 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-033e79f6-9ce9-40dc-8d16-6a86499e16d7', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': "ترجم هذا النص من financial news:\n\nFed governors may dissent against Powell amid Trump pressure - WSJ's\xa0Timiraos"}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 09:20:56,808 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 09:20:56,808 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 09:20:56,809 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 09:20:56,809 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 09:20:56,877 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d0560>
+2025-08-01 09:20:56,877 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10f1eb2d0> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 09:20:56,963 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10f9d0440>
+2025-08-01 09:20:56,964 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:56,964 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 09:20:56,964 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 09:20:56,964 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 09:20:56,964 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 09:20:57,294 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 16:20:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'996'), (b'x-ratelimit-remaining-tokens', b'11817'), (b'x-ratelimit-reset-requests', b'5m38.318s'), (b'x-ratelimit-reset-tokens', b'915ms'), (b'x-request-id', b'req_01k1k6zgpbepm98tdhcjfc4qcc'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9686aa712b4af9fc-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 09:20:57,294 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 09:20:57,295 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 09:20:57,295 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 09:20:57,295 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 09:20:57,295 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 16:20:57 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '996', 'x-ratelimit-remaining-tokens': '11817', 'x-ratelimit-reset-requests': '5m38.318s', 'x-ratelimit-reset-tokens': '915ms', 'x-request-id': 'req_01k1k6zgpbepm98tdhcjfc4qcc', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '9686aa712b4af9fc-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 09:20:57,296 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 09:20:57,296 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 09:20:58,045 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 09:20:58,046 - database - DEBUG - save_database:54 - Saved 24 seen articles to database
+2025-08-01 09:20:58,046 - __main__ - INFO - post_articles:287 - Posted Arabic article: Fed governors may dissent against Powell amid Trum...
+2025-08-01 09:21:04,047 - __main__ - INFO - check_for_news:429 - Posted 4 new Arabic articles from 5 found
+2025-08-01 09:21:04,047 - investing_scraper - INFO - cleanup_cache:655 - 🧹 Cleaned up memory cache
+2025-08-01 09:21:04,047 - __main__ - INFO - run:479 - Waiting 300 seconds until next check...
+2025-08-01 09:26:04,047 - __main__ - INFO - check_for_news:410 - Checking for new financial news and economic events...
+2025-08-01 09:26:04,047 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 09:26:04,047 - investing_scraper - INFO - _scrape_real_calendar:466 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 09:26:04,047 - investing_scraper - INFO - _safe_delay:171 - Resetting session to avoid detection
+2025-08-01 09:26:04,047 - investing_scraper - ERROR - _fetch_page:230 - 💥 Error fetching https://www.investing.com/economic-calendar/: 'NoneType' object has no attribute 'get'
+2025-08-01 09:26:04,048 - investing_scraper - INFO - scrape_economic_calendar:449 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 09:26:04,048 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: معدل البطالة
+2025-08-01 09:26:04,048 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: فرص العمل الأمريكية
+2025-08-01 09:26:04,048 - investing_scraper - INFO - _create_simulated_events:607 - 🤖 Simulated event: مؤشر أسعار المستهلك
+2025-08-01 09:26:04,048 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 09:26:09,004 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:26:34,145 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 09:26:35,256 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:26:51,523 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 09:26:52,397 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:27:20,248 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 09:27:21,155 - investing_scraper - WARNING - _fetch_page:221 - 🚫 Access forbidden - implementing fallback strategy
+2025-08-01 09:27:50,464 - investing_scraper - INFO - _try_direct_scraping:270 - 🔍 Scraping Cryptocurrency from https://www.investing.com/news/cryptocurrency-news
+2025-08-01 10:14:06,875 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-08-01 10:14:06,875 - database - INFO - load_database:29 - Loaded 4 seen articles from database
+2025-08-01 10:14:07,038 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-08-01 10:14:07,038 - __main__ - INFO - __init__:47 - AI Translator initialized with Groq API (FREE)
+2025-08-01 10:14:07,038 - __main__ - INFO - __init__:57 - Google Translator initialized as fallback
+2025-08-01 10:14:07,038 - __main__ - INFO - __init__:87 - Free Arabic News Bot initialized
+2025-08-01 10:14:07,038 - __main__ - INFO - run:487 - Starting FREE Arabic Financial News Bot...
+2025-08-01 10:14:07,038 - __main__ - INFO - run:498 - Bot configuration: {'environment': 'free', 'channel_id': '-1002294392721', 'scrape_interval': 180, 'ai_translation': True, 'images_enabled': False, 'max_articles': 8, 'investing_sections': 6, 'relevant_keywords': 57, 'memory_optimization': True}
+2025-08-01 10:14:07,818 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 10:14:07,819 - __main__ - INFO - run:509 - Startup message sent successfully
+2025-08-01 10:14:07,819 - __main__ - INFO - check_for_news:450 - Checking for new financial news and economic events...
+2025-08-01 10:14:07,819 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 10:14:07,819 - investing_scraper - INFO - _scrape_real_calendar:580 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 10:14:07,820 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 1/3 for: https://www.investing.com/economic-calendar/
+2025-08-01 10:14:09,328 - investing_scraper - INFO - _fetch_page:272 - ✅ Successfully fetched: https://www.investing.com/economic-calendar/
+2025-08-01 10:14:09,499 - investing_scraper - INFO - _scrape_real_calendar:662 - ✅ Found 0 real economic events
+2025-08-01 10:14:09,499 - investing_scraper - INFO - scrape_economic_calendar:563 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 10:14:09,500 - investing_scraper - INFO - _create_simulated_events:730 - 🤖 Simulated event: معدل البطالة (已发布)
+2025-08-01 10:14:09,500 - investing_scraper - INFO - _create_simulated_events:730 - 🤖 Simulated event: فرص العمل الأمريكية (已发布)
+2025-08-01 10:14:09,500 - investing_scraper - INFO - _create_simulated_events:730 - 🤖 Simulated event: مؤشر أسعار المستهلك (已发布)
+2025-08-01 10:14:10,148 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 10:14:10,155 - database - DEBUG - save_database:54 - Saved 5 seen articles to database
+2025-08-01 10:14:10,155 - __main__ - INFO - check_economic_calendar:349 - Posted economic event: unemployment rate
+2025-08-01 10:14:16,883 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 10:14:16,885 - database - DEBUG - save_database:54 - Saved 6 seen articles to database
+2025-08-01 10:14:16,885 - __main__ - INFO - check_economic_calendar:349 - Posted economic event: non farm payrolls
+2025-08-01 10:14:23,527 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 10:14:23,528 - database - DEBUG - save_database:54 - Saved 7 seen articles to database
+2025-08-01 10:14:23,528 - __main__ - INFO - check_economic_calendar:349 - Posted economic event: cpi
+2025-08-01 10:14:29,528 - investing_scraper - INFO - _try_direct_scraping:345 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 10:14:29,529 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 1/3 for: https://www.investing.com/news/breaking-news
+2025-08-01 10:14:29,612 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 1)
+2025-08-01 10:15:24,449 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 2/3 for: https://www.investing.com/news/breaking-news
+2025-08-01 10:15:24,760 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 2)
+2025-08-01 10:16:03,426 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 3/3 for: https://www.investing.com/news/breaking-news
+2025-08-01 10:16:03,673 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 3)
+2025-08-01 10:16:03,673 - investing_scraper - INFO - _try_direct_scraping:345 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 10:16:07,964 - investing_scraper - INFO - _safe_delay:179 - Taking longer break: 12.7s
+2025-08-01 10:16:20,715 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 1/3 for: https://www.investing.com/news/forex-news
+2025-08-01 10:16:20,946 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 1)
+2025-08-01 10:17:18,052 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 2/3 for: https://www.investing.com/news/forex-news
+2025-08-01 10:17:18,288 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 2)
+2025-08-01 10:18:03,783 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 3/3 for: https://www.investing.com/news/forex-news
+2025-08-01 10:18:04,227 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 3)
+2025-08-01 10:18:04,227 - investing_scraper - INFO - _try_direct_scraping:345 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 10:18:10,160 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 1/3 for: https://www.investing.com/news/commodities-news
+2025-08-01 10:18:10,411 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 1)
+2025-08-01 10:18:51,108 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 2/3 for: https://www.investing.com/news/commodities-news
+2025-08-01 10:18:51,346 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 2)
+2025-08-01 10:19:44,454 - investing_scraper - INFO - _safe_delay:179 - Taking longer break: 16.7s
+2025-08-01 10:20:01,165 - investing_scraper - INFO - _safe_delay:185 - Resetting session to avoid detection
+2025-08-01 10:20:01,166 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 3/3 for: https://www.investing.com/news/commodities-news
+2025-08-01 10:20:01,166 - investing_scraper - ERROR - _fetch_page:300 - 💥 Unexpected error (attempt 3): 'NoneType' object has no attribute 'get'
+2025-08-01 10:20:01,166 - investing_scraper - ERROR - _fetch_page:305 - ❌ All attempts failed for: https://www.investing.com/news/commodities-news
+2025-08-01 10:20:01,166 - investing_scraper - INFO - _try_direct_scraping:345 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 10:20:07,511 - investing_scraper - INFO - _fetch_page:267 - 🔄 Attempt 1/3 for: https://www.investing.com/news/stock-market-news
+2025-08-01 10:20:07,743 - investing_scraper - WARNING - _fetch_page:279 - 🚫 Access forbidden (attempt 1)
+2025-08-01 10:20:32,362 - __main__ - INFO - run:537 - Free Arabic bot stopped
+2025-08-01 10:55:56,298 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-08-01 10:55:56,334 - investing_scraper - INFO - __init__:73 - ✅ Initialized fake-useragent for realistic traffic simulation
+2025-08-01 10:55:56,334 - database - INFO - load_database:29 - Loaded 7 seen articles from database
+2025-08-01 10:55:56,475 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-08-01 10:55:56,475 - __main__ - INFO - __init__:47 - AI Translator initialized with Groq API (FREE)
+2025-08-01 10:55:56,475 - __main__ - INFO - __init__:57 - Google Translator initialized as fallback
+2025-08-01 10:55:56,475 - __main__ - INFO - __init__:87 - Free Arabic News Bot initialized
+2025-08-01 10:55:56,475 - __main__ - INFO - run:487 - Starting FREE Arabic Financial News Bot...
+2025-08-01 10:55:56,475 - __main__ - INFO - run:498 - Bot configuration: {'environment': 'free', 'channel_id': '-1002294392721', 'scrape_interval': 180, 'ai_translation': True, 'images_enabled': False, 'max_articles': 8, 'investing_sections': 5, 'relevant_keywords': 57, 'memory_optimization': True}
+2025-08-01 10:55:57,351 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 10:55:57,351 - __main__ - INFO - run:509 - Startup message sent successfully
+2025-08-01 10:55:57,351 - __main__ - INFO - check_for_news:450 - Checking for new financial news and economic events...
+2025-08-01 10:55:57,351 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 10:55:57,352 - investing_scraper - INFO - _scrape_real_calendar:631 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 10:55:57,352 - investing_scraper - ERROR - _scrape_real_calendar:717 - 💥 Error scraping real calendar: 'InvestingNewsScraper' object has no attribute '_fetch_page'
+2025-08-01 10:55:57,352 - investing_scraper - INFO - scrape_economic_calendar:614 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 10:55:57,352 - investing_scraper - INFO - _create_simulated_events:781 - 🤖 Simulated event: معدل البطالة (已发布)
+2025-08-01 10:55:57,352 - investing_scraper - INFO - _create_simulated_events:781 - 🤖 Simulated event: فرص العمل الأمريكية (已发布)
+2025-08-01 10:55:57,352 - investing_scraper - INFO - _create_simulated_events:781 - 🤖 Simulated event: مؤشر أسعار المستهلك (已发布)
+2025-08-01 10:55:57,352 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 10:55:57,356 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/breaking-news
+2025-08-01 10:55:57,855 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:55:58,188 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:55:58,188 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Breaking News, skipping...
+2025-08-01 10:55:58,188 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 10:55:58,188 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 11.1s
+2025-08-01 10:56:09,292 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/forex-news
+2025-08-01 10:56:09,597 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:56:09,869 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:56:09,870 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Currencies, skipping...
+2025-08-01 10:56:09,870 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 10:56:09,870 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 6.2s
+2025-08-01 10:56:16,040 - investing_scraper - INFO - _human_like_delay:195 - 🔄 Resetting session (human-like behavior)
+2025-08-01 10:56:16,040 - investing_scraper - INFO - _human_like_delay:200 - ☕ Taking session break: 29.4s
+2025-08-01 10:56:45,450 - investing_scraper - INFO - _human_like_delay:206 - 🤔 Thinking time: 12.2s
+2025-08-01 10:56:57,693 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/commodities-news
+2025-08-01 10:56:58,061 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:56:58,061 - investing_scraper - ERROR - _fetch_page_simple:355 - 💥 Error fetching https://www.investing.com/news/commodities-news: 'NoneType' object has no attribute 'get'
+2025-08-01 10:56:58,063 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Commodities, skipping...
+2025-08-01 10:56:58,063 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 10:56:58,063 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 5.4s
+2025-08-01 10:57:03,419 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/stock-market-news
+2025-08-01 10:57:03,892 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:57:04,303 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:57:04,303 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Stock Market, skipping...
+2025-08-01 10:57:04,303 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Cryptocurrency from https://www.investing.com/news/cryptocurrency-news
+2025-08-01 10:57:04,303 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 11.7s
+2025-08-01 10:57:16,018 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/cryptocurrency-news
+2025-08-01 10:57:17,388 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:57:20,397 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:57:20,397 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Cryptocurrency, skipping...
+2025-08-01 10:57:20,397 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Economic Indicators from https://www.investing.com/news/economic-indicators
+2025-08-01 10:57:20,397 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 8.9s
+2025-08-01 10:57:25,699 - __main__ - INFO - run:537 - Free Arabic bot stopped
+2025-08-01 10:58:08,487 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-08-01 10:58:08,520 - investing_scraper - INFO - __init__:73 - ✅ Initialized fake-useragent for realistic traffic simulation
+2025-08-01 10:58:08,520 - database - INFO - load_database:29 - Loaded 7 seen articles from database
+2025-08-01 10:58:08,640 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-08-01 10:58:08,641 - __main__ - INFO - __init__:47 - AI Translator initialized with Groq API (FREE)
+2025-08-01 10:58:08,641 - __main__ - INFO - __init__:57 - Google Translator initialized as fallback
+2025-08-01 10:58:08,641 - __main__ - INFO - __init__:87 - Free Arabic News Bot initialized
+2025-08-01 10:58:08,641 - __main__ - INFO - run:487 - Starting FREE Arabic Financial News Bot...
+2025-08-01 10:58:08,641 - __main__ - INFO - run:498 - Bot configuration: {'environment': 'free', 'channel_id': '-1002294392721', 'scrape_interval': 180, 'ai_translation': True, 'images_enabled': False, 'max_articles': 8, 'investing_sections': 5, 'relevant_keywords': 57, 'memory_optimization': True}
+2025-08-01 10:58:09,682 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 10:58:09,682 - __main__ - INFO - run:509 - Startup message sent successfully
+2025-08-01 10:58:09,682 - __main__ - INFO - check_for_news:450 - Checking for new financial news and economic events...
+2025-08-01 10:58:09,683 - __main__ - INFO - check_economic_calendar:303 - Checking economic calendar...
+2025-08-01 10:58:09,683 - investing_scraper - INFO - _scrape_real_calendar:631 - 🗓️ Scraping economic calendar from https://www.investing.com/economic-calendar/
+2025-08-01 10:58:09,683 - investing_scraper - ERROR - _scrape_real_calendar:717 - 💥 Error scraping real calendar: 'InvestingNewsScraper' object has no attribute '_fetch_page'
+2025-08-01 10:58:09,683 - investing_scraper - INFO - scrape_economic_calendar:614 - 🤖 No real calendar data, creating simulated economic events
+2025-08-01 10:58:09,683 - investing_scraper - INFO - _create_simulated_events:781 - 🤖 Simulated event: معدل البطالة (已发布)
+2025-08-01 10:58:09,683 - investing_scraper - INFO - _create_simulated_events:781 - 🤖 Simulated event: فرص العمل الأمريكية (已发布)
+2025-08-01 10:58:09,684 - investing_scraper - INFO - _create_simulated_events:781 - 🤖 Simulated event: مؤشر أسعار المستهلك (已发布)
+2025-08-01 10:58:09,684 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Breaking News from https://www.investing.com/news/breaking-news
+2025-08-01 10:58:09,687 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/breaking-news
+2025-08-01 10:58:10,424 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:58:11,060 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:58:11,061 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Breaking News, skipping...
+2025-08-01 10:58:11,061 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Currencies from https://www.investing.com/news/forex-news
+2025-08-01 10:58:11,061 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 8.8s
+2025-08-01 10:58:19,816 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/forex-news
+2025-08-01 10:58:20,257 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:58:20,688 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:58:20,688 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Currencies, skipping...
+2025-08-01 10:58:20,688 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Commodities from https://www.investing.com/news/commodities-news
+2025-08-01 10:58:20,688 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 6.1s
+2025-08-01 10:58:26,781 - investing_scraper - INFO - _human_like_delay:195 - 🔄 Resetting session (human-like behavior)
+2025-08-01 10:58:26,781 - investing_scraper - INFO - _human_like_delay:200 - ☕ Taking session break: 39.4s
+2025-08-01 10:59:06,149 - investing_scraper - INFO - _human_like_delay:206 - 🤔 Thinking time: 13.5s
+2025-08-01 10:59:19,627 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/commodities-news
+2025-08-01 10:59:20,284 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:59:20,285 - investing_scraper - ERROR - _fetch_page_simple:355 - 💥 Error fetching https://www.investing.com/news/commodities-news: 'NoneType' object has no attribute 'get'
+2025-08-01 10:59:20,286 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Commodities, skipping...
+2025-08-01 10:59:20,286 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Stock Market from https://www.investing.com/news/stock-market-news
+2025-08-01 10:59:20,286 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 9.2s
+2025-08-01 10:59:29,471 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/stock-market-news
+2025-08-01 10:59:29,816 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:59:30,067 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:59:30,067 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Stock Market, skipping...
+2025-08-01 10:59:30,067 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Cryptocurrency from https://www.investing.com/news/cryptocurrency-news
+2025-08-01 10:59:30,067 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 8.9s
+2025-08-01 10:59:39,013 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/cryptocurrency-news
+2025-08-01 10:59:39,426 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 10:59:39,745 - investing_scraper - WARNING - _fetch_page_simple:346 - 🚫 Still blocked with aiohttp: 403
+2025-08-01 10:59:39,745 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Cryptocurrency, skipping...
+2025-08-01 10:59:39,745 - investing_scraper - INFO - _try_direct_scraping:395 - 🔍 Scraping Economic Indicators from https://www.investing.com/news/economic-indicators
+2025-08-01 10:59:39,745 - investing_scraper - INFO - _human_like_delay:186 - ⏳ Human-like delay: 9.6s
+2025-08-01 10:59:49,353 - investing_scraper - INFO - _human_like_delay:195 - 🔄 Resetting session (human-like behavior)
+2025-08-01 10:59:49,353 - investing_scraper - INFO - _human_like_delay:200 - ☕ Taking session break: 26.9s
+2025-08-01 11:00:16,271 - investing_scraper - INFO - _human_like_delay:206 - 🤔 Thinking time: 14.2s
+2025-08-01 11:00:30,483 - investing_scraper - INFO - _fetch_page_simple:324 - 🌐 Fetching like a real user: https://www.investing.com/news/economic-indicators
+2025-08-01 11:00:31,083 - investing_scraper - WARNING - _fetch_page_simple:333 - 🚫 Still blocked with requests: 403
+2025-08-01 11:00:31,083 - investing_scraper - ERROR - _fetch_page_simple:355 - 💥 Error fetching https://www.investing.com/news/economic-indicators: 'NoneType' object has no attribute 'get'
+2025-08-01 11:00:31,085 - investing_scraper - WARNING - _try_direct_scraping:399 - ❌ Could not fetch Economic Indicators, skipping...
+2025-08-01 11:00:31,085 - investing_scraper - INFO - _try_direct_scraping:477 - ✅ Direct scraped 0 articles from investing.com
+2025-08-01 11:00:31,085 - investing_scraper - INFO - scrape_investing_news:370 - 🔄 Direct scraping failed, falling back to RSS feeds
+2025-08-01 11:00:31,109 - investing_scraper - INFO - _fallback_rss_scraping:510 - 📡 Fetching RSS from investing_general
+2025-08-01 11:00:31,639 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Never mind Wall Street records, investors rethink ...
+2025-08-01 11:00:31,639 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Weakening US jobs market hits center of Fed rate p...
+2025-08-01 11:00:31,639 - investing_scraper - INFO - _fallback_rss_scraping:510 - 📡 Fetching RSS from investing_economic
+2025-08-01 11:00:31,855 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Pepe Dollar ($PEPD) Presale Picks Up Pace as Ether...
+2025-08-01 11:00:31,855 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Bitcoin price today: slides to $115.9k on tariff j...
+2025-08-01 11:00:31,855 - investing_scraper - INFO - _fallback_rss_scraping:510 - 📡 Fetching RSS from investing_crypto
+2025-08-01 11:00:32,261 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Trump's tariffs, Fed minutes, Rumble's Bitcoin buy...
+2025-08-01 11:00:32,261 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Bitcoin price today: slips to $94k as risk appetit...
+2025-08-01 11:00:32,261 - investing_scraper - INFO - _fallback_rss_scraping:510 - 📡 Fetching RSS from investing_forex
+2025-08-01 11:00:32,606 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Trump hits more countries with steep tariffs, mark...
+2025-08-01 11:00:32,606 - investing_scraper - INFO - _fallback_rss_scraping:510 - 📡 Fetching RSS from marketwatch
+2025-08-01 11:00:35,419 - investing_scraper - INFO - _fallback_rss_scraping:574 - 📰 RSS: Dollar jumps 0.5% to 0.8890 francs...
+2025-08-01 11:00:35,420 - investing_scraper - INFO - _fallback_rss_scraping:591 - ✅ RSS fallback retrieved 8 articles
+2025-08-01 11:00:35,420 - __main__ - INFO - post_articles:258 - Found 7 relevant articles from 8 total
+2025-08-01 11:00:35,494 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-77d6820d-aa61-4b71-9676-32716d5f37f5', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nNever mind Wall Street records, investors rethink US market supremacy'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 11:00:35,496 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 11:00:35,500 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 11:00:36,140 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d01fec0>
+2025-08-01 11:00:36,165 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c345850> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 11:00:36,262 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d03dd30>
+2025-08-01 11:00:36,262 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:36,263 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 11:00:36,263 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 11:00:36,263 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 11:00:36,263 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:36,553 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 18:00:36 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11819'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'905ms'), (b'x-request-id', b'req_01k1kcp01pex6r7w8jgss9gbfh'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=UGP7BvHG1ExwOANOjJxdJMBQ3LnxgaytjibTiN4t_0Q-1754071236-1.0.1.1-CQX2ly7EXjb.z3MaWDwJLJQ3mxFOk6BPl8d9eT1YfsdGdvgNA03ZU8rET3Egn2_vAN.nZCCwKgr4duU0sq6eosyr74_t4zkFWMcDpfNzJ1s; path=/; expires=Fri, 01-Aug-25 18:30:36 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96873c6d0842f9f0-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 11:00:36,554 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 11:00:36,555 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 11:00:36,555 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 11:00:36,555 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 11:00:36,556 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 18:00:36 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '999', 'x-ratelimit-remaining-tokens': '11819', 'x-ratelimit-reset-requests': '1m26.4s', 'x-ratelimit-reset-tokens': '905ms', 'x-request-id': 'req_01k1kcp01pex6r7w8jgss9gbfh', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=UGP7BvHG1ExwOANOjJxdJMBQ3LnxgaytjibTiN4t_0Q-1754071236-1.0.1.1-CQX2ly7EXjb.z3MaWDwJLJQ3mxFOk6BPl8d9eT1YfsdGdvgNA03ZU8rET3Egn2_vAN.nZCCwKgr4duU0sq6eosyr74_t4zkFWMcDpfNzJ1s; path=/; expires=Fri, 01-Aug-25 18:30:36 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'cf-ray': '96873c6d0842f9f0-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 11:00:36,558 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 11:00:36,559 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 11:00:37,321 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 11:00:37,323 - database - DEBUG - save_database:54 - Saved 8 seen articles to database
+2025-08-01 11:00:37,323 - __main__ - INFO - post_articles:287 - Posted Arabic article: Never mind Wall Street records, investors rethink ...
+2025-08-01 11:00:43,324 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-15fba4e8-ec46-431e-b91c-17584549f70e', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nWeakening US jobs market hits center of Fed rate policy debate'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 11:00:43,325 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 11:00:43,325 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 11:00:43,326 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 11:00:43,326 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 11:00:43,426 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d137620>
+2025-08-01 11:00:43,426 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c345850> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 11:00:43,520 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d137590>
+2025-08-01 11:00:43,521 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:43,521 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 11:00:43,521 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 11:00:43,521 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 11:00:43,521 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:43,813 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 18:00:44 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'br'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11821'), (b'x-ratelimit-reset-requests', b'2m45.538999999s'), (b'x-ratelimit-reset-tokens', b'895ms'), (b'x-request-id', b'req_01k1kcp74peygt23gjpaetkw1y'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96873c9a5dcbf9fc-MCT'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 11:00:43,813 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 11:00:43,814 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 11:00:43,814 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 11:00:43,814 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 11:00:43,814 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 18:00:44 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'content-encoding': 'br', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '998', 'x-ratelimit-remaining-tokens': '11821', 'x-ratelimit-reset-requests': '2m45.538999999s', 'x-ratelimit-reset-tokens': '895ms', 'x-request-id': 'req_01k1kcp74peygt23gjpaetkw1y', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96873c9a5dcbf9fc-MCT', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 11:00:43,815 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 11:00:43,815 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 11:00:44,593 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 11:00:44,595 - database - DEBUG - save_database:54 - Saved 9 seen articles to database
+2025-08-01 11:00:44,595 - __main__ - INFO - post_articles:287 - Posted Arabic article: Weakening US jobs market hits center of Fed rate p...
+2025-08-01 11:00:50,596 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-ee284657-84cf-4dbc-8fde-0c923035f415', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من cryptocurrency news:\n\nPepe Dollar ($PEPD) Presale Picks Up Pace as Ethereum (ETH) Hovers Over $3,600'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 11:00:50,596 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 11:00:50,597 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 11:00:50,597 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 11:00:50,597 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 11:00:50,663 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d15dca0>
+2025-08-01 11:00:50,663 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c345850> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 11:00:50,741 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d15d6a0>
+2025-08-01 11:00:50,742 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:50,742 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 11:00:50,742 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 11:00:50,742 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 11:00:50,742 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:51,129 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 18:00:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'997'), (b'x-ratelimit-remaining-tokens', b'11816'), (b'x-ratelimit-reset-requests', b'4m11.933s'), (b'x-ratelimit-reset-tokens', b'920ms'), (b'x-request-id', b'req_01k1kcpe7rex79vm8q5gkketm8'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96873cc78cf5fa00-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 11:00:51,129 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 11:00:51,130 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 11:00:51,130 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 11:00:51,130 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 11:00:51,130 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 18:00:51 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '997', 'x-ratelimit-remaining-tokens': '11816', 'x-ratelimit-reset-requests': '4m11.933s', 'x-ratelimit-reset-tokens': '920ms', 'x-request-id': 'req_01k1kcpe7rex79vm8q5gkketm8', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96873cc78cf5fa00-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 11:00:51,130 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 11:00:51,130 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 11:00:51,975 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 11:00:51,976 - database - DEBUG - save_database:54 - Saved 10 seen articles to database
+2025-08-01 11:00:51,976 - __main__ - INFO - post_articles:287 - Posted Arabic article: Pepe Dollar ($PEPD) Presale Picks Up Pace as Ether...
+2025-08-01 11:00:57,978 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-6438e097-d3fb-4ab8-9721-1ffa5a4ac8b1', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من cryptocurrency news:\n\nBitcoin price today: slides to $115.9k on tariff jitters, profit-taking'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 11:00:57,978 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 11:00:57,979 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 11:00:57,979 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 11:00:57,979 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 11:00:58,068 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10c1dec00>
+2025-08-01 11:00:58,069 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c345850> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 11:00:58,203 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10cfb3e30>
+2025-08-01 11:00:58,204 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:58,204 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 11:00:58,204 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 11:00:58,205 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 11:00:58,205 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 11:00:58,535 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 18:00:58 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'996'), (b'x-ratelimit-remaining-tokens', b'11818'), (b'x-ratelimit-reset-requests', b'5m38.140999999s'), (b'x-ratelimit-reset-tokens', b'910ms'), (b'x-request-id', b'req_01k1kcpngvex79rjdw22j5vyvk'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96873cf66f71f9e7-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 11:00:58,536 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 11:00:58,536 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 11:00:58,537 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 11:00:58,537 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 11:00:58,537 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 18:00:58 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '996', 'x-ratelimit-remaining-tokens': '11818', 'x-ratelimit-reset-requests': '5m38.140999999s', 'x-ratelimit-reset-tokens': '910ms', 'x-request-id': 'req_01k1kcpngvex79rjdw22j5vyvk', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96873cf66f71f9e7-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 11:00:58,538 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 11:00:58,538 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 11:00:59,594 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 11:00:59,595 - database - DEBUG - save_database:54 - Saved 11 seen articles to database
+2025-08-01 11:00:59,595 - __main__ - INFO - post_articles:287 - Posted Arabic article: Bitcoin price today: slides to $115.9k on tariff j...
+2025-08-01 11:01:05,603 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-31acb995-287c-45b0-b3f9-c600ea209f30', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': "ترجم هذا النص من cryptocurrency news:\n\nTrump's tariffs, Fed minutes, Rumble's Bitcoin buy - what's moving markets"}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 11:01:05,604 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 11:01:05,605 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 11:01:05,605 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 11:01:05,605 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 11:01:05,786 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d10d520>
+2025-08-01 11:01:05,786 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c345850> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 11:01:05,997 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d0b2840>
+2025-08-01 11:01:05,998 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 11:01:05,998 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 11:01:05,998 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 11:01:05,998 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 11:01:05,998 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 11:01:06,375 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 18:01:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'995'), (b'x-ratelimit-remaining-tokens', b'11817'), (b'x-ratelimit-reset-requests', b'7m4.201s'), (b'x-ratelimit-reset-tokens', b'915ms'), (b'x-request-id', b'req_01k1kcpx4meyjr375qvekzh5gg'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96873d272c86d1f4-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 11:01:06,375 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 11:01:06,376 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 11:01:06,376 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 11:01:06,376 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 11:01:06,376 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 18:01:06 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '995', 'x-ratelimit-remaining-tokens': '11817', 'x-ratelimit-reset-requests': '7m4.201s', 'x-ratelimit-reset-tokens': '915ms', 'x-request-id': 'req_01k1kcpx4meyjr375qvekzh5gg', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96873d272c86d1f4-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 11:01:06,377 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 11:01:06,377 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 11:01:07,328 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 11:01:07,329 - database - DEBUG - save_database:54 - Saved 12 seen articles to database
+2025-08-01 11:01:07,329 - __main__ - INFO - post_articles:287 - Posted Arabic article: Trump's tariffs, Fed minutes, Rumble's Bitcoin buy...
+2025-08-01 11:01:13,339 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-4344dcc9-ca35-43a8-a0b9-ea315a312e60', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من cryptocurrency news:\n\nBitcoin price today: slips to $94k as risk appetite sours on Trump tariff threat'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 11:01:13,340 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 11:01:13,340 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 11:01:13,341 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 11:01:13,341 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 11:01:13,424 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d15d9d0>
+2025-08-01 11:01:13,425 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c345850> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 11:01:13,513 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d15e840>
+2025-08-01 11:01:13,513 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 11:01:13,513 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 11:01:13,513 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 11:01:13,513 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 11:01:13,513 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 11:01:13,837 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 18:01:14 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'br'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'994'), (b'x-ratelimit-remaining-tokens', b'11815'), (b'x-ratelimit-reset-requests', b'8m30.941999999s'), (b'x-ratelimit-reset-tokens', b'925ms'), (b'x-request-id', b'req_01k1kcq4djfb5bpb1zj3252bza'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96873d55cd6bf9fa-MCT'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 11:01:13,837 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 11:01:13,838 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 11:01:13,838 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 11:01:13,838 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 11:01:13,838 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 18:01:14 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'content-encoding': 'br', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '994', 'x-ratelimit-remaining-tokens': '11815', 'x-ratelimit-reset-requests': '8m30.941999999s', 'x-ratelimit-reset-tokens': '925ms', 'x-request-id': 'req_01k1kcq4djfb5bpb1zj3252bza', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96873d55cd6bf9fa-MCT', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 11:01:13,839 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 11:01:13,839 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 11:01:14,578 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 11:01:14,579 - database - DEBUG - save_database:54 - Saved 13 seen articles to database
+2025-08-01 11:01:14,579 - __main__ - INFO - post_articles:287 - Posted Arabic article: Bitcoin price today: slips to $94k as risk appetit...
+2025-08-01 11:01:20,585 - groq._base_client - DEBUG - _build_request:480 - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-d88eec0e-dd96-4c1f-990a-fc55c7d97383', 'json_data': {'messages': [{'role': 'system', 'content': 'أنت مترجم محترف متخصص في الأخبار المالية والعملات المشفرة. \nقم بترجمة النص التالي إلى العربية مع مراعاة:\n1. استخدام المصطلحات المالية العربية الصحيحة\n2. الحفاظ على المعنى المالي والاقتصادي\n3. جعل النص طبيعي ومفهوم للقارئ العربي\n4. استخدام تعبيرات مالية مناسبة للسوق العربي\n\nقم بالترجمة فقط بدون أي تفسيرات إضافية.'}, {'role': 'user', 'content': 'ترجم هذا النص من financial news:\n\nTrump hits more countries with steep tariffs, markets dive'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1024, 'temperature': 0.3, 'top_p': 0.9}}
+2025-08-01 11:01:20,586 - groq._base_client - DEBUG - request:1498 - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-08-01 11:01:20,586 - httpcore.connection - DEBUG - atrace:87 - close.started
+2025-08-01 11:01:20,586 - httpcore.connection - DEBUG - atrace:87 - close.complete
+2025-08-01 11:01:20,587 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-08-01 11:01:20,684 - httpcore.connection - DEBUG - atrace:87 - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d01fec0>
+2025-08-01 11:01:20,684 - httpcore.connection - DEBUG - atrace:87 - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c345850> server_hostname='api.groq.com' timeout=5.0
+2025-08-01 11:01:20,781 - httpcore.connection - DEBUG - atrace:87 - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10d15fd40>
+2025-08-01 11:01:20,782 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.started request=<Request [b'POST']>
+2025-08-01 11:01:20,782 - httpcore.http11 - DEBUG - atrace:87 - send_request_headers.complete
+2025-08-01 11:01:20,782 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.started request=<Request [b'POST']>
+2025-08-01 11:01:20,782 - httpcore.http11 - DEBUG - atrace:87 - send_request_body.complete
+2025-08-01 11:01:20,782 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.started request=<Request [b'POST']>
+2025-08-01 11:01:21,114 - httpcore.http11 - DEBUG - atrace:87 - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 01 Aug 2025 18:01:21 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'dmm'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'993'), (b'x-ratelimit-remaining-tokens', b'11822'), (b'x-ratelimit-reset-requests', b'9m57.549999999s'), (b'x-ratelimit-reset-tokens', b'890ms'), (b'x-request-id', b'req_01k1kcqbgaeykrv8r1kaf44may'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'96873d831911f9fe-MCT'), (b'Content-Encoding', b'br'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-08-01 11:01:21,114 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.started request=<Request [b'POST']>
+2025-08-01 11:01:21,115 - httpcore.http11 - DEBUG - atrace:87 - receive_response_body.complete
+2025-08-01 11:01:21,115 - httpcore.http11 - DEBUG - atrace:87 - response_closed.started
+2025-08-01 11:01:21,115 - httpcore.http11 - DEBUG - atrace:87 - response_closed.complete
+2025-08-01 11:01:21,115 - groq._base_client - DEBUG - request:1536 - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Fri, 01 Aug 2025 18:01:21 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin', 'x-groq-region': 'dmm', 'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '12000', 'x-ratelimit-remaining-requests': '993', 'x-ratelimit-remaining-tokens': '11822', 'x-ratelimit-reset-requests': '9m57.549999999s', 'x-ratelimit-reset-tokens': '890ms', 'x-request-id': 'req_01k1kcqbgaeykrv8r1kaf44may', 'via': '1.1 google', 'cf-cache-status': 'DYNAMIC', 'server': 'cloudflare', 'cf-ray': '96873d831911f9fe-MCT', 'content-encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-08-01 11:01:21,115 - ai_translator - INFO - translate_to_arabic:71 - AI translation successful
+2025-08-01 11:01:21,115 - __main__ - INFO - translate_to_arabic:153 - AI translation successful
+2025-08-01 11:01:21,862 - __main__ - INFO - send_message:197 - Message sent successfully
+2025-08-01 11:01:21,863 - database - DEBUG - save_database:54 - Saved 14 seen articles to database
+2025-08-01 11:01:21,863 - __main__ - INFO - post_articles:287 - Posted Arabic article: Trump hits more countries with steep tariffs, mark...
+2025-08-01 11:01:27,867 - __main__ - INFO - check_for_news:469 - Posted 7 new Arabic articles from 8 found
+2025-08-01 11:01:27,868 - investing_scraper - INFO - cleanup_cache:829 - 🧹 Cleaned up memory cache
+2025-08-01 11:01:27,868 - __main__ - INFO - run:520 - Waiting 180 seconds until next check...
+2025-08-01 13:44:21,738 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-08-01 13:44:21,783 - investing_scraper - INFO - __init__:93 - ✅ Initialized fake-useragent for realistic traffic simulation
+2025-08-01 13:44:21,783 - database - INFO - load_database:29 - Loaded 10 seen articles from database
+2025-08-01 13:44:21,783 - free_arabic_bot - INFO - __init__:94 - 🌍 Financial News Bot initialized in EN mode
+2025-08-01 13:44:21,823 - investing_scraper - INFO - __init__:93 - ✅ Initialized fake-useragent for realistic traffic simulation
+2025-08-01 13:44:21,824 - database - INFO - load_database:29 - Loaded 10 seen articles from database
+2025-08-01 13:44:21,971 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-08-01 13:44:21,972 - free_arabic_bot - INFO - __init__:51 - AI Translator initialized with Groq API (FREE)
+2025-08-01 13:44:21,972 - free_arabic_bot - INFO - __init__:62 - Google Translator initialized as fallback
+2025-08-01 13:44:21,972 - free_arabic_bot - INFO - __init__:94 - 🌍 Financial News Bot initialized in AR mode

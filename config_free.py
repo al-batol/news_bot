@@ -19,32 +19,30 @@ class Config:
     # AI TRANSLATION WITH GROQ (FREE API)
     USE_AI_TRANSLATION = True   # Enable Groq API for better Arabic translation
     GROQ_API_KEY = os.getenv('GROQ_API_KEY', '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')  # Free Groq API key
+    ENABLE_ARABIC = False       # Enable/disable Arabic translation (True=Arabic, False=English only)
     USE_IMAGES = False         # FREE: No images, text only
     
     # Not needed for free version
     OPENAI_API_KEY = ''
     UNSPLASH_ACCESS_KEY = ''
     
-    # Enhanced News Sources for Economic Data and Trading News (TESTED & WORKING)
-    NEWS_SOURCES = {
-        # Investing.com feeds (most reliable for economic data)
-        'investing_economic': 'https://www.investing.com/rss/news_301.rss',  # Economic indicators ✅
-        'investing_rss': 'https://www.investing.com/rss/news.rss',           # General financial news ✅
-        'investing_crypto': 'https://www.investing.com/rss/news_285.rss',    # Cryptocurrency news ✅
-        
-        # MarketWatch (working well)
-        'marketwatch': 'https://feeds.marketwatch.com/marketwatch/realtimeheadlines/',  # Real-time headlines ✅
-        
-        # Additional reliable sources (only working ones)
-        'cointelegraph': 'https://cointelegraph.com/rss',                               # Cointelegraph ✅
-    }
+    # Investing.com scraping configuration (replaces RSS feeds)
+    INVESTING_NEWS_SECTIONS = [
+        'headlines',
+        'economic-indicators', 
+        'forex-news',
+        'commodities-news',
+        'stock-market-news',
+        'cryptocurrency-news'
+    ]
     
-    # Backup sources (automatically used if main sources have no new articles)
-    BACKUP_SOURCES = {
-        'decrypt': 'https://decrypt.co/feed',
-        'the_block': 'https://www.theblock.co/rss.xml', 
-        'crypto_news': 'https://cryptonews.com/news/feed/',
-        'benzinga_crypto': 'https://www.benzinga.com/feed',
+    # Resource optimization settings for 400MB RAM, better performance
+    SCRAPER_CONFIG = {
+        'max_concurrent_requests': 5,  # Increased concurrent connections
+        'request_delay_min': 2,        # Minimum delay between requests (anti-ban)
+        'request_delay_max': 4,        # Maximum delay between requests
+        'max_articles_per_section': 4, # More articles per section
+        'memory_cleanup_threshold': 200, # Higher cache threshold
     }
     
     # Enhanced News Filtering Keywords - Financial Focus
@@ -68,9 +66,10 @@ class Config:
     # All relevant keywords combined
     RELEVANT_KEYWORDS = STOCK_KEYWORDS + CRYPTO_KEYWORDS + MARKET_IMPACT_KEYWORDS
     
-    # Bot Configuration - Optimized for free usage
-    SCRAPE_INTERVAL_SECONDS = int(os.getenv('SCRAPE_INTERVAL_SECONDS', '180'))  # 3 minutes
-    MAX_ARTICLES_PER_SCRAPE = int(os.getenv('MAX_ARTICLES_PER_SCRAPE', '3'))   # Limit to 3
+    # Bot Configuration - Performance optimized (400MB RAM allowed)
+    SCRAPE_INTERVAL_SECONDS = int(os.getenv('SCRAPE_INTERVAL_SECONDS', '180'))  # 3 minutes for faster updates
+    MAX_ARTICLES_PER_SCRAPE = int(os.getenv('MAX_ARTICLES_PER_SCRAPE', '8'))   # Increased for better coverage
+    MAX_ECONOMIC_EVENTS = int(os.getenv('MAX_ECONOMIC_EVENTS', '5'))           # More economic events
     
     # Request Headers
     REQUEST_HEADERS = {
@@ -88,13 +87,18 @@ class Config:
     ENVIRONMENT = os.getenv('ENVIRONMENT', 'free')
     DEBUG = bool(os.getenv('DEBUG', 'False'))
     
-    # Database Settings
-    DATABASE_FILE = os.getenv('DATABASE_FILE', 'free_seen_articles.json')
-    MAX_DATABASE_SIZE = int(os.getenv('MAX_DATABASE_SIZE', '5000'))
+    # Database Settings - Production optimized for better performance
+    DATABASE_FILE = os.getenv('DATABASE_FILE', 'production_seen_articles.json')
+    MAX_DATABASE_SIZE = int(os.getenv('MAX_DATABASE_SIZE', '3000'))  # Increased for better performance
     
-    # Rate Limiting
-    MESSAGE_DELAY_SECONDS = int(os.getenv('MESSAGE_DELAY_SECONDS', '4'))  # Slower for free
-    MAX_RETRIES = int(os.getenv('MAX_RETRIES', '3'))
+    # Rate Limiting - Anti-ban optimization
+    MESSAGE_DELAY_SECONDS = int(os.getenv('MESSAGE_DELAY_SECONDS', '6'))  # Slower to avoid Telegram limits
+    MAX_RETRIES = int(os.getenv('MAX_RETRIES', '2'))  # Reduced retries to save resources
+    
+    # Memory optimization settings - Performance mode
+    ENABLE_MEMORY_OPTIMIZATION = True
+    MAX_MEMORY_CACHE_SIZE = 150  # Increased cache for better performance (400MB RAM)
+    CLEANUP_INTERVAL = 15        # Less frequent cleanup for better performance
     
     @classmethod
     def validate_config(cls):
@@ -119,6 +123,7 @@ class Config:
             'ai_translation': cls.USE_AI_TRANSLATION,
             'images_enabled': cls.USE_IMAGES,
             'max_articles': cls.MAX_ARTICLES_PER_SCRAPE,
-            'news_sources': len(cls.NEWS_SOURCES),
-            'relevant_keywords': len(cls.RELEVANT_KEYWORDS)
+            'investing_sections': len(cls.INVESTING_NEWS_SECTIONS),
+            'relevant_keywords': len(cls.RELEVANT_KEYWORDS),
+            'memory_optimization': cls.ENABLE_MEMORY_OPTIMIZATION
         } 

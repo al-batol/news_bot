@@ -16,7 +16,7 @@ from config_free import Config
 from deep_translator import GoogleTranslator
 from ai_translator import AITranslator
 from crypto_arabic_formatter import CryptoArabicFormatter
-from rss_scraper import RSSNewsScraper
+from investing_scraper import InvestingNewsScraper, EconomicEvent
 from database import ArticleDatabase
 from error_handler import setup_logging
 
@@ -32,9 +32,13 @@ class FreeArabicNewsBot:
         self.running = False
         
         # Initialize components
-        self.scraper = RSSNewsScraper()
-        self.database = ArticleDatabase(Config.DATABASE_FILE)
+        self.scraper = InvestingNewsScraper()
+        self.database = ArticleDatabase('production_seen_articles.json')  # Use production database
         self.formatter = CryptoArabicFormatter()
+        
+        # Economic calendar for upcoming events
+        self.pending_events = []
+        self.last_calendar_check = None
         
         # Initialize AI translator (FREE)
         if Config.USE_AI_TRANSLATION:
@@ -99,39 +103,104 @@ class FreeArabicNewsBot:
         
         return '🪙'  # Default to crypto emoji for crypto-focused bot
     
+    def _get_section_emoji(self, section: str) -> str:
+        """🎨 Get emoji based on article section"""
+        section = section.upper()
+        
+        if 'CRYPTO' in section:
+            return '₿'
+        elif 'FOREX' in section:
+            return '💱'
+        elif 'STOCK' in section:
+            return '📈'
+        elif 'ECONOMIC' in section:
+            return '🏛️'
+        elif 'COMMODITIES' in section:
+            return '🛢️'
+        elif 'BREAKING' in section:
+            return '🚨'
+        else:
+            return '📰'
+    
     def is_relevant_news(self, title: str, summary: str = "") -> bool:
-        """Enhanced relevance check with crypto priority"""
+        """🎯 STRICT: Financial markets content ONLY - NO world news, politics, or wars"""
         content = f"{title} {summary}".lower()
         
-        # Prioritize crypto content (higher relevance)
+        # 🚫 IMMEDIATE EXCLUSIONS: World news, politics, wars, conflicts
+        world_news_exclusions = [
+            # Wars & Conflicts
+            'war', 'battle', 'military', 'soldier', 'army', 'navy', 'strike', 'attack', 'killed', 'dead', 'wounded',
+            'ukraine', 'russia', 'israel', 'gaza', 'palestinian', 'hamas', 'missile', 'bomb', 'explosion',
+            'syria', 'iran', 'iraq', 'afghanistan', 'libya', 'yemen', 'sudan', 'terror', 'terrorist',
+            
+            # Politics & Elections  
+            'election', 'vote', 'poll', 'candidate', 'president', 'senator', 'congress', 'parliament',
+            'trump', 'biden', 'putin', 'xi jinping', 'modi', 'erdogan', 'macron', 'merkel',
+            'republican', 'democrat', 'liberal', 'conservative', 'campaign', 'rally',
+            
+            # Crime & Accidents
+            'murder', 'shooting', 'robbery', 'theft', 'arrest', 'police', 'court', 'trial', 'sentence',
+            'accident', 'crash', 'fire', 'flood', 'earthquake', 'hurricane', 'tornado', 'disaster',
+            
+            # Entertainment & Sports
+            'sports', 'football', 'soccer', 'basketball', 'baseball', 'tennis', 'olympics', 'fifa',
+            'celebrity', 'actor', 'actress', 'singer', 'movie', 'film', 'tv show', 'netflix', 'disney',
+            'music', 'album', 'concert', 'grammy', 'oscar', 'emmy', 'game', 'gaming', 'playstation',
+            
+            # Health & Lifestyle  
+            'health', 'medical', 'doctor', 'hospital', 'covid', 'vaccine', 'virus', 'pandemic',
+            'diet', 'exercise', 'fitness', 'workout', 'beauty', 'fashion', 'lifestyle', 'recipe',
+            'travel', 'tourism', 'hotel', 'restaurant', 'weather', 'climate change'
+        ]
+        
+        # 🚫 STRICT CHECK: Reject any world/political/war content
+        for exclusion in world_news_exclusions:
+            if exclusion in content:
+                logger.debug(f"🚫 EXCLUDED (world news): {exclusion} in '{title[:50]}...'")
+                return False
+        
+        # ✅ REQUIRED: Must contain financial market keywords
         crypto_score = 0
         for keyword in Config.CRYPTO_KEYWORDS:
             if keyword.lower() in content:
                 crypto_score += 2  # Higher weight for crypto
         
-        # Check financial/market keywords
+        # ✅ FINANCIAL KEYWORDS: Stocks, forex, commodities, economics
+        financial_keywords = [
+            # Core Financial
+            'stock', 'share', 'market', 'trading', 'investor', 'investment', 'portfolio', 'dividend',
+            'earnings', 'revenue', 'profit', 'loss', 'ipo', 'merger', 'acquisition', 'buyback',
+            
+            # Economic Indicators  
+            'fed', 'federal reserve', 'interest rate', 'inflation', 'gdp', 'unemployment', 'job',
+            'consumer price', 'ppi', 'cpi', 'retail sales', 'housing', 'manufacturing',
+            
+            # Forex & Currencies
+            'dollar', 'euro', 'yen', 'pound', 'currency', 'forex', 'exchange rate', 'devaluation',
+            'central bank', 'monetary policy', 'quantitative easing',
+            
+            # Commodities & Energy
+            'oil', 'crude', 'gold', 'silver', 'copper', 'wheat', 'corn', 'natural gas', 'commodity',
+            'opec', 'energy', 'mining', 'metals', 'agriculture',
+            
+            # Crypto (additional)
+            'blockchain', 'defi', 'nft', 'stablecoin', 'altcoin', 'binance', 'coinbase'
+        ]
+        
         financial_score = 0
-        for keyword in Config.STOCK_KEYWORDS + Config.MARKET_IMPACT_KEYWORDS:
-            if keyword.lower() in content:
+        for keyword in financial_keywords:
+            if keyword in content:
                 financial_score += 1
         
         total_score = crypto_score + financial_score
         
-        # Strong exclusions
-        exclusions = [
-            'sports', 'entertainment', 'celebrity', 'weather', 'music', 'game',
-            'fashion', 'travel', 'food', 'recipe', 'movie', 'tv show', 'netflix',
-            'health tips', 'diet', 'exercise', 'workout', 'beauty', 'lifestyle'
-        ]
-        
-        for exclusion in exclusions:
-            if exclusion in content:
-                return False
-        
-        # Crypto news gets priority (score >= 2)
-        # Financial news needs score >= 1
-        # General economic news with high impact gets through
-        return total_score >= 1
+        # 🎯 STRICT REQUIREMENT: Must be financial markets content
+        if total_score >= 1:
+            logger.debug(f"✅ APPROVED: Score {total_score} - '{title[:50]}...'")
+            return True
+        else:
+            logger.debug(f"🚫 EXCLUDED (not financial): Score {total_score} - '{title[:50]}...'")
+            return False
     
     async def translate_to_arabic(self, text: str, context: str = "crypto news") -> str:
         """Translate text to Arabic using AI or Google Translate (optimized)"""
@@ -216,26 +285,35 @@ class FreeArabicNewsBot:
             return False
     
     async def format_arabic_message(self, article) -> str:
-        """Format article as enhanced Arabic crypto/financial message (OPTIMIZED)"""
+        """🌍 FLEXIBLE: Format article as Arabic (if enabled) or English financial message"""
         try:
+            # 🚀 CHECK CONFIG: Skip Arabic translation if disabled
+            if not Config.ENABLE_ARABIC:
+                # 🇺🇸 ENGLISH ONLY MODE: Send news directly without translation
+                section_emoji = self._get_section_emoji(getattr(article, 'section', ''))
+                flag = self.detect_country_flag(article.title, getattr(article, 'summary', ''))
+                
+                message = f"🚨 {section_emoji} {flag} BREAKING: {article.title}\n\n"
+                
+                if hasattr(article, 'summary') and article.summary:
+                    message += f"📝 {article.summary}\n\n"
+                
+                # message += f"📊 Section: {getattr(article, 'section', 'Financial News')}\n"
+                # message += f"⏰ {getattr(article, 'published', datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M'))}\n\n"
+                message += "📈 Follow us: @news_news127"
+                
+                return message
+            
+            # 🇸🇦 ARABIC MODE: Original Arabic translation flow
             # Determine context for better translation
             content = f"{article.title} {getattr(article, 'summary', '')}"
             context = "cryptocurrency news" if any(crypto in content.lower() for crypto in ['bitcoin', 'crypto', 'ethereum']) else "financial news"
             
-            # Check if this is economic data first (to avoid unnecessary translation)
-            economic_data = self.formatter.extract_economic_data(article.title, getattr(article, 'summary', ''))
+            # Translate title to Arabic
+            arabic_title = await self.translate_to_arabic(article.title, context)
             
-            # Only translate if not economic data (economic data uses Arabic names already)
-            if economic_data and economic_data.get('has_data'):
-                # For economic data, use the Arabic name directly
-                arabic_title = economic_data.get('arabic_name', article.title)
-                # Skip market analysis API call for economic data - use built-in logic
-                market_analysis = {'impact': 'محايد', 'currency': 'الدولار الأمريكي'}
-            else:
-                # For non-economic news, translate normally
-                arabic_title = await self.translate_to_arabic(article.title, context)
-                # Skip market analysis for non-economic news to save API calls
-                market_analysis = {'impact': 'محايد', 'currency': 'السوق'}
+            # Simple market analysis (no API calls for efficiency)
+            market_analysis = {'impact': 'محايد', 'currency': 'الدولار الأمريكي'}
             
             # Use enhanced formatter for professional-style messages
             message = await self.formatter.format_enhanced_arabic_news(
@@ -245,10 +323,15 @@ class FreeArabicNewsBot:
             return message
             
         except Exception as e:
-            logger.error(f"Error formatting enhanced Arabic message: {e}")
-            # Fallback to simple format
+            logger.error(f"💥 Error formatting message: {e}")
+            # 🛡️ ROBUST FALLBACK: Based on config setting
             flag = self.detect_country_flag(article.title, getattr(article, 'summary', ''))
-            return f"عاجل: {flag} {article.title}\n\nتابعنا لكل جديد : @news_news127"
+            section_emoji = self._get_section_emoji(getattr(article, 'section', ''))
+            
+            if Config.ENABLE_ARABIC:
+                return f"عاجل: {section_emoji} {flag} {article.title}\n\nتابعنا لكل جديد : @news_news127"
+            else:
+                return f"🚨 {section_emoji} {flag} BREAKING: {article.title}\n\nFollow us: @news_news127"
     
     async def post_articles(self, articles):
         """Post filtered articles to Telegram channel"""
@@ -302,38 +385,211 @@ class FreeArabicNewsBot:
         
         return posted_count
     
-    async def check_for_news(self):
-        """Check for new articles and post them"""
+    async def check_economic_calendar(self):
+        """Check for upcoming and released economic events"""
         try:
-            logger.info("Checking for new financial news...")
+            logger.info("Checking economic calendar...")
             
-            # Get new articles from RSS sources with retry logic
+            # Get economic events
+            events = await self.scraper.scrape_economic_calendar()
+            
+            for event in events:
+                try:
+                    # Create different keys for before/after event states
+                    event_base_key = f"{event.event_name}_{event.time}_{event.country}"
+                    upcoming_key = f"{event_base_key}_upcoming"
+                    released_key = f"{event_base_key}_released"
+                    
+                    # Check if event is current (time-based logic)
+                    is_event_released = self._is_event_released(event)
+                    
+                    if is_event_released and event.actual and event.actual not in ["", "--", "TBD"]:
+                        # Event has been released with actual data - send "صدر الآن" message
+                        if self.database.is_article_seen(released_key):
+                            continue  # Already sent release message
+                            
+                        message = await self.formatter.format_economic_data_release(
+                            event_name_arabic=event.event_name_arabic,
+                            country="أمريكا" if "US" in event.country.upper() else event.country,
+                            country_flag=self.scraper.get_country_flag(event.country),
+                            previous=event.previous,
+                            forecast=event.forecast,
+                            actual=event.actual,
+                            impact_analysis=self._analyze_economic_impact(event)
+                        )
+                        event_key = released_key
+                        
+                    else:
+                        # Upcoming event - send "ترقبوا اليوم" message
+                        if self.database.is_article_seen(upcoming_key):
+                            continue  # Already sent upcoming message
+                            
+                        message = await self.formatter.format_economic_announcement(
+                            event_name_arabic=event.event_name_arabic,
+                            country_flag=self.scraper.get_country_flag(event.country),
+                            event_time=event.time
+                        )
+                        event_key = upcoming_key
+                    
+                    # Send message
+                    success = await self.send_message(message)
+                    
+                    if success:
+                        # Mark as seen
+                        self.database.mark_article_seen(
+                            event_key,
+                            event.event_name,
+                            f"economic_calendar_{event.event_name}",
+                            datetime.now(timezone.utc).isoformat()
+                        )
+                        logger.info(f"Posted economic event: {event.event_name}")
+                        
+                        # Add delay between posts
+                        await asyncio.sleep(Config.MESSAGE_DELAY_SECONDS)
+                    
+                except Exception as e:
+                    logger.error(f"Error posting economic event: {e}")
+                    continue
+                    
+        except Exception as e:
+            logger.error(f"Error checking economic calendar: {e}")
+    
+    def _analyze_economic_impact(self, event: EconomicEvent) -> str:
+        """Analyze the impact of economic event on USD"""
+        try:
+            if not event.actual or not event.forecast:
+                return "كما هو متوقع للدولار الأمريكي"
+            
+            # Clean and compare values
+            def clean_value(val):
+                if not val:
+                    return None
+                try:
+                    return float(re.sub(r'[^\d.-]', '', str(val)))
+                except:
+                    return None
+            
+            actual_val = clean_value(event.actual)
+            forecast_val = clean_value(event.forecast)
+            
+            if actual_val is None or forecast_val is None:
+                return "كما هو متوقع للدولار الأمريكي"
+            
+            event_lower = event.event_name.lower()
+            
+            # Employment indicators (higher = better for USD)
+            if any(keyword in event_lower for keyword in ['payroll', 'jobs', 'employment']):
+                if actual_val > forecast_val:
+                    return "إيجابي للدولار الأمريكي"
+                elif actual_val < forecast_val:
+                    return "سلبي للدولار الأمريكي"
+            
+            # Unemployment (lower = better for USD)
+            elif 'unemployment' in event_lower:
+                if actual_val < forecast_val:
+                    return "إيجابي للدولار الأمريكي"
+                elif actual_val > forecast_val:
+                    return "سلبي للدولار الأمريكي"
+            
+            # PMI (higher = better for USD)
+            elif 'pmi' in event_lower:
+                if actual_val > forecast_val:
+                    return "إيجابي للدولار الأمريكي"
+                elif actual_val < forecast_val:
+                    return "سلبي للدولار الأمريكي"
+            
+            return "كما هو متوقع للدولار الأمريكي"
+            
+        except Exception as e:
+            logger.error(f"Error analyzing economic impact: {e}")
+            return "كما هو متوقع للدولار الأمريكي"
+    
+    def _is_event_released(self, event: EconomicEvent) -> bool:
+        """Check if economic event has been released based on time and actual data"""
+        try:
+            # If event has actual data, it's definitely released
+            if event.actual and event.actual not in ["", "--", "TBD", None]:
+                return True
+            
+            # If no time specified, consider it not released yet
+            if not event.time or event.time in ["TBD", "All Day", ""]:
+                return False
+            
+            current_time = datetime.now(timezone.utc)
+            current_hour = current_time.hour
+            current_minute = current_time.minute
+            
+            # Parse event time
+            if ':' in event.time:
+                event_hour, event_minute = map(int, event.time.split(':'))
+            else:
+                event_hour = int(event.time) if event.time.isdigit() else 13
+                event_minute = 30
+            
+            # Check if current time has passed the event time (give 5 minutes grace period)
+            if current_hour > event_hour:
+                return True
+            elif current_hour == event_hour and current_minute >= (event_minute + 5):
+                return True
+            else:
+                return False
+            
+        except Exception as e:
+            logger.error(f"Error checking event release time: {e}")
+            return bool(event.actual)  # Fallback to checking actual data existence
+    
+    async def check_for_news(self):
+        """🚀 ENHANCED: Check for new articles and economic events with professional scraping"""
+        try:
+            logger.info("⚡ PROFESSIONAL: Checking for breaking financial news and economic events...")
+            
+            # Check economic calendar first (higher priority)
+            await self.check_economic_calendar()
+            
+            # 🚀 ENHANCED: Get new articles with professional anti-detection scraping
             articles = []
             for attempt in range(Config.MAX_RETRIES):
                 try:
-                    articles = await self.scraper.get_latest_news()
-                    if articles:
+                    # 🎯 USE ENHANCED FEATURES: Breaking news priority + more articles
+                    raw_articles = await self.scraper.scrape_investing_news(
+                        max_articles=Config.MAX_ARTICLES_PER_SCRAPE * 2,  # Get more for better selection
+                        breaking_news_priority=True  # 🔥 Prioritize breaking news
+                    )
+                    
+                    if raw_articles:
+                        # 🧠 SMART CLASSIFICATION: Fix article sections using URL + content analysis
+                        articles = self.scraper.fix_article_sections(raw_articles)
+                        
+                        # 📊 PROFESSIONAL: Report section coverage
+                        coverage = self.scraper.verify_section_coverage(articles)
+                        covered_sections = [section for section, count in coverage.items() if count > 0]
+                        logger.info(f"📊 SECTION COVERAGE: {len(covered_sections)}/6 sections - {', '.join(covered_sections)}")
+                        
                         break
                 except Exception as e:
-                    logger.error(f"RSS fetch attempt {attempt + 1} failed: {e}")
+                    logger.error(f"⚠️ Investing.com fetch attempt {attempt + 1} failed: {e}")
                     if attempt < Config.MAX_RETRIES - 1:
                         await asyncio.sleep(10)
             
             if articles:
                 posted = await self.post_articles(articles)
-                logger.info(f"Posted {posted} new Arabic articles from {len(articles)} found")
-            else:
-                logger.info("No new articles found (network or RSS issues)")
+                logger.info(f"✅ Posted {posted} new Arabic articles from {len(articles)} found")
                 
-            # Cleanup database if it gets too large
+                # 🎯 Log top breaking news for monitoring
+                for article in articles[:3]:
+                    logger.info(f"🔥 {article.section}: {article.title[:60]}...")
+            else:
+                logger.info("ℹ️ No new articles found")
+                
+            # Cleanup database if it gets too large  
             if self.database.get_article_count() > Config.MAX_DATABASE_SIZE:
                 self.database.cleanup_old_articles(Config.MAX_DATABASE_SIZE // 2)
             
-            # Periodic cleanup of RSS scraper cache to ensure fresh content
-            self.scraper.periodic_cache_cleanup()
+            # Cleanup scraper cache to save memory
+            self.scraper.cleanup_cache()
                 
         except Exception as e:
-            logger.error(f"Error checking for news: {e}")
+            logger.error(f"💥 Error checking for news: {e}")
     
     async def run(self):
         """Main run loop"""
@@ -352,11 +608,20 @@ class FreeArabicNewsBot:
             config_summary = Config.get_config_summary()
             logger.info(f"Bot configuration: {config_summary}")
             
-            # Send startup message
-            startup_message = (
-                f"🚀 بوت الأخبار المالية العربي!\n\n"
-                f"تابعنا لكل جديد : @news_news127"
-            )
+            # Send startup message based on language mode
+            if Config.ENABLE_ARABIC:
+                startup_message = (
+                    f"🚀 بوت الأخبار المالية العربي!\n\n"
+                    f"تابعنا لكل جديد : @news_news127"
+                )
+            else:
+                startup_message = (
+                    f"🚀 Financial News Bot Started!\n\n"
+                    f"📈 Real-time financial market updates\n"
+                    f"🔥 Breaking news priority\n"
+                    f"🎯 Professional market analysis\n\n"
+                    f"Follow us for real-time updates: @news_news127"
+                )
             
             # Try to send startup message
             startup_sent = await self.send_message(startup_message)
@@ -370,9 +635,10 @@ class FreeArabicNewsBot:
                 try:
                     await self.check_for_news()
                     
-                    # Wait for next cycle
-                    logger.info(f"Waiting {Config.SCRAPE_INTERVAL_SECONDS} seconds until next check...")
-                    await asyncio.sleep(Config.SCRAPE_INTERVAL_SECONDS)
+                    # Wait for next cycle (1 hour 2 minutes as requested by user)
+                    wait_time = 3720  # 1 hour 2 minutes (62 minutes) for economic calendar updates
+                    logger.info(f"⏰ Waiting {wait_time} seconds (1h 2m) until next economic calendar check...")
+                    await asyncio.sleep(wait_time)
                     
                 except KeyboardInterrupt:
                     logger.info("Bot stopped by user")
@@ -393,14 +659,16 @@ class FreeArabicNewsBot:
 async def main():
     """Main function"""
     # Set up logging
-    setup_logging(Config.LOG_LEVEL)
+    setup_logging(Config.LOG_LEVEL, Config.LOG_FILE)
     
-    print("🇸🇦 🤖 FREE Arabic Financial News Bot")
+    language_mode = "🇸🇦 Arabic" if Config.ENABLE_ARABIC else "🇺🇸 English"
+    print(f"🤖 FREE Financial News Bot ({language_mode})")
     print("=" * 60)
-    print("🤖 AI-Powered Translation (Groq - FREE)")
-    print("💎 Enhanced Crypto Market Focus")
-    print("📊 Professional Arabic Formatting")
+    print("🤖 AI-Powered Translation (Groq - FREE)" if Config.ENABLE_ARABIC else "🚀 Direct English News (No Translation)")
+    print("💎 Enhanced Financial Market Focus")
+    print("📊 Professional News Formatting")
     print("🔥 Real-time Market Impact Analysis")
+    print(f"🌍 Language: {language_mode}")
     print(f"📱 Channel: {Config.TELEGRAM_CHANNEL_ID}")
     print(f"⏱️  Update Interval: {Config.SCRAPE_INTERVAL_SECONDS} seconds")
     print(f"🌍 Environment: {Config.ENVIRONMENT}")

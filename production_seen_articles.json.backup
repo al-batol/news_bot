@@ -1,28 +1,140 @@
 {
   "seen_articles": [
-    "40a90a8d3142",
-    "6a8df7fd860f",
-    "8bff2793bf9f"
+    "HCOB Eurozone Manufacturing PMI  (Jul)_04:00__released",
+    "non farm payrolls_13:30_United States",
+    "Core CPI (MoM)  (Jul)_05:00__released",
+    "Italian Retail Sales (MoM)  (Jun)_04:00__released",
+    "HCOB Italy Manufacturing PMI  (Jul)_03:45__released",
+    "S&P Global Manufacturing PMI  (Jul)_01:00__released",
+    "Core CPI (YoY)  (Jul)_05:00__released",
+    "Commodity Prices (YoY)  (Jul)_02:30__released",
+    "cpi_13:30_United States",
+    "b2ad0c7fc523",
+    "unemployment rate_13:30_United States",
+    "HCOB Spain Manufacturing PMI  (Jul)_03:15__released",
+    "Italian Retail Sales (YoY)  (Jun)_04:00__released",
+    "HCOB Germany Manufacturing PMI  (Jul)_03:55__released",
+    "afbcdd515868",
+    "b37170cd1c96",
+    "S&P Global Manufacturing PMI  (Jul)_04:30__released",
+    "HCOB France Manufacturing PMI  (Jul)_03:50__released",
+    "S&P Global Manufacturing PMI  (Jul)_02:00__released"
   ],
   "article_metadata": {
-    "8bff2793bf9f": {
-      "title": "Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them",
-      "link": "https://www.marketwatch.com/story/elon-musk-in-a-post-on-x-says-some-of-his-trump-posts-went-too-far-and-that-he-regrets-them-90e73a6a?mod=mw_rss_realtimeheadlines",
-      "timestamp": "Wed, 11 Jun 2025 07:09:00 GMT",
-      "seen_at": "2025-07-29T18:47:36.904636+00:00"
+    "unemployment rate_13:30_United States": {
+      "title": "unemployment rate",
+      "link": "economic_calendar_unemployment rate",
+      "timestamp": "2025-08-01T21:22:31.953907+00:00",
+      "seen_at": "2025-08-01T21:22:31.953924+00:00"
     },
-    "6a8df7fd860f": {
-      "title": "Swiss National Bank cuts interest rates by a half point to 0.5%",
-      "link": "https://www.marketwatch.com/story/swiss-national-bank-cuts-interest-rates-by-a-half-point-to-0-5-ed1fce78?mod=mw_rss_realtimeheadlines",
-      "timestamp": "Thu, 12 Dec 2024 08:32:00 GMT",
-      "seen_at": "2025-07-29T18:47:41.154018+00:00"
+    "non farm payrolls_13:30_United States": {
+      "title": "non farm payrolls",
+      "link": "economic_calendar_non farm payrolls",
+      "timestamp": "2025-08-01T21:22:38.633594+00:00",
+      "seen_at": "2025-08-01T21:22:38.633611+00:00"
     },
-    "40a90a8d3142": {
-      "title": "Powell says labor market not a source of significant inflation pressure",
-      "link": "https://www.marketwatch.com/story/powell-says-labor-market-not-a-source-of-significant-inflation-pressure-cc3b1297?mod=mw_rss_realtimeheadlines",
-      "timestamp": "Wed, 31 Jul 2024 18:48:00 GMT",
-      "seen_at": "2025-07-29T18:47:45.735514+00:00"
+    "cpi_13:30_United States": {
+      "title": "cpi",
+      "link": "economic_calendar_cpi",
+      "timestamp": "2025-08-01T21:22:45.499370+00:00",
+      "seen_at": "2025-08-01T21:22:45.499385+00:00"
+    },
+    "afbcdd515868": {
+      "title": "iBio receives Nasdaq notice for minimum bid price deficiency",
+      "link": "https://www.investing.com/news/sec-filings/ibio-receives-nasdaq-notice-for-minimum-bid-price-deficiency-93CH-4166745",
+      "timestamp": "2025-08-01 21:22",
+      "seen_at": "2025-08-01T21:22:54.989708+00:00"
+    },
+    "b37170cd1c96": {
+      "title": "Opendoor stock rises after regaining Nasdaq compliance",
+      "link": "https://www.investing.com/news/stock-market-news/opendoor-stock-rises-after-regaining-nasdaq-compliance-93CH-4166743",
+      "timestamp": "2025-08-01 21:22",
+      "seen_at": "2025-08-01T21:23:02.084838+00:00"
+    },
+    "S&P Global Manufacturing PMI  (Jul)_01:00__released": {
+      "title": "S&P Global Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_S&P Global Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:36:26.457748+00:00",
+      "seen_at": "2025-08-01T21:36:26.457759+00:00"
+    },
+    "S&P Global Manufacturing PMI  (Jul)_02:00__released": {
+      "title": "S&P Global Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_S&P Global Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:36:33.567087+00:00",
+      "seen_at": "2025-08-01T21:36:33.567100+00:00"
+    },
+    "Commodity Prices (YoY)  (Jul)_02:30__released": {
+      "title": "Commodity Prices (YoY)  (Jul)",
+      "link": "economic_calendar_Commodity Prices (YoY)  (Jul)",
+      "timestamp": "2025-08-01T21:36:40.306233+00:00",
+      "seen_at": "2025-08-01T21:36:40.306263+00:00"
+    },
+    "HCOB Spain Manufacturing PMI  (Jul)_03:15__released": {
+      "title": "HCOB Spain Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Spain Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:22.026143+00:00",
+      "seen_at": "2025-08-01T21:43:22.026161+00:00"
+    },
+    "HCOB Italy Manufacturing PMI  (Jul)_03:45__released": {
+      "title": "HCOB Italy Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Italy Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:28.753949+00:00",
+      "seen_at": "2025-08-01T21:43:28.753962+00:00"
+    },
+    "HCOB France Manufacturing PMI  (Jul)_03:50__released": {
+      "title": "HCOB France Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB France Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:35.548879+00:00",
+      "seen_at": "2025-08-01T21:43:35.548896+00:00"
+    },
+    "HCOB Germany Manufacturing PMI  (Jul)_03:55__released": {
+      "title": "HCOB Germany Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Germany Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:42.370301+00:00",
+      "seen_at": "2025-08-01T21:43:42.370316+00:00"
+    },
+    "Italian Retail Sales (YoY)  (Jun)_04:00__released": {
+      "title": "Italian Retail Sales (YoY)  (Jun)",
+      "link": "economic_calendar_Italian Retail Sales (YoY)  (Jun)",
+      "timestamp": "2025-08-01T21:43:49.250983+00:00",
+      "seen_at": "2025-08-01T21:43:49.250998+00:00"
+    },
+    "Italian Retail Sales (MoM)  (Jun)_04:00__released": {
+      "title": "Italian Retail Sales (MoM)  (Jun)",
+      "link": "economic_calendar_Italian Retail Sales (MoM)  (Jun)",
+      "timestamp": "2025-08-01T21:43:56.007074+00:00",
+      "seen_at": "2025-08-01T21:43:56.007089+00:00"
+    },
+    "HCOB Eurozone Manufacturing PMI  (Jul)_04:00__released": {
+      "title": "HCOB Eurozone Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Eurozone Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:44:02.780260+00:00",
+      "seen_at": "2025-08-01T21:44:02.780272+00:00"
+    },
+    "S&P Global Manufacturing PMI  (Jul)_04:30__released": {
+      "title": "S&P Global Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_S&P Global Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:44:09.740810+00:00",
+      "seen_at": "2025-08-01T21:44:09.740826+00:00"
+    },
+    "Core CPI (YoY)  (Jul)_05:00__released": {
+      "title": "Core CPI (YoY)  (Jul)",
+      "link": "economic_calendar_Core CPI (YoY)  (Jul)",
+      "timestamp": "2025-08-01T21:44:16.564697+00:00",
+      "seen_at": "2025-08-01T21:44:16.564713+00:00"
+    },
+    "Core CPI (MoM)  (Jul)_05:00__released": {
+      "title": "Core CPI (MoM)  (Jul)",
+      "link": "economic_calendar_Core CPI (MoM)  (Jul)",
+      "timestamp": "2025-08-01T21:44:23.383173+00:00",
+      "seen_at": "2025-08-01T21:44:23.383188+00:00"
+    },
+    "b2ad0c7fc523": {
+      "title": "Mexico stocks lower at close of trade; S&P/BMV IPC down 0.87%",
+      "link": "https://www.investing.com/news/stock-market-news/mexico-stocks-lower-at-close-of-trade-spbmv-ipc-down-087-4166762",
+      "timestamp": "2025-08-01 21:44",
+      "seen_at": "2025-08-01T21:44:34.421182+00:00"
     }
   },
-  "last_updated": "2025-07-29T18:47:45.735522+00:00"
+  "last_updated": "2025-08-01T21:44:34.421201+00:00"
 }

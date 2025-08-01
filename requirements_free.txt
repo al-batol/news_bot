@@ -5,18 +5,19 @@
 aiohttp==3.9.5
 python-dotenv==1.0.0
 
-# RSS scraping
+# Web scraping for investing.com
+beautifulsoup4==4.12.2
+lxml==5.1.0
 feedparser==6.0.10
-brotli==1.1.0
 
-# AI translation
-groq==0.12.0
+# FREE AI translation with Groq
 deep-translator==1.11.4
+groq==0.4.1
 
 # Async support
 APScheduler==3.10.4
 
 # Basic requirements
 requests==2.31.0
-beautifulsoup4==4.12.2
-lxml==5.1.0 
+fake-useragent==1.4.0
+requests-html==0.10.0 

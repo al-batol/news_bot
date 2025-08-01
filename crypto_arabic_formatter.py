@@ -101,94 +101,8 @@ class CryptoArabicFormatter:
             'neutral': 'تأثير محايد على الأسواق'
         }
     
-    def extract_economic_data(self, title: str, summary: str = "") -> Optional[Dict]:
-        """
-        Enhanced economic data extraction for trading-style news
-        """
-        content = f"{title} {summary}".lower()
-        
-        # Enhanced number patterns to catch all formats
-        # Matches: 7.5M, 3.2%, 218K, 0.155, +0.16%, etc.
-        number_patterns = re.findall(r'([+-]?\d+\.?\d*[kmb%]?)', content, re.IGNORECASE)
-        
-        # Enhanced economic indicators with priority order
-        economic_indicators = {
-            # Employment (highest priority for USD impact)
-            'non-farm payroll': 'فرص العمل الأمريكية',
-            'non farm payroll': 'فرص العمل الأمريكية',
-            'nonfarm payrolls': 'فرص العمل الأمريكية', 
-            'payrolls': 'فرص العمل الأمريكية',
-            'jobs report': 'تقرير الوظائف الأمريكي',
-            'unemployment rate': 'معدل البطالة الأمريكي',
-            'unemployment claims': 'معدلات الشكاوى من البطالة',
-            'jobless claims': 'طلبات إعانة البطالة',
-            
-            # Manufacturing and PMI
-            'chicago pmi': 'مؤشر مديري المشتريات من شيكاغو',
-            'ism manufacturing': 'مؤشر مديري المشتريات الصناعي',
-            'manufacturing pmi': 'مؤشر مديري المشتريات التصنيعي',
-            'pmi': 'مؤشر مديري المشتريات',
-            
-            # Inflation
-            'cpi': 'مؤشر أسعار المستهلك',
-            'core cpi': 'مؤشر أسعار المستهلك الأساسي',
-            'inflation': 'التضخم',
-            'ppi': 'مؤشر أسعار المنتجين',
-            
-            # Other indicators
-            'retail sales': 'مبيعات التجزئة',
-            'gdp': 'الناتج المحلي الإجمالي',
-            'housing starts': 'بدء البناء السكني'
-        }
-        
-        # Find the most specific indicator
-        found_indicator = None
-        found_arabic_name = None
-        
-        for indicator, arabic_name in economic_indicators.items():
-            if indicator in content:
-                found_indicator = indicator
-                found_arabic_name = arabic_name
-                break
-        
-        # Look for previous/forecast/actual patterns
-        prev_pattern = re.search(r'(?:previous|prev|prior|last)[:\s]*([+-]?\d+\.?\d*[kmb%]?)', content, re.IGNORECASE)
-        forecast_pattern = re.search(r'(?:forecast|est|expected|estimate)[:\s]*([+-]?\d+\.?\d*[kmb%]?)', content, re.IGNORECASE)
-        actual_pattern = re.search(r'(?:actual|current|latest|came in at)[:\s]*([+-]?\d+\.?\d*[kmb%]?)', content, re.IGNORECASE)
-        
-        # Extract vs pattern (common in economic news)
-        vs_pattern = re.search(r'(\d+\.?\d*[kmb%]?)\s*(?:vs|versus|against)\s*(\d+\.?\d*[kmb%]?)', content, re.IGNORECASE)
-        
-        if found_indicator and (number_patterns or prev_pattern or forecast_pattern or actual_pattern):
-            data_values = []
-            
-            # Try to extract structured data
-            if prev_pattern:
-                data_values.append(('previous', prev_pattern.group(1)))
-            if forecast_pattern:
-                data_values.append(('forecast', forecast_pattern.group(1)))
-            if actual_pattern:
-                data_values.append(('actual', actual_pattern.group(1)))
-            elif vs_pattern:
-                # Handle "X vs Y expected" format
-                data_values.append(('actual', vs_pattern.group(1)))
-                data_values.append(('forecast', vs_pattern.group(2)))
-            
-            # If no structured data, use all numbers found
-            if not data_values and number_patterns:
-                for num in number_patterns[:3]:  # Take first 3 numbers
-                    data_values.append(('value', num))
-            
-            return {
-                'indicator': found_indicator,
-                'arabic_name': found_arabic_name,
-                'values': data_values,
-                'raw_numbers': number_patterns,
-                'has_data': True,
-                'is_economic_data': True
-            }
-        
-        return None
+    # NOTE: This method has been replaced by investing_scraper.py economic calendar functionality
+    # Keeping for backward compatibility only
     
     def detect_crypto_asset(self, title: str, summary: str = "") -> str:
         """
@@ -258,34 +172,112 @@ class CryptoArabicFormatter:
             crypto_asset = self.detect_crypto_asset(article.title, getattr(article, 'summary', ''))
             sentiment_analysis = self.analyze_market_sentiment(article.title, getattr(article, 'summary', ''))
             
-            # Try to extract economic data
-            economic_data = self.extract_economic_data(article.title, getattr(article, 'summary', ''))
-            
-            if economic_data and economic_data['has_data']:
-                # Format as economic data release
-                return await self._format_economic_data_release(
-                    translation, economic_data, market_analysis, sentiment_analysis
-                )
-            else:
-                # Format as general crypto/market news
-                return await self._format_crypto_market_news(
-                    translation, crypto_asset, market_analysis, sentiment_analysis
-                )
+            # Format as general crypto/market news (economic data now handled separately)
+            return await self._format_crypto_market_news(
+                translation, crypto_asset, market_analysis, sentiment_analysis
+            )
                 
         except Exception as e:
             logger.error(f"Error in enhanced formatting: {e}")
             # Fallback to simple format
             return await self._format_simple_news(translation, market_analysis)
     
+    async def format_economic_announcement(self, event_name_arabic: str, country_flag: str = "🇺🇸", event_time: str = None) -> str:
+        """
+        Format upcoming economic event announcement with enhanced emojis
+        """
+        # Enhanced emojis for different event types
+        if 'بطالة' in event_name_arabic:
+            emoji = "💼"  # Briefcase for unemployment
+        elif 'وظائف' in event_name_arabic or 'توظيف' in event_name_arabic:
+            emoji = "🏢"  # Office building for jobs
+        elif 'تضخم' in event_name_arabic or 'أسعار المستهلك' in event_name_arabic:
+            emoji = "📊"  # Chart for inflation
+        elif 'مشتريات' in event_name_arabic:
+            emoji = "🏭"  # Factory for PMI
+        elif 'فائدة' in event_name_arabic:
+            emoji = "🏦"  # Bank for interest rates
+        elif 'تجزئة' in event_name_arabic:
+            emoji = "🛍️"  # Shopping for retail
+        else:
+            emoji = "📈"  # Default economic chart
+        
+        # Build announcement message with better formatting
+        message = f"⏰ ترقبوا اليوم سيصدر {emoji}\n\n"
+        message += f"{country_flag} {event_name_arabic}"
+        
+        if event_time:
+            message += f"\n🕐 الموعد: {event_time}"
+        
+        message += f"\n\n💡 سنقوم بنشر النتائج فور صدورها"
+        
+        return message
+    
+    async def format_economic_data_release(self, event_name_arabic: str, country: str, country_flag: str, 
+                                         previous: str = None, forecast: str = None, actual: str = None,
+                                         impact_analysis: str = None) -> str:
+        """
+        Format economic data release with improved emojis and visual appeal
+        """
+        # Enhanced header with flash emoji for urgent news
+        message = f"🚨 صدر الآن :\n\n"
+        
+        # Country and event name with enhanced emoji
+        message += f"{country} - {country_flag}\n"
+        
+        # Choose emoji based on event type for better visual context
+        if 'بطالة' in event_name_arabic:
+            event_emoji = "💼"  # Briefcase for unemployment
+        elif 'وظائف' in event_name_arabic or 'توظيف' in event_name_arabic:
+            event_emoji = "🏢"  # Office building for jobs
+        elif 'تضخم' in event_name_arabic or 'أسعار المستهلك' in event_name_arabic:
+            event_emoji = "📊"  # Chart for inflation
+        elif 'مشتريات' in event_name_arabic:
+            event_emoji = "🏭"  # Factory for PMI
+        elif 'فائدة' in event_name_arabic:
+            event_emoji = "🏦"  # Bank for interest rates
+        elif 'تجزئة' in event_name_arabic:
+            event_emoji = "🛍️"  # Shopping for retail
+        else:
+            event_emoji = "📈"  # Default economic chart
+            
+        message += f"{event_emoji} {event_name_arabic}\n\n"
+        
+        # Data points with enhanced formatting and emojis
+        if previous:
+            message += f"⏮️ السابق : {previous}\n"
+        if forecast:
+            message += f"🎯 التقدير : {forecast}\n"
+        if actual:
+            message += f"✨ الحالي : {actual}\n"
+        
+        # Add separator line for better readability
+        message += "\n" + "➖" * 25 + "\n\n"
+        
+        # Result analysis with appropriate emoji based on impact
+        if impact_analysis:
+            if 'إيجابي' in impact_analysis:
+                result_emoji = "✅"  # Green check for positive
+            elif 'سلبي' in impact_analysis:
+                result_emoji = "❌"  # Red X for negative
+            else:
+                result_emoji = "⚖️"  # Scale for neutral
+            
+            message += f"{result_emoji} النتيجة : {impact_analysis}"
+        else:
+            message += f"⚖️ النتيجة : كما هو متوقع للدولار الأمريكي"
+        
+        # Add footer for engagement
+        message += f"\n\n📊 تابعونا لتحليل الأسواق"
+        
+        return message
+    
     async def _format_economic_data_release(self, translation: str, data: Dict, analysis: Dict, sentiment: Dict) -> str:
         """
-        Format economic data release in TradingView style exactly like user's example
+        Legacy method - now redirects to new format_economic_data_release
         """
         # Get the Arabic name for the indicator
         indicator_arabic = data.get('arabic_name', data.get('indicator', 'البيانات الاقتصادية'))
-        
-        # Build the header with red square for "صدر الآن"
-        message = f"🟥 صدر الآن :- {indicator_arabic}\n\n"
         
         # Extract structured data values
         data_values = data.get('values', [])
@@ -315,29 +307,27 @@ class CryptoArabicFormatter:
                 actual_val = numbers[0]
                 forecast_val = numbers[1]
         
-        # Format the data points with green circles
-        if previous_val:
-            message += f"🟢 السابق: {previous_val}\n"
-        if forecast_val:
-            message += f"🟢 التقدير: {forecast_val}\n"
-        if actual_val:
-            message += f"🟢 الحالي : {actual_val}\n"
-        
-        # Add empty line before result
-        message += "\n"
-        
         # Determine USD impact based on indicator type and sentiment
         usd_impact = self._analyze_usd_impact(data, sentiment, previous_val, forecast_val, actual_val)
         
-        # Format the result with appropriate emoji and USD focus
+        # Format the result analysis
         if usd_impact == 'positive':
-            message += f"✅ النتيجة : إيجابي للدولار الأمريكي"
+            impact_analysis = "إيجابي للدولار الأمريكي"
         elif usd_impact == 'negative':
-            message += f"🟥 النتيجة: سلبي لأسعار الدولار"
+            impact_analysis = "سلبي للدولار الأمريكي"
         else:
-            message += f"🟡 النتيجة : تأثير محايد على الدولار الأمريكي"
+            impact_analysis = "كما هو متوقع للدولار الأمريكي"
         
-        return message
+        # Use new formatting method
+        return await self.format_economic_data_release(
+            event_name_arabic=indicator_arabic,
+            country="أمريكا",
+            country_flag="🇺🇸",
+            previous=previous_val,
+            forecast=forecast_val,
+            actual=actual_val,
+            impact_analysis=impact_analysis
+        )
     
     def _analyze_usd_impact(self, data: Dict, sentiment: Dict, previous_val: str = None, forecast_val: str = None, actual_val: str = None) -> str:
         """
