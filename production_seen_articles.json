@@ -1,0 +1,301 @@
+{
+  "seen_articles": [
+    "503cb6167548",
+    "unemployment rate_13:30_United States",
+    "8aa3dcab98ac",
+    "Core CPI (MoM)  (Jul)_05:00__released",
+    "8d57da38278d",
+    "HCOB Spain Manufacturing PMI  (Jul)_03:15__released",
+    "fe66b1332891",
+    "073d955a72d5",
+    "S&P Global Manufacturing PMI  (Jul)_04:30__released",
+    "3cf3ad39dfcb",
+    "S&P Global Manufacturing PMI  (Jul)_02:00__released",
+    "92235fd6c64e",
+    "7f8fa8fec8a5",
+    "Core CPI (YoY)  (Jul)_05:00__released",
+    "8456ca6c8f82",
+    "cpi_13:30_United States",
+    "HCOB Eurozone Manufacturing PMI  (Jul)_04:00__released",
+    "ca53f9f76729",
+    "0cc267151c95",
+    "non farm payrolls_13:30_United States",
+    "b37170cd1c96",
+    "HCOB France Manufacturing PMI  (Jul)_03:50__released",
+    "bd462f29f0dd",
+    "25d8ff16956d",
+    "7623432d8edb",
+    "668d62bedeac",
+    "43d56b901328",
+    "54de70f5a516",
+    "51db49b3bc52",
+    "6d8d80582e05",
+    "HCOB Italy Manufacturing PMI  (Jul)_03:45__released",
+    "8b590d50f1e6",
+    "dc8f8f4a1d69",
+    "Commodity Prices (YoY)  (Jul)_02:30__released",
+    "HCOB Germany Manufacturing PMI  (Jul)_03:55__released",
+    "Italian Retail Sales (YoY)  (Jun)_04:00__released",
+    "2da9e695130b",
+    "fa18f7edb5c6",
+    "b2ad0c7fc523",
+    "Italian Retail Sales (MoM)  (Jun)_04:00__released",
+    "afbcdd515868",
+    "S&P Global Manufacturing PMI  (Jul)_01:00__released"
+  ],
+  "article_metadata": {
+    "unemployment rate_13:30_United States": {
+      "title": "unemployment rate",
+      "link": "economic_calendar_unemployment rate",
+      "timestamp": "2025-08-01T21:22:31.953907+00:00",
+      "seen_at": "2025-08-01T21:22:31.953924+00:00"
+    },
+    "non farm payrolls_13:30_United States": {
+      "title": "non farm payrolls",
+      "link": "economic_calendar_non farm payrolls",
+      "timestamp": "2025-08-01T21:22:38.633594+00:00",
+      "seen_at": "2025-08-01T21:22:38.633611+00:00"
+    },
+    "cpi_13:30_United States": {
+      "title": "cpi",
+      "link": "economic_calendar_cpi",
+      "timestamp": "2025-08-01T21:22:45.499370+00:00",
+      "seen_at": "2025-08-01T21:22:45.499385+00:00"
+    },
+    "afbcdd515868": {
+      "title": "iBio receives Nasdaq notice for minimum bid price deficiency",
+      "link": "https://www.investing.com/news/sec-filings/ibio-receives-nasdaq-notice-for-minimum-bid-price-deficiency-93CH-4166745",
+      "timestamp": "2025-08-01 21:22",
+      "seen_at": "2025-08-01T21:22:54.989708+00:00"
+    },
+    "b37170cd1c96": {
+      "title": "Opendoor stock rises after regaining Nasdaq compliance",
+      "link": "https://www.investing.com/news/stock-market-news/opendoor-stock-rises-after-regaining-nasdaq-compliance-93CH-4166743",
+      "timestamp": "2025-08-01 21:22",
+      "seen_at": "2025-08-01T21:23:02.084838+00:00"
+    },
+    "S&P Global Manufacturing PMI  (Jul)_01:00__released": {
+      "title": "S&P Global Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_S&P Global Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:36:26.457748+00:00",
+      "seen_at": "2025-08-01T21:36:26.457759+00:00"
+    },
+    "S&P Global Manufacturing PMI  (Jul)_02:00__released": {
+      "title": "S&P Global Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_S&P Global Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:36:33.567087+00:00",
+      "seen_at": "2025-08-01T21:36:33.567100+00:00"
+    },
+    "Commodity Prices (YoY)  (Jul)_02:30__released": {
+      "title": "Commodity Prices (YoY)  (Jul)",
+      "link": "economic_calendar_Commodity Prices (YoY)  (Jul)",
+      "timestamp": "2025-08-01T21:36:40.306233+00:00",
+      "seen_at": "2025-08-01T21:36:40.306263+00:00"
+    },
+    "HCOB Spain Manufacturing PMI  (Jul)_03:15__released": {
+      "title": "HCOB Spain Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Spain Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:22.026143+00:00",
+      "seen_at": "2025-08-01T21:43:22.026161+00:00"
+    },
+    "HCOB Italy Manufacturing PMI  (Jul)_03:45__released": {
+      "title": "HCOB Italy Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Italy Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:28.753949+00:00",
+      "seen_at": "2025-08-01T21:43:28.753962+00:00"
+    },
+    "HCOB France Manufacturing PMI  (Jul)_03:50__released": {
+      "title": "HCOB France Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB France Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:35.548879+00:00",
+      "seen_at": "2025-08-01T21:43:35.548896+00:00"
+    },
+    "HCOB Germany Manufacturing PMI  (Jul)_03:55__released": {
+      "title": "HCOB Germany Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Germany Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:43:42.370301+00:00",
+      "seen_at": "2025-08-01T21:43:42.370316+00:00"
+    },
+    "Italian Retail Sales (YoY)  (Jun)_04:00__released": {
+      "title": "Italian Retail Sales (YoY)  (Jun)",
+      "link": "economic_calendar_Italian Retail Sales (YoY)  (Jun)",
+      "timestamp": "2025-08-01T21:43:49.250983+00:00",
+      "seen_at": "2025-08-01T21:43:49.250998+00:00"
+    },
+    "Italian Retail Sales (MoM)  (Jun)_04:00__released": {
+      "title": "Italian Retail Sales (MoM)  (Jun)",
+      "link": "economic_calendar_Italian Retail Sales (MoM)  (Jun)",
+      "timestamp": "2025-08-01T21:43:56.007074+00:00",
+      "seen_at": "2025-08-01T21:43:56.007089+00:00"
+    },
+    "HCOB Eurozone Manufacturing PMI  (Jul)_04:00__released": {
+      "title": "HCOB Eurozone Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_HCOB Eurozone Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:44:02.780260+00:00",
+      "seen_at": "2025-08-01T21:44:02.780272+00:00"
+    },
+    "S&P Global Manufacturing PMI  (Jul)_04:30__released": {
+      "title": "S&P Global Manufacturing PMI  (Jul)",
+      "link": "economic_calendar_S&P Global Manufacturing PMI  (Jul)",
+      "timestamp": "2025-08-01T21:44:09.740810+00:00",
+      "seen_at": "2025-08-01T21:44:09.740826+00:00"
+    },
+    "Core CPI (YoY)  (Jul)_05:00__released": {
+      "title": "Core CPI (YoY)  (Jul)",
+      "link": "economic_calendar_Core CPI (YoY)  (Jul)",
+      "timestamp": "2025-08-01T21:44:16.564697+00:00",
+      "seen_at": "2025-08-01T21:44:16.564713+00:00"
+    },
+    "Core CPI (MoM)  (Jul)_05:00__released": {
+      "title": "Core CPI (MoM)  (Jul)",
+      "link": "economic_calendar_Core CPI (MoM)  (Jul)",
+      "timestamp": "2025-08-01T21:44:23.383173+00:00",
+      "seen_at": "2025-08-01T21:44:23.383188+00:00"
+    },
+    "b2ad0c7fc523": {
+      "title": "Mexico stocks lower at close of trade; S&P/BMV IPC down 0.87%",
+      "link": "https://www.investing.com/news/stock-market-news/mexico-stocks-lower-at-close-of-trade-spbmv-ipc-down-087-4166762",
+      "timestamp": "2025-08-01 21:44",
+      "seen_at": "2025-08-01T21:44:34.421182+00:00"
+    },
+    "073d955a72d5": {
+      "title": "NetClass Technology announces $2 million convertible note and share sale",
+      "link": "https://www.investing.com/news/sec-filings/netclass-technology-announces-2-million-convertible-note-and-share-sale-93CH-4166761",
+      "timestamp": "2025-08-01 21:44",
+      "seen_at": "2025-08-01T21:44:41.833349+00:00"
+    },
+    "0cc267151c95": {
+      "title": "XCF Global enters $7.5 million convertible note agreement with EEME Energy",
+      "link": "https://www.investing.com/news/sec-filings/xcf-global-enters-75-million-convertible-note-agreement-with-eeme-energy-93CH-4166781",
+      "timestamp": "2025-08-01 22:19",
+      "seen_at": "2025-08-01T22:19:56.428710+00:00"
+    },
+    "6d8d80582e05": {
+      "title": "Phillips 66 director Heim buys $125,970 in shares",
+      "link": "https://www.investing.com/news/insider-trading-news/phillips-66-director-heim-buys-125970-in-shares-93CH-4166779",
+      "timestamp": "2025-08-01 22:19",
+      "seen_at": "2025-08-01T22:20:03.220837+00:00"
+    },
+    "25d8ff16956d": {
+      "title": "EPR Properties EVP Zimmerman sells $412k in shares",
+      "link": "https://www.investing.com/news/insider-trading-news/epr-properties-evp-zimmerman-sells-412k-in-shares-93CH-4166778",
+      "timestamp": "2025-08-01 22:19",
+      "seen_at": "2025-08-01T22:20:10.093493+00:00"
+    },
+    "92235fd6c64e": {
+      "title": "Align Technology EVP Coletti buys $4.6k in stock",
+      "link": "https://www.investing.com/news/insider-trading-news/align-technology-evp-coletti-buys-46k-in-stock-93CH-4166776",
+      "timestamp": "2025-08-01 22:19",
+      "seen_at": "2025-08-01T22:20:16.875768+00:00"
+    },
+    "51db49b3bc52": {
+      "title": "Meta to share AI infrastructure costs via $2 billion asset sale",
+      "link": "https://www.investing.com/news/stock-market-news/meta-to-share-ai-infrastructure-costs-via-2-billion-asset-sale-4166757",
+      "timestamp": "2025-08-01 22:19",
+      "seen_at": "2025-08-01T22:20:23.771564+00:00"
+    },
+    "43d56b901328": {
+      "title": "Rush Street Interactive CIO Roosileht sells $1.3m in stock",
+      "link": "https://www.investing.com/news/insider-trading-news/rush-street-interactive-cio-roosileht-sells-13m-in-stock-93CH-4166786",
+      "timestamp": "2025-08-01 22:21",
+      "seen_at": "2025-08-01T22:21:49.935391+00:00"
+    },
+    "668d62bedeac": {
+      "title": "Ladder Capital director Alexander sells $1m in stock",
+      "link": "https://www.investing.com/news/insider-trading-news/ladder-capital-director-alexander-sells-1m-in-stock-93CH-4166785",
+      "timestamp": "2025-08-01 22:21",
+      "seen_at": "2025-08-01T22:21:56.743924+00:00"
+    },
+    "fa18f7edb5c6": {
+      "title": "Global stock index sinks with dollar, bond yields after weak US jobs data",
+      "link": "https://www.investing.com/news/economy-news/asian-shares-fall-as-us-unleashes-fresh-tariffs-jobs-data-up-next-4164780",
+      "timestamp": "2025-08-01 22:21",
+      "seen_at": "2025-08-01T22:22:03.537602+00:00"
+    },
+    "8456ca6c8f82": {
+      "title": "Phillips 66 director Cornelius buys $61k in shares",
+      "link": "https://www.investing.com/news/insider-trading-news/phillips-66-director-cornelius-buys-61k-in-shares-93CH-4166783",
+      "timestamp": "2025-08-01 22:21",
+      "seen_at": "2025-08-01T22:22:10.353003+00:00"
+    },
+    "8aa3dcab98ac": {
+      "title": "Nuo Therapeutics: Sheedy buys $200k in AURX stock",
+      "link": "https://www.investing.com/news/insider-trading-news/nuo-therapeutics-sheedy-buys-200k-in-aurx-stock-93CH-4166782",
+      "timestamp": "2025-08-01 22:21",
+      "seen_at": "2025-08-01T22:22:17.397933+00:00"
+    },
+    "54de70f5a516": {
+      "title": "Ventas CEO Cafaro sells $695,722 in stock",
+      "link": "https://www.investing.com/news/insider-trading-news/ventas-ceo-cafaro-sells-695722-in-stock-93CH-4166790",
+      "timestamp": "2025-08-01 22:36",
+      "seen_at": "2025-08-01T22:36:44.143302+00:00"
+    },
+    "ca53f9f76729": {
+      "title": "Eagle Point sells ACRES commercial realty (ACR) stock for $328,417",
+      "link": "https://www.investing.com/news/insider-trading-news/eagle-point-sells-acres-commercial-realty-acr-stock-for-328417-93CH-4166793",
+      "timestamp": "2025-08-01 22:48",
+      "seen_at": "2025-08-01T22:48:59.766886+00:00"
+    },
+    "2da9e695130b": {
+      "title": "Eagle Point sells acres Commercial Realty Corp (ACR) stock for $328,417",
+      "link": "https://www.investing.com/news/insider-trading-news/eagle-point-sells-acres-commercial-realty-corp-acr-stock-for-328417-93CH-4166792",
+      "timestamp": "2025-08-01 22:48",
+      "seen_at": "2025-08-01T22:49:06.449523+00:00"
+    },
+    "dc8f8f4a1d69": {
+      "title": "Ventas EVP Probst sells $266,960 in shares",
+      "link": "https://www.investing.com/news/insider-trading-news/ventas-evp-probst-sells-266960-in-shares-93CH-4166791",
+      "timestamp": "2025-08-01 22:48",
+      "seen_at": "2025-08-01T22:49:13.308430+00:00"
+    },
+    "8d57da38278d": {
+      "title": "Varonis director van den bosch sells $165k in shares",
+      "link": "https://www.investing.com/news/insider-trading-news/varonis-director-van-den-bosch-sells-165k-in-shares-93CH-4166799",
+      "timestamp": "2025-08-01 23:07",
+      "seen_at": "2025-08-01T23:07:34.199602+00:00"
+    },
+    "bd462f29f0dd": {
+      "title": "Zurn Elkay CAO Peterson sells $953k in ZWS stock",
+      "link": "https://www.investing.com/news/insider-trading-news/zurn-elkay-cao-peterson-sells-953k-in-zws-stock-93CH-4166798",
+      "timestamp": "2025-08-01 23:07",
+      "seen_at": "2025-08-01T23:07:40.992390+00:00"
+    },
+    "8b590d50f1e6": {
+      "title": "Zurn Elkay water director Jahnke sells shares worth $1.3 million",
+      "link": "https://www.investing.com/news/insider-trading-news/zurn-elkay-water-director-jahnke-sells-shares-worth-13-million-93CH-4166797",
+      "timestamp": "2025-08-01 23:07",
+      "seen_at": "2025-08-01T23:07:48.066368+00:00"
+    },
+    "503cb6167548": {
+      "title": "Zurn Elkay CIO Troutman sells $3.9m in ZWS stock",
+      "link": "https://www.investing.com/news/insider-trading-news/zurn-elkay-cio-troutman-sells-39m-in-zws-stock-93CH-4166795",
+      "timestamp": "2025-08-01 23:07",
+      "seen_at": "2025-08-01T23:07:56.507475+00:00"
+    },
+    "7623432d8edb": {
+      "title": "Zurn Elkay VP Chhabra sells $4.75m in ZWS stock",
+      "link": "https://www.investing.com/news/insider-trading-news/zurn-elkay-vp-chhabra-sells-475m-in-zws-stock-93CH-4166794",
+      "timestamp": "2025-08-01 23:07",
+      "seen_at": "2025-08-01T23:08:03.372578+00:00"
+    },
+    "fe66b1332891": {
+      "title": "Stocks slump on latest tariffs, soft jobs data",
+      "link": "https://www.investing.com/news/economy-news/wall-street-futures-slide-as-trumps-new-tariffs-amazon-weigh-4165758",
+      "timestamp": "2025-08-01 23:18",
+      "seen_at": "2025-08-01T23:18:37.117583+00:00"
+    },
+    "3cf3ad39dfcb": {
+      "title": "Bybit & Block Scholes Report: BTC and ETH Options Reflect Bearish Tilt Despite Strong Funding Rates",
+      "link": "https://www.investing.com/news/cryptocurrency-news/bybit--block-scholes-report-btc-and-eth-options-reflect-bearish-tilt-despite-strong-funding-rates-4166210",
+      "timestamp": "2025-08-01 23:18",
+      "seen_at": "2025-08-01T23:18:43.965748+00:00"
+    },
+    "7f8fa8fec8a5": {
+      "title": "Pepe Dollar ($PEPD) Presale Picks Up Pace as Ethereum (ETH) Hovers Over $3,600",
+      "link": "https://www.investing.com/news/cryptocurrency-news/pepe-dollar-pepd-presale-picks-up-pace-as-ethereum-eth-hovers-over-3600-4166123",
+      "timestamp": "2025-08-01 23:18",
+      "seen_at": "2025-08-01T23:18:50.763149+00:00"
+    }
+  },
+  "last_updated": "2025-08-01T23:18:50.763171+00:00"
+}

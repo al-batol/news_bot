@@ -51,6 +51,7 @@ class NewsArticle:
     summary: str
     section: str  # Breaking News, Currencies, Commodities, etc.
     article_id: str
+    image_url: Optional[str] = None  # NEW: Image URL from RSS enclosure
     
     def __post_init__(self):
         if not self.article_id:
@@ -638,9 +639,23 @@ class InvestingNewsScraper:
                         summary = getattr(entry, 'summary', '')
                         
                         if title and link and len(title) > 10:
+                            # 🚫 FILTER OUT: Insider trading news (boring director buy/sell articles)
+                            if 'insider-trading' in link.lower() or self._is_insider_trading_news(title):
+                                logger.debug(f"🚫 Skipping insider trading: {title[:50]}...")
+                                continue
+                            
                             # Clean summary
                             if summary:
                                 summary = re.sub(r'<[^>]+>', '', summary).strip()
+                            
+                            # 📸 NEW: Extract image URL from RSS enclosure
+                            image_url = None
+                            if hasattr(entry, 'enclosures') and entry.enclosures:
+                                for enclosure in entry.enclosures:
+                                    if hasattr(enclosure, 'type') and enclosure.type and 'image' in enclosure.type:
+                                        if hasattr(enclosure, 'url') or hasattr(enclosure, 'href'):
+                                            image_url = getattr(enclosure, 'url', getattr(enclosure, 'href', None))
+                                            break
                             
                             # ENHANCED: Better section identification for BLITZ mode
                             section_names = {
@@ -665,7 +680,8 @@ class InvestingNewsScraper:
                                 published=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M'),
                                 summary=summary[:200] + "..." if len(summary) > 200 else summary,
                                 section=section_names.get(feed_name, f"BLITZ-{feed_name.upper()}"),
-                                article_id=""
+                                article_id="",
+                                image_url=image_url  # NEW: Include image URL
                             )
                             
                             # ENHANCED: Include ALL required sections + breaking news
@@ -1291,8 +1307,8 @@ class InvestingNewsScraper:
             'syria', 'iran', 'iraq', 'afghanistan', 'libya', 'yemen', 'sudan', 'terror', 'terrorist',
             
             # Politics & Elections (unless market-related)
-            'election', 'vote', 'poll', 'candidate', 'senator', 'congress', 'parliament', 'campaign', 'rally',
-            'trump', 'biden', 'putin', 'xi jinping', 'modi', 'erdogan', 'macron', 'merkel',
+            'candidate', 'senator', 'congress', 'parliament', 'campaign'
+            'xi jinping', 'modi', 'erdogan', 'macron', 'merkel',
             
             # Crime & Accidents  
             'murder', 'shooting', 'robbery', 'theft', 'arrest', 'police', 'court', 'trial', 'sentence',
@@ -1355,38 +1371,99 @@ class InvestingNewsScraper:
         return score >= 1  # Must have financial relevance
     
     def _stealth_deduplicate(self, articles: List[NewsArticle]) -> List[NewsArticle]:
-        """STEALTH: Advanced deduplication for investing.com articles"""
+        """ENHANCED: Advanced deduplication catching near-identical articles"""
         if not articles:
             return []
     
         unique_articles = {}
         
         for article in articles:
-            # STEALTH: Create normalized key for comparison
+            # ENHANCED: Create multiple normalized keys for better deduplication
             normalized_title = re.sub(r'[^\w\s]', '', article.title.lower()).strip()
             title_words = set(normalized_title.split())
             
-            # STEALTH: Check for duplicates with fuzzy matching
+            # ENHANCED: Extract key financial info (amounts, company names, etc.)
+            amount_match = re.search(r'\$[\d,]+', article.title)
+            company_match = re.search(r'([A-Z]{2,5})\s+', article.title)  # Stock symbols
+            
+            # Create financial signature for better matching
+            financial_signature = ""
+            if amount_match:
+                financial_signature += amount_match.group(0)
+            if company_match:
+                financial_signature += company_match.group(1)
+            
+            # ENHANCED: Check for duplicates with multiple methods
             is_duplicate = False
-            for existing_key in unique_articles.keys():
-                existing_words = set(existing_key.split())
+            for existing_title, existing_article in unique_articles.items():
+                existing_words = set(existing_title.split())
                 
+                # Method 1: Word similarity (as before)
                 if len(title_words) > 0 and len(existing_words) > 0:
-                    # Calculate similarity
                     intersection = len(title_words & existing_words)
                     union = len(title_words | existing_words)
-                    similarity = intersection / union if union > 0 else 0
+                    word_similarity = intersection / union if union > 0 else 0
                     
-                    if similarity > 0.7:  # 70% similarity threshold
+                    if word_similarity > 0.75:  # 75% word similarity (more strict)
                         is_duplicate = True
                         break
+                
+                # Method 2: Financial signature matching (for stock trades, etc.)
+                if financial_signature and len(financial_signature) > 3:
+                    existing_amount = re.search(r'\$[\d,]+', existing_article.title)
+                    existing_company = re.search(r'([A-Z]{2,5})\s+', existing_article.title)
+                    
+                    existing_signature = ""
+                    if existing_amount:
+                        existing_signature += existing_amount.group(0)
+                    if existing_company:
+                        existing_signature += existing_company.group(1)
+                    
+                    if financial_signature == existing_signature:
+                        is_duplicate = True
+                        break
+                
+                # Method 3: URL similarity (same base story with different IDs)
+                if hasattr(article, 'link') and hasattr(existing_article, 'link'):
+                    # Remove trailing numbers/IDs from URLs
+                    clean_url1 = re.sub(r'-\d+$', '', article.link.split('/')[-1])
+                    clean_url2 = re.sub(r'-\d+$', '', existing_article.link.split('/')[-1])
+                    
+                    if clean_url1 == clean_url2 and len(clean_url1) > 10:
+                        is_duplicate = True
+                        break
+                
+                # Method 4: Character similarity for very similar titles (more restrictive)
+                if len(normalized_title) > 35:  # Only for longer titles to avoid false positives
+                    existing_normalized = re.sub(r'[^\w\s]', '', existing_article.title.lower()).strip()
+                    title1_clean = re.sub(r'\s+', ' ', normalized_title)
+                    title2_clean = re.sub(r'\s+', ' ', existing_normalized)
+                    
+                    # Only compare if titles are very similar in length AND have significant word overlap
+                    if abs(len(title1_clean) - len(title2_clean)) <= 3:  # Very similar length
+                        # First check if there's significant word overlap
+                        words1 = set(title1_clean.split())
+                        words2 = set(title2_clean.split())
+                        if len(words1) > 0 and len(words2) > 0:
+                            word_overlap = len(words1 & words2) / len(words1 | words2)
+                            
+                            # Only apply character similarity if there's already significant word overlap
+                            if word_overlap > 0.6:  # 60% word overlap required first
+                                shorter = min(len(title1_clean), len(title2_clean))
+                                longer = max(len(title1_clean), len(title2_clean))
+                                if shorter > 0:
+                                    char_similarity = shorter / longer
+                                    if char_similarity > 0.95:  # 95% character similarity (very strict)
+                                        is_duplicate = True
+                                        break
             
             if not is_duplicate:
                 unique_articles[normalized_title] = article
         
-        # STEALTH: Sort by recency (latest first)
+        # ENHANCED: Sort by recency and relevance
         sorted_articles = list(unique_articles.values())
         
+        logger.info(f"🧹 DEDUPLICATION: Filtered {len(articles)} → {len(sorted_articles)} unique articles")
         return sorted_articles
     
     async def _investing_rss_fallback(self, max_articles: int) -> List[NewsArticle]:
@@ -1647,36 +1724,13 @@ class InvestingNewsScraper:
         return articles
     
     def _deduplicate_and_rank(self, articles: List[NewsArticle]) -> List[NewsArticle]:
-        """PROFESSIONAL: Remove duplicates and rank by relevance"""
+        """ENHANCED: Remove duplicates with advanced matching and rank by relevance"""
         
         if not articles:
             return []
         
-        # Group by similar titles (fuzzy matching)
-        unique_articles = {}
-        
-        for article in articles:
-            # Create a normalized title for comparison
-            normalized_title = re.sub(r'[^\w\s]', '', article.title.lower()).strip()
-            title_words = set(normalized_title.split())
-            
-            # Check for similarity with existing articles
-            is_duplicate = False
-            for existing_normalized in unique_articles.keys():
-                existing_words = set(existing_normalized.split())
-                
-                # Calculate Jaccard similarity
-                if len(title_words) > 0 and len(existing_words) > 0:
-                    intersection = len(title_words & existing_words)
-                    union = len(title_words | existing_words)
-                    similarity = intersection / union
-                    
-                    if similarity > 0.6:  # 60% similarity threshold
-                        is_duplicate = True
-                        break
-            
-            if not is_duplicate:
-                unique_articles[normalized_title] = article
+        # Use the same enhanced deduplication logic
+        unique_articles = self._stealth_deduplicate(articles)
         
         # Sort by relevance (extract score from section field)
         def get_relevance_score(article):
@@ -1687,7 +1741,7 @@ class InvestingNewsScraper:
             except:
                 return 0
         
-        sorted_articles = sorted(unique_articles.values(), key=get_relevance_score, reverse=True)
+        sorted_articles = sorted(unique_articles, key=get_relevance_score, reverse=True)
         
         return sorted_articles
     
@@ -2195,6 +2249,39 @@ class InvestingNewsScraper:
         if event.country.upper() in ['US', 'USA', 'UNITED STATES']:
             return True
             
+        return False
+
+    def _is_insider_trading_news(self, title: str) -> bool:
+        """🚫 Filter out boring insider trading news"""
+        title_lower = title.lower()
+        
+        # Insider trading keywords
+        insider_keywords = [
+            'director', 'ceo', 'cfo', 'cio', 'evp', 'vp', 'president',
+            'buys', 'sells', 'purchases', 'acquires', 'disposes',
+            'insider', 'trading', 'shares', 'stock', 'holdings'
+        ]
+        
+        # Check if it's about someone buying/selling shares
+        has_person = any(word in title_lower for word in ['director', 'ceo', 'cfo', 'cio', 'evp', 'vp', 'president'])
+        has_action = any(word in title_lower for word in ['buys', 'sells', 'purchases', 'sells shares', 'buys shares'])
+        has_amount = '$' in title and any(word in title_lower for word in ['stock', 'shares'])
+        
+        # If it has person + action + money amount, it's likely insider trading
+        if has_person and has_action and has_amount:
+            return True
+            
+        # Common patterns
+        insider_patterns = [
+            r'\w+\s+(director|ceo|cfo|cio|evp|vp)\s+\w+\s+(buys|sells)',
+            r'\w+\s+(buys|sells)\s+\$[\d,]+\s+in\s+\w+\s+(stock|shares)',
+            r'insider\s+(trading|buys|sells)',
+        ]
+        
+        for pattern in insider_patterns:
+            if re.search(pattern, title_lower):
+                return True
+        
         return False
 
     async def _blitz_alternative_endpoints(self, max_articles: int) -> List[NewsArticle]:

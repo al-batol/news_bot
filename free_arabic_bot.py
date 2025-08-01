@@ -134,9 +134,8 @@ class FreeArabicNewsBot:
             'syria', 'iran', 'iraq', 'afghanistan', 'libya', 'yemen', 'sudan', 'terror', 'terrorist',
             
             # Politics & Elections  
-            'election', 'vote', 'poll', 'candidate', 'president', 'senator', 'congress', 'parliament',
-            'trump', 'biden', 'putin', 'xi jinping', 'modi', 'erdogan', 'macron', 'merkel',
-            'republican', 'democrat', 'liberal', 'conservative', 'campaign', 'rally',
+            'parliament','xi jinping', 'modi', 'erdogan', 'macron', 'merkel',
+            'republican', 'democrat', 'liberal', 'conservative', 'campaign',
             
             # Crime & Accidents
             'murder', 'shooting', 'robbery', 'theft', 'arrest', 'police', 'court', 'trial', 'sentence',
@@ -241,20 +240,34 @@ class FreeArabicNewsBot:
         
         return text  # Return original if all translation fails
     
-    async def send_message(self, text: str) -> bool:
-        """Send message to Telegram channel"""
+    async def send_message(self, text: str, image_url: str = None) -> bool:
+        """Send message to Telegram channel with optional image"""
         try:
             # Add retry logic for network issues
             for attempt in range(Config.MAX_RETRIES):
                 try:
                     async with aiohttp.ClientSession() as session:
-                        data = {
-                            'chat_id': self.channel_id,
-                            'text': text,
-                            'disable_web_page_preview': True
-                        }
+                        # 📸 NEW: Send with image if available
+                        if image_url:
+                            # Send as photo with caption
+                            data = {
+                                'chat_id': self.channel_id,
+                                'photo': image_url,
+                                'caption': text,
+                                'parse_mode': 'HTML'
+                            }
+                            endpoint = f"{self.base_url}/sendPhoto"
+                            logger.info(f"📸 Sending message with image: {image_url}")
+                        else:
+                            # Send as text message (as before)
+                            data = {
+                                'chat_id': self.channel_id,
+                                'text': text,
+                                'disable_web_page_preview': True
+                            }
+                            endpoint = f"{self.base_url}/sendMessage"
                         
-                        async with session.post(f"{self.base_url}/sendMessage", json=data, timeout=10) as response:
+                        async with session.post(endpoint, json=data, timeout=10) as response:
                             if response.status == 200:
                                 result = await response.json()
                                 if result.get('ok'):
@@ -359,8 +372,8 @@ class FreeArabicNewsBot:
                 # Format Arabic message
                 message = await self.format_arabic_message(article)
                 
-                # Send message
-                success = await self.send_message(message)
+                # Send message with image if available  
+                success = await self.send_message(message, article.image_url if hasattr(article, 'image_url') else None)
                 
                 if success:
                     # Mark as seen in database
@@ -431,8 +444,8 @@ class FreeArabicNewsBot:
                         )
                         event_key = upcoming_key
                     
-                    # Send message
-                    success = await self.send_message(message)
+                    # Send message with image if available
+                    success = await self.send_message(message, event.image_url if hasattr(event, 'image_url') else None)
                     
                     if success:
                         # Mark as seen
