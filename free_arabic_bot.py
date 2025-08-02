@@ -287,8 +287,12 @@ class FreeArabicNewsBot:
                 
                 message = f"🚨 {section_emoji} {flag} BREAKING: {article.title}\n\n"
                 
-                if hasattr(article, 'summary') and article.summary:
+                # Only add description if it exists and is meaningful (not empty)
+                if hasattr(article, 'summary') and article.summary and article.summary.strip():
                     message += f"📝 {article.summary}\n\n"
+                else:
+                    # If no description, add a line break for better formatting
+                    message += f"📰 Latest crypto market update\n\n"
                 
                 # message += f"📊 Section: {getattr(article, 'section', 'Financial News')}\n"
                 # message += f"⏰ {getattr(article, 'published', datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M'))}\n\n"

@@ -631,19 +631,36 @@ class InvestingNewsScraper:
                         # Keep the original string format to avoid timezone parsing issues
                         published = published
                     
-                    # Extract description
+                    # Extract description with better handling
                     description = ''
-                    if hasattr(entry, 'summary'):
-                        description = entry.summary
-                    elif hasattr(entry, 'description'):
-                        description = entry.description
-                    elif hasattr(entry, 'content') and entry.content:
-                        description = entry.content[0].get('value', '')
                     
-                    # Clean HTML from description
+                    # Try multiple sources for description
+                    if hasattr(entry, 'summary') and entry.summary:
+                        description = entry.summary
+                        logger.debug(f"📝 COINDESK: Using summary field")
+                    elif hasattr(entry, 'description') and entry.description:
+                        description = entry.description
+                        logger.debug(f"📝 COINDESK: Using description field")
+                    elif hasattr(entry, 'content') and entry.content and len(entry.content) > 0:
+                        content_value = entry.content[0].get('value', '')
+                        if content_value:
+                            description = content_value
+                            logger.debug(f"📝 COINDESK: Using content field (HTML): {description[:50]}...")
+                    
+                    # Clean HTML from description and extract meaningful text
                     if description:
-                        soup = BeautifulSoup(description, 'html.parser')
-                        description = soup.get_text().strip()
+                        try:
+                            soup = BeautifulSoup(description, 'html.parser')
+                            # Remove script and style elements
+                            for script in soup(["script", "style"]):
+                                script.decompose()
+                            # Get text and clean up whitespace
+                            description = soup.get_text()
+                            description = ' '.join(description.split())  # Clean up whitespace
+                            logger.debug(f"📝 COINDESK: Cleaned description: {description[:100]}...")
+                        except Exception as e:
+                            logger.error(f"💥 COINDESK: Error cleaning HTML: {e}")
+                            description = ''
                     
                     # Extract media URL (photos only)
                     media_url = None
@@ -662,12 +679,31 @@ class InvestingNewsScraper:
                     if not title or not link:
                         continue
                     
-                    # Create article
+                    # Create article with proper summary handling
+                    # Only use description if it's different from title and meaningful
+                    summary = ''
+                    if description and len(description) > 20 and description.lower() != title.lower():
+                        # Limit summary length and ensure it ends properly
+                        summary = description[:400].strip()
+                        if len(description) > 400:
+                            # Find last complete sentence or word
+                            last_period = summary.rfind('. ')
+                            last_space = summary.rfind(' ')
+                            if last_period > 300:
+                                summary = summary[:last_period + 1]
+                            elif last_space > 300:
+                                summary = summary[:last_space] + '...'
+                            else:
+                                summary += '...'
+                        logger.debug(f"📝 COINDESK: Final summary: {summary[:100]}...")
+                    else:
+                        logger.debug(f"📝 COINDESK: No meaningful description found, skipping summary")
+                    
                     article = NewsArticle(
                         title=title,
                         link=link,
                         published=published,
-                        summary=description[:500] if description else title,  # Limit summary length
+                        summary=summary,  # Will be empty string if no good description
                         section='CRYPTOCURRENCY',  # CoinDesk is crypto-focused
                         article_id=hashlib.md5(f"{title}_{link}".encode()).hexdigest()[:12],
                         image_url=media_url
