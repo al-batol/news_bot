@@ -539,56 +539,111 @@ class InvestingNewsScraper:
     
     async def scrape_investing_news(self, max_articles: int = 10, breaking_news_priority: bool = True) -> List[NewsArticle]:
         """
-        🎁 GIFT MODE: Using the perfect RSS feed from our bro!
-        https://www.investing.com/rss/investing_news.rss - ALL news in one place!
+        🏆 PROFESSIONAL RSS SYSTEM: Complete investing.com coverage
+        Using specialized RSS feeds for each category - maximum reliability!
         """
-        logger.info("🎁 GIFT MODE: Using the PERFECT RSS feed - no more complexity!")
+        logger.info("🏆 PROFESSIONAL RSS: Multi-feed system for complete coverage!")
         
-        # 🎁 THE GIFT: One perfect RSS feed that has everything!
-        articles = await self._use_perfect_rss_gift(max_articles)
+        # 🏆 Professional multi-feed approach
+        articles = await self._professional_rss_system(max_articles)
         
         if articles:
-            logger.info(f"🎉 GIFT SUCCESS: Retrieved {len(articles)} articles from the perfect RSS!")
+            logger.info(f"✅ RSS SUCCESS: Retrieved {len(articles)} articles from professional feeds!")
             return articles
         
-        logger.error("❌ Gift RSS failed (impossible!)")
+        logger.error("❌ Professional RSS system failed")
         return []
 
-    async def _use_perfect_rss_gift(self, max_articles: int) -> List[NewsArticle]:
+    async def _professional_rss_system(self, max_articles: int) -> List[NewsArticle]:
         """
-        🎁 THE GIFT: Perfect RSS feed with ALL investing.com news!
-        Thanks to our amazing bro for this gift!
+        🏆 PROFESSIONAL RSS SYSTEM: Multi-feed approach for complete coverage
+        Fetches from specialized investing.com RSS feeds for each category
         """
+        all_articles = []
+        
+        # 🏆 PROFESSIONAL RSS FEEDS - Complete Coverage
+        rss_feeds = {
+            'GENERAL': 'https://www.investing.com/rss/investing_news.rss',
+            'ECONOMIC-INDICATORS': 'https://www.investing.com/rss/news_95.rss',
+            'STOCK-MARKET': 'https://www.investing.com/rss/news_25.rss', 
+            'COMMODITIES': 'https://www.investing.com/rss/news_11.rss',
+            'CRYPTOCURRENCY': 'https://www.investing.com/rss/news_301.rss',
+            'ECONOMY': 'https://www.investing.com/rss/news_14.rss'
+        }
+        
+        # Professional headers
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+            'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Connection': 'keep-alive',
+        }
+        
+        # 🚀 Fetch from all feeds simultaneously  
+        tasks = []
+        for section, rss_url in rss_feeds.items():
+            task = asyncio.create_task(self._fetch_and_parse_rss(section, rss_url, headers))
+            tasks.append(task)
+        
+        # Wait for all feeds to complete
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        
+        # Process results
+        total_fetched = 0
+        for result in results:
+            if isinstance(result, list):
+                all_articles.extend(result)
+                total_fetched += len(result)
+            elif isinstance(result, Exception):
+                logger.warning(f"Feed fetch failed: {result}")
+        
+        logger.info(f"🏆 PROFESSIONAL RSS: Fetched {total_fetched} articles from {len(rss_feeds)} feeds")
+        
+        if all_articles:
+            # Sort by published date (newest first)
+            all_articles.sort(key=lambda x: x.published, reverse=True)
+            
+            # Apply deduplication
+            unique_articles = self._simple_deduplicate(all_articles)
+            
+            # Return top articles
+            final_articles = unique_articles[:max_articles]
+            logger.info(f"✅ PROFESSIONAL RSS COMPLETE: {len(final_articles)} unique articles ready!")
+            
+            # Log categories breakdown
+            categories = {}
+            for article in final_articles:
+                section = article.section
+                categories[section] = categories.get(section, 0) + 1
+            
+            for section, count in categories.items():
+                logger.info(f"📊 {section}: {count} articles")
+            
+            return final_articles
+        
+        logger.error("❌ No articles retrieved from any RSS feed")
+        return []
+    
+    async def _fetch_and_parse_rss(self, section: str, rss_url: str, headers: dict) -> List[NewsArticle]:
+        """🔍 Fetch and parse a single RSS feed"""
         articles = []
         
-        # 🎁 THE PERFECT GIFT URL
-        gift_rss_url = "https://www.investing.com/rss/investing_news.rss"
-        
         try:
-            logger.info(f"🎁 Fetching from the PERFECT gift RSS: {gift_rss_url}")
+            logger.info(f"🔍 Fetching {section} from: {rss_url}")
             
-            # Simple, reliable headers
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-                'Accept': 'application/rss+xml, application/xml, text/xml, */*',
-                'Accept-Language': 'en-US,en;q=0.9',
-                'Connection': 'keep-alive',
-            }
-            
-            # Get the gift RSS content
-            content = await self._fetch_rss_content(gift_rss_url, headers)
+            # Fetch RSS content
+            content = await self._fetch_rss_content(rss_url, headers)
             
             if content:
-                # Parse the perfect RSS feed
                 import feedparser
                 feed = feedparser.parse(content)
                 
                 if feed and hasattr(feed, 'entries'):
-                    logger.info(f"🎉 GIFT: Found {len(feed.entries)} entries in the perfect RSS!")
+                    logger.info(f"📰 {section}: Found {len(feed.entries)} entries")
                     
-                    for entry in feed.entries[:max_articles]:
+                    for entry in feed.entries[:20]:  # Take up to 20 from each feed
                         try:
-                            # Extract data
+                            # Extract basic data
                             title = getattr(entry, 'title', '').strip()
                             link = getattr(entry, 'link', '')
                             summary = getattr(entry, 'summary', getattr(entry, 'description', '')).strip()
@@ -602,7 +657,7 @@ class InvestingNewsScraper:
                                     summary = re.sub(r'^Investing\.com[-\s]*', '', summary, flags=re.IGNORECASE)
                                     summary = summary.strip()
                                 
-                                # 📸 Try to extract image from description
+                                # 📸 Extract image from RSS enclosures or content
                                 image_url = None
                                 if hasattr(entry, 'enclosures') and entry.enclosures:
                                     for enclosure in entry.enclosures:
@@ -611,41 +666,38 @@ class InvestingNewsScraper:
                                                 image_url = getattr(enclosure, 'url', getattr(enclosure, 'href', None))
                                                 break
                                 
-                                # 🎯 Detect section from URL or content
-                                section = self._detect_article_section(link, title, summary)
+                                # Use the section from the feed, with smart fallback
+                                article_section = section if section != 'GENERAL' else self._detect_article_section(link, title, summary)
                                 
-                                # Create perfect article
+                                # Create article
                                 article = NewsArticle(
                                     title=title,
                                     link=link,
                                     published=published,
                                     summary=summary[:300] + "..." if len(summary) > 300 else summary,
-                                    section=section,
+                                    section=article_section,
                                     article_id="",
                                     image_url=image_url
                                 )
                                 
                                 articles.append(article)
-                                logger.info(f"🎁 GIFT: {section} - {title[:50]}...")
+                                logger.debug(f"✅ {article_section}: {title[:50]}...")
                                 
                         except Exception as e:
-                            logger.debug(f"Error processing gift entry: {e}")
+                            logger.debug(f"Error processing {section} entry: {e}")
                             continue
                     
-                    # Apply simple deduplication
-                    unique_articles = self._simple_deduplicate(articles)
-                    logger.info(f"🎉 GIFT COMPLETE: {len(unique_articles)} perfect articles!")
-                    return unique_articles
+                    logger.info(f"✅ {section}: Processed {len(articles)} articles")
                     
                 else:
-                    logger.error("❌ Gift RSS: No entries found")
+                    logger.warning(f"⚠️ {section}: No entries in RSS feed")
             else:
-                logger.error("❌ Gift RSS: Could not fetch content")
+                logger.warning(f"⚠️ {section}: Could not fetch RSS content")
                 
         except Exception as e:
-            logger.error(f"💥 Gift RSS error: {e}")
+            logger.error(f"💥 {section} RSS error: {e}")
             
-        return []
+        return articles
     
     def _detect_article_section(self, link: str, title: str, summary: str) -> str:
         """🎯 Smart section detection from URL and content"""
@@ -1768,39 +1820,6 @@ class InvestingNewsScraper:
     def _is_relevant_investing_article(self, article: NewsArticle) -> bool:
         """🎯 STRICT: Financial markets ONLY - NO world news, politics, wars, sports"""
         content = f"{article.title} {article.summary}".lower()
-        
-        # 🚫 IMMEDIATE EXCLUSIONS: Non-financial content
-        world_news_exclusions = [
-            # Wars & Conflicts
-            'war', 'battle', 'military', 'soldier', 'army', 'navy', 'strike', 'attack', 'killed', 'dead', 'wounded',
-            'ukraine', 'russia', 'israel', 'gaza', 'palestinian', 'hamas', 'missile', 'bomb', 'explosion',
-            'syria', 'iran', 'iraq', 'afghanistan', 'libya', 'yemen', 'sudan', 'terror', 'terrorist',
-            
-            # Politics & Elections (unless market-related)
-            'candidate', 'senator', 'congress', 'parliament', 'campaign'
-            'xi jinping', 'modi', 'erdogan', 'macron', 'merkel',
-            
-            # Crime & Accidents  
-            'murder', 'shooting', 'robbery', 'theft', 'arrest', 'police', 'court', 'trial', 'sentence',
-            'accident', 'crash', 'fire', 'flood', 'earthquake', 'hurricane', 'tornado', 'disaster',
-            
-            # Entertainment & Sports
-            'sports', 'football', 'soccer', 'basketball', 'baseball', 'tennis', 'olympics', 'fifa',
-            'celebrity', 'actor', 'actress', 'singer', 'movie', 'film', 'tv show', 'netflix', 'disney',
-            
-            # Health & Lifestyle
-            'health', 'medical', 'doctor', 'hospital', 'covid', 'vaccine', 'virus', 'pandemic',
-            'diet', 'exercise', 'fitness', 'workout', 'beauty', 'fashion', 'lifestyle', 'recipe',
-            'travel', 'tourism', 'hotel', 'restaurant', 'weather'
-        ]
-        
-        # 🚫 STRICT EXCLUSION CHECK
-        for exclusion in world_news_exclusions:
-            if exclusion in content:
-                # Exception: If it has strong financial impact
-                financial_exceptions = ['market', 'stock', 'economy', 'economic', 'trading', 'investment']
-                if not any(financial in content for financial in financial_exceptions):
-                    return False
         
         # ✅ REQUIRED: Financial market keywords
         section_keywords = {

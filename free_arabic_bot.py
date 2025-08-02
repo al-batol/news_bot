@@ -76,12 +76,15 @@ class FreeArabicNewsBot:
             'oil': '🛢️', 'gold': '🥇', 'silver': '🥈', 'copper': '🟫',
         }
         
+        # 🕐 Bot startup time for filtering fresh news only
+        self.startup_time = datetime.now(timezone.utc)
+        
         # Performance tracking
         self.stats = {
             'messages_sent': 0,
             'articles_processed': 0,
             'translation_successes': 0,
-            'start_time': datetime.now(timezone.utc)
+            'start_time': self.startup_time
         }
         
         logger.info("Free Arabic News Bot initialized")
@@ -126,45 +129,13 @@ class FreeArabicNewsBot:
         """🎯 STRICT: Financial markets content ONLY - NO world news, politics, or wars"""
         content = f"{title} {summary}".lower()
         
-        # 🚫 IMMEDIATE EXCLUSIONS: World news, politics, wars, conflicts
-        world_news_exclusions = [
-            # Wars & Conflicts
-            'war', 'battle', 'military', 'soldier', 'army', 'navy', 'strike', 'attack', 'killed', 'dead', 'wounded',
-            'ukraine', 'russia', 'israel', 'gaza', 'palestinian', 'hamas', 'missile', 'bomb', 'explosion',
-            'syria', 'iran', 'iraq', 'afghanistan', 'libya', 'yemen', 'sudan', 'terror', 'terrorist',
-            
-            # Politics & Elections  
-            'parliament','xi jinping', 'modi', 'erdogan', 'macron', 'merkel',
-            'republican', 'democrat', 'liberal', 'conservative', 'campaign',
-            
-            # Crime & Accidents
-            'murder', 'shooting', 'robbery', 'theft', 'arrest', 'police', 'court', 'trial', 'sentence',
-            'accident', 'crash', 'fire', 'flood', 'earthquake', 'hurricane', 'tornado', 'disaster',
-            
-            # Entertainment & Sports
-            'sports', 'football', 'soccer', 'basketball', 'baseball', 'tennis', 'olympics', 'fifa',
-            'celebrity', 'actor', 'actress', 'singer', 'movie', 'film', 'tv show', 'netflix', 'disney',
-            'music', 'album', 'concert', 'grammy', 'oscar', 'emmy', 'game', 'gaming', 'playstation',
-            
-            # Health & Lifestyle  
-            'health', 'medical', 'doctor', 'hospital', 'covid', 'vaccine', 'virus', 'pandemic',
-            'diet', 'exercise', 'fitness', 'workout', 'beauty', 'fashion', 'lifestyle', 'recipe',
-            'travel', 'tourism', 'hotel', 'restaurant', 'weather', 'climate change'
-        ]
-        
-        # 🚫 STRICT CHECK: Reject any world/political/war content
-        for exclusion in world_news_exclusions:
-            if exclusion in content:
-                logger.debug(f"🚫 EXCLUDED (world news): {exclusion} in '{title[:50]}...'")
-                return False
-        
         # ✅ REQUIRED: Must contain financial market keywords
         crypto_score = 0
         for keyword in Config.CRYPTO_KEYWORDS:
             if keyword.lower() in content:
                 crypto_score += 2  # Higher weight for crypto
         
-        # ✅ FINANCIAL KEYWORDS: Stocks, forex, commodities, economics
+        # ✅ EXPANDED FINANCIAL KEYWORDS: Comprehensive coverage for all financial content
         financial_keywords = [
             # Core Financial
             'stock', 'share', 'market', 'trading', 'investor', 'investment', 'portfolio', 'dividend',
@@ -183,7 +154,15 @@ class FreeArabicNewsBot:
             'opec', 'energy', 'mining', 'metals', 'agriculture',
             
             # Crypto (additional)
-            'blockchain', 'defi', 'nft', 'stablecoin', 'altcoin', 'binance', 'coinbase'
+            'blockchain', 'defi', 'nft', 'stablecoin', 'altcoin', 'binance', 'coinbase',
+            
+            # 🔥 EXPANDED: Major Companies & Financial Terms
+            'apple', 'tesla', 'microsoft', 'google', 'amazon', 'meta', 'nvidia', 'berkshire',
+            'ceo', 'cfo', 'president', 'company', 'corporation', 'firm', 'business', 'financial',
+            'bank', 'banking', 'credit', 'loan', 'reserves', 'fund', 'finance', 'capital',
+            'imf', 'world bank', 'economic', 'economy', 'tariff', 'trade', 'export', 'import',
+            'sales', 'growth', 'decline', 'billion', 'million', 'lawsuit', 'jury', 'settlement',
+            'regulatory', 'regulation', 'policy', 'announcement', 'guidance', 'forecast'
         ]
         
         financial_score = 0
@@ -350,13 +329,47 @@ class FreeArabicNewsBot:
         """Post filtered articles to Telegram channel"""
         posted_count = 0
         
-        # Filter articles for relevance
-        relevant_articles = []
+        # 🚀 NO CONTENT FILTERING: Trust our professional RSS endpoints!
+        # But filter by time: only get fresh news after bot startup
+        fresh_articles = []
         for article in articles:
-            if self.is_relevant_news(article.title, getattr(article, 'summary', '')):
-                relevant_articles.append(article)
+            try:
+                # Parse article publish time
+                if hasattr(article, 'published') and article.published:
+                    # Handle different date formats
+                    published_time = None
+                    if isinstance(article.published, str):
+                        # Try different datetime formats
+                        for fmt in ['%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%a, %d %b %Y %H:%M:%S %z', '%a, %d %b %Y %H:%M:%S %Z']:
+                            try:
+                                published_time = datetime.strptime(article.published, fmt)
+                                if published_time.tzinfo is None:
+                                    published_time = published_time.replace(tzinfo=timezone.utc)
+                                break
+                            except ValueError:
+                                continue
+                    
+                    # If we couldn't parse time, include the article (better safe than sorry)
+                    if published_time is None:
+                        fresh_articles.append(article)
+                        continue
+                    
+                    # Only include articles published after bot startup
+                    if published_time >= self.startup_time:
+                        fresh_articles.append(article)
+                        logger.debug(f"✅ FRESH: {article.title[:50]}... (published: {published_time})")
+                    else:
+                        logger.debug(f"⏰ OLD: Skipping {article.title[:50]}... (published: {published_time})")
+                else:
+                    # No publish time, include it
+                    fresh_articles.append(article)
+            except Exception as e:
+                logger.debug(f"Error parsing article time: {e}")
+                # If error parsing time, include the article
+                fresh_articles.append(article)
         
-        logger.info(f"Found {len(relevant_articles)} relevant articles from {len(articles)} total")
+        relevant_articles = fresh_articles
+        logger.info(f"📰 FRESH NEWS: Using {len(relevant_articles)} fresh articles from {len(articles)} total (after startup: {self.startup_time.strftime('%H:%M:%S')})")
         
         # Limit to max articles per scrape
         relevant_articles = relevant_articles[:Config.MAX_ARTICLES_PER_SCRAPE]

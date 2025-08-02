@@ -1,34 +1,43 @@
 {
   "seen_articles": [
-    "HCOB Spain Manufacturing PMI  (Jul)_03:15__released",
-    "HCOB Eurozone Manufacturing PMI  (Jul)_04:00__released",
-    "Italian Retail Sales (MoM)  (Jun)_04:00__released",
-    "d2ff630069d0",
-    "Italian Retail Sales (YoY)  (Jun)_04:00__released",
-    "78a8ac3e97de",
-    "9dc0ab844a16",
-    "HCOB Italy Manufacturing PMI  (Jul)_03:45__released",
-    "d1edff4c3bd7",
-    "b7833b005c0b",
-    "S&P Global Manufacturing PMI  (Jul)_04:30__released",
     "19613b218ff4",
-    "1b15fc6bd3ce",
-    "cc2a9914cefe",
-    "Core CPI (MoM)  (Jul)_05:00__released",
-    "754f13704ce8",
-    "HCOB Germany Manufacturing PMI  (Jul)_03:55__released",
-    "HCOB France Manufacturing PMI  (Jul)_03:50__released",
-    "Commodity Prices (YoY)  (Jul)_02:30__released",
-    "S&P Global Manufacturing PMI  (Jul)_01:00__released",
-    "b15117354940",
-    "3b4689db145d",
     "08e86f1175eb",
-    "b9164851856a",
-    "309c308a9811",
-    "4cdd96a950e4",
-    "1b7a37a6b499",
     "S&P Global Manufacturing PMI  (Jul)_02:00__released",
-    "Core CPI (YoY)  (Jul)_05:00__released"
+    "a75e0b0ccf9d",
+    "Italian Retail Sales (YoY)  (Jun)_04:00__released",
+    "f7abf80b103f",
+    "1b7a37a6b499",
+    "HCOB Eurozone Manufacturing PMI  (Jul)_04:00__released",
+    "cc2a9914cefe",
+    "S&P Global Manufacturing PMI  (Jul)_01:00__released",
+    "b9164851856a",
+    "1b15fc6bd3ce",
+    "4cdd96a950e4",
+    "9dc0ab844a16",
+    "f999142c3464",
+    "Core CPI (YoY)  (Jul)_05:00__released",
+    "b7833b005c0b",
+    "8e9d9b9136c3",
+    "d1edff4c3bd7",
+    "HCOB Spain Manufacturing PMI  (Jul)_03:15__released",
+    "Core CPI (MoM)  (Jul)_05:00__released",
+    "fac0cd131df7",
+    "ccd0a5591c70",
+    "Commodity Prices (YoY)  (Jul)_02:30__released",
+    "fe66b1332891",
+    "HCOB France Manufacturing PMI  (Jul)_03:50__released",
+    "b15117354940",
+    "309c308a9811",
+    "78a8ac3e97de",
+    "fa18f7edb5c6",
+    "HCOB Italy Manufacturing PMI  (Jul)_03:45__released",
+    "754f13704ce8",
+    "Italian Retail Sales (MoM)  (Jun)_04:00__released",
+    "94d263f4b739",
+    "HCOB Germany Manufacturing PMI  (Jul)_03:55__released",
+    "d2ff630069d0",
+    "3b4689db145d",
+    "S&P Global Manufacturing PMI  (Jul)_04:30__released"
   ],
   "article_metadata": {
     "S&P Global Manufacturing PMI  (Jul)_01:00__released": {
@@ -204,7 +213,61 @@
       "link": "https://www.investing.com/news/stock-market-news/these-are-top-10-stocks-traded-on-the-robinhood-uk-platform-in-july-4166433",
       "timestamp": "2025-08-01 15:17:20",
       "seen_at": "2025-08-02T00:28:41.762599+00:00"
+    },
+    "ccd0a5591c70": {
+      "title": "Big Tech may be breaking the bank for AI, but investors love it",
+      "link": "https://www.investing.com/news/stock-market-news/big-tech-may-be-breaking-the-bank-for-ai-but-investors-love-it-4162069",
+      "timestamp": "2025-08-01 23:15:47",
+      "seen_at": "2025-08-02T02:24:07.725699+00:00"
+    },
+    "fe66b1332891": {
+      "title": "Stocks slump on latest tariffs, soft jobs data",
+      "link": "https://www.investing.com/news/economy-news/wall-street-futures-slide-as-trumps-new-tariffs-amazon-weigh-4165758",
+      "timestamp": "2025-08-01 23:10:58",
+      "seen_at": "2025-08-02T02:24:14.345209+00:00"
+    },
+    "fa18f7edb5c6": {
+      "title": "Global stock index sinks with dollar, bond yields after weak US jobs data",
+      "link": "https://www.investing.com/news/economy-news/asian-shares-fall-as-us-unleashes-fresh-tariffs-jobs-data-up-next-4164780",
+      "timestamp": "2025-08-01 22:16:14",
+      "seen_at": "2025-08-02T02:24:21.076201+00:00"
+    },
+    "a75e0b0ccf9d": {
+      "title": "Trump fires US labor official over data and gets earlier than expected chance to reshape Fed",
+      "link": "https://www.investing.com/news/economic-indicators/trump-fires-us-labor-departments-statistical-leader-after-weaker-than-expected-jobs-report-4166608",
+      "timestamp": "2025-08-01 23:45:52",
+      "seen_at": "2025-08-02T02:48:28.777211+00:00"
+    },
+    "94d263f4b739": {
+      "title": "New Zealand will make it easier to run businesses in conservation areas",
+      "link": "https://www.investing.com/news/economy-news/new-zealand-will-make-it-easier-to-run-businesses-in-conservation-areas-4166820",
+      "timestamp": "2025-08-02 02:20:32",
+      "seen_at": "2025-08-02T02:49:46.571638+00:00"
+    },
+    "f999142c3464": {
+      "title": "Walmart's Mexico CEO Caride steps down in surprise move",
+      "link": "https://www.investing.com/news/stock-market-news/walmarts-mexico-ceo-ignacio-caride-steps-down-4166765",
+      "timestamp": "2025-08-02 00:45:33",
+      "seen_at": "2025-08-02T02:49:53.208157+00:00"
+    },
+    "fac0cd131df7": {
+      "title": "Rwanda, Congo agree on outline for economic framework as part of peace deal",
+      "link": "https://www.investing.com/news/commodities-news/rwanda-congo-agree-on-outline-for-economic-integration-framework-as-part-of-peace-deal-us-says-4166802",
+      "timestamp": "2025-08-01 23:35:42",
+      "seen_at": "2025-08-02T02:49:59.923915+00:00"
+    },
+    "f7abf80b103f": {
+      "title": "Exclusive-Alphabet's CapitalG, Nvidia in talks to fund Vast Data at up to $30 billion valuation, sources say",
+      "link": "https://www.investing.com/news/stock-market-news/exclusivealphabets-capitalg-nvidia-in-talks-to-fund-vast-data-at-up-to-30-billion-valuation-sources-say-4165260",
+      "timestamp": "2025-08-01 23:16:23",
+      "seen_at": "2025-08-02T02:50:06.656189+00:00"
+    },
+    "8e9d9b9136c3": {
+      "title": "CEO Tim Cook says Apple ready to open its wallet to catch up in AI",
+      "link": "https://www.investing.com/news/stock-market-news/ceo-tim-cook-says-apple-ready-to-open-its-wallet-to-catch-up-in-ai-4164792",
+      "timestamp": "2025-08-01 23:11:21",
+      "seen_at": "2025-08-02T02:50:13.329280+00:00"
     }
   },
-  "last_updated": "2025-08-02T00:28:41.762608+00:00"
+  "last_updated": "2025-08-02T02:50:13.329288+00:00"
 }
