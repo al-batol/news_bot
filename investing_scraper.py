@@ -623,7 +623,13 @@ class InvestingNewsScraper:
                     # Extract basic information
                     title = entry.get('title', '').strip()
                     link = entry.get('link', '').strip()
+                    
+                    # Handle CoinDesk timezone parsing issues
                     published = entry.get('published', '')
+                    # Use the raw published string to avoid feedparser timezone bugs
+                    if published and 'published_parsed' in entry:
+                        # Keep the original string format to avoid timezone parsing issues
+                        published = published
                     
                     # Extract description
                     description = ''

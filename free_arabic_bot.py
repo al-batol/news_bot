@@ -8,7 +8,7 @@ import aiohttp
 import logging
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Optional, List, Dict, Any
 
 # Import enhanced modules
@@ -339,12 +339,22 @@ class FreeArabicNewsBot:
                     # Handle different date formats
                     published_time = None
                     if isinstance(article.published, str):
-                        # Try different datetime formats
-                        for fmt in ['%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%a, %d %b %Y %H:%M:%S %z', '%a, %d %b %Y %H:%M:%S %Z']:
+                        # Try different datetime formats (CoinDesk uses RFC 2822 format)
+                        date_formats = [
+                            '%a, %d %b %Y %H:%M:%S %z',    # CoinDesk format: "Sat, 02 Aug 2025 16:43:51 +0000"
+                            '%Y-%m-%d %H:%M:%S %z',
+                            '%Y-%m-%d %H:%M:%S', 
+                            '%Y-%m-%d %H:%M', 
+                            '%a, %d %b %Y %H:%M:%S %Z',
+                            '%a, %d %b %Y %H:%M:%S'         # Fallback without timezone
+                        ]
+                        
+                        for fmt in date_formats:
                             try:
                                 published_time = datetime.strptime(article.published, fmt)
                                 if published_time.tzinfo is None:
                                     published_time = published_time.replace(tzinfo=timezone.utc)
+                                logger.debug(f"🕒 Parsed time: {published_time} from format {fmt}")
                                 break
                             except ValueError:
                                 continue
@@ -354,10 +364,26 @@ class FreeArabicNewsBot:
                         fresh_articles.append(article)
                         continue
                     
-                    # Only include articles published after bot startup
-                    if published_time >= self.startup_time:
+                    # Flexible time filtering with different rules for different sources
+                    current_time = datetime.now(timezone.utc)
+                    time_tolerance = timedelta(hours=12)  # Allow future articles (timezone issues)
+                    max_future_time = current_time + time_tolerance
+                    
+                    # For CoinDesk crypto news, be more lenient (allow articles up to 6 hours old)
+                    if hasattr(article, 'section') and article.section == 'CRYPTOCURRENCY':
+                        min_time = current_time - timedelta(hours=6)  # 6 hours back for crypto
+                        is_fresh = min_time <= published_time <= max_future_time
+                        logger.debug(f"🪙 CRYPTO CHECK: {article.title[:30]}... time: {published_time}, range: {min_time} to {max_future_time}")
+                    else:
+                        # For other news, use bot startup time as minimum
+                        is_fresh = self.startup_time <= published_time <= max_future_time
+                        logger.debug(f"📰 NEWS CHECK: {article.title[:30]}... time: {published_time}, startup: {self.startup_time}")
+                    
+                    if is_fresh:
                         fresh_articles.append(article)
                         logger.debug(f"✅ FRESH: {article.title[:50]}... (published: {published_time})")
+                    elif published_time > max_future_time:
+                        logger.debug(f"🔮 FUTURE: Skipping {article.title[:50]}... (published: {published_time}) - too far in future")
                     else:
                         logger.debug(f"⏰ OLD: Skipping {article.title[:50]}... (published: {published_time})")
                 else:
