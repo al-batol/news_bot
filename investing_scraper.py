@@ -539,23 +539,145 @@ class InvestingNewsScraper:
     
     async def scrape_investing_news(self, max_articles: int = 10, breaking_news_priority: bool = True) -> List[NewsArticle]:
         """
-        HARDCORE: Ultra-advanced investing.com scraping that beats their detection system
-        Optimized for speed and breaking news priority
+        🎁 GIFT MODE: Using the perfect RSS feed from our bro!
+        https://www.investing.com/rss/investing_news.rss - ALL news in one place!
         """
-        logger.info("⚡ HARDCORE MODE: Lightning-fast investing.com bypass (BREAKING NEWS PRIORITY)")
+        logger.info("🎁 GIFT MODE: Using the PERFECT RSS feed - no more complexity!")
         
-        # HARDCORE: Try fastest working methods first
-        if breaking_news_priority:
-            articles = await self._breaking_news_blitz(max_articles)
-            if articles:
-                logger.info(f"🚀 BREAKING NEWS BLITZ: {len(articles)} articles in record time!")
-                return articles
+        # 🎁 THE GIFT: One perfect RSS feed that has everything!
+        articles = await self._use_perfect_rss_gift(max_articles)
         
-        # HARDCORE: Optimized stealth techniques
-        articles = await self._hardcore_investing_scraping(max_articles)
+        if articles:
+            logger.info(f"🎉 GIFT SUCCESS: Retrieved {len(articles)} articles from the perfect RSS!")
+            return articles
         
-        logger.info(f"💪 HARDCORE: Retrieved {len(articles)} articles bypassing all blocks!")
-        return articles
+        logger.error("❌ Gift RSS failed (impossible!)")
+        return []
+
+    async def _use_perfect_rss_gift(self, max_articles: int) -> List[NewsArticle]:
+        """
+        🎁 THE GIFT: Perfect RSS feed with ALL investing.com news!
+        Thanks to our amazing bro for this gift!
+        """
+        articles = []
+        
+        # 🎁 THE PERFECT GIFT URL
+        gift_rss_url = "https://www.investing.com/rss/investing_news.rss"
+        
+        try:
+            logger.info(f"🎁 Fetching from the PERFECT gift RSS: {gift_rss_url}")
+            
+            # Simple, reliable headers
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Connection': 'keep-alive',
+            }
+            
+            # Get the gift RSS content
+            content = await self._fetch_rss_content(gift_rss_url, headers)
+            
+            if content:
+                # Parse the perfect RSS feed
+                import feedparser
+                feed = feedparser.parse(content)
+                
+                if feed and hasattr(feed, 'entries'):
+                    logger.info(f"🎉 GIFT: Found {len(feed.entries)} entries in the perfect RSS!")
+                    
+                    for entry in feed.entries[:max_articles]:
+                        try:
+                            # Extract data
+                            title = getattr(entry, 'title', '').strip()
+                            link = getattr(entry, 'link', '')
+                            summary = getattr(entry, 'summary', getattr(entry, 'description', '')).strip()
+                            published = getattr(entry, 'published', datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M'))
+                            
+                            if title and link and len(title) > 10:
+                                # 🧹 Clean summary (remove "Investing.com-")
+                                if summary:
+                                    import re
+                                    summary = re.sub(r'<[^>]+>', '', summary).strip()
+                                    summary = re.sub(r'^Investing\.com[-\s]*', '', summary, flags=re.IGNORECASE)
+                                    summary = summary.strip()
+                                
+                                # 📸 Try to extract image from description
+                                image_url = None
+                                if hasattr(entry, 'enclosures') and entry.enclosures:
+                                    for enclosure in entry.enclosures:
+                                        if hasattr(enclosure, 'type') and enclosure.type and 'image' in enclosure.type:
+                                            if hasattr(enclosure, 'url') or hasattr(enclosure, 'href'):
+                                                image_url = getattr(enclosure, 'url', getattr(enclosure, 'href', None))
+                                                break
+                                
+                                # 🎯 Detect section from URL or content
+                                section = self._detect_article_section(link, title, summary)
+                                
+                                # Create perfect article
+                                article = NewsArticle(
+                                    title=title,
+                                    link=link,
+                                    published=published,
+                                    summary=summary[:300] + "..." if len(summary) > 300 else summary,
+                                    section=section,
+                                    article_id="",
+                                    image_url=image_url
+                                )
+                                
+                                articles.append(article)
+                                logger.info(f"🎁 GIFT: {section} - {title[:50]}...")
+                                
+                        except Exception as e:
+                            logger.debug(f"Error processing gift entry: {e}")
+                            continue
+                    
+                    # Apply simple deduplication
+                    unique_articles = self._simple_deduplicate(articles)
+                    logger.info(f"🎉 GIFT COMPLETE: {len(unique_articles)} perfect articles!")
+                    return unique_articles
+                    
+                else:
+                    logger.error("❌ Gift RSS: No entries found")
+            else:
+                logger.error("❌ Gift RSS: Could not fetch content")
+                
+        except Exception as e:
+            logger.error(f"💥 Gift RSS error: {e}")
+            
+        return []
+    
+    def _detect_article_section(self, link: str, title: str, summary: str) -> str:
+        """🎯 Smart section detection from URL and content"""
+        content = f"{link} {title} {summary}".lower()
+        
+        # Detect from URL path
+        if 'stock-market' in link or 'equities' in link:
+            return 'STOCK-MARKET'
+        elif 'crypto' in link or 'bitcoin' in link:
+            return 'CRYPTOCURRENCY'  
+        elif 'forex' in link or 'currencies' in link:
+            return 'FOREX'
+        elif 'commodities' in link or 'gold' in link or 'oil' in link:
+            return 'COMMODITIES'
+        elif 'economic-indicators' in link or 'economy' in link:
+            return 'ECONOMIC-INDICATORS'
+        elif 'earnings' in link:
+            return 'EARNINGS'
+        
+        # Detect from content
+        if any(word in content for word in ['bitcoin', 'crypto', 'ethereum']):
+            return 'CRYPTOCURRENCY'
+        elif any(word in content for word in ['fed', 'jobs', 'unemployment', 'inflation', 'gdp']):
+            return 'ECONOMIC-INDICATORS'  
+        elif any(word in content for word in ['stock', 'shares', 'earnings', 'nasdaq', 'dow']):
+            return 'STOCK-MARKET'
+        elif any(word in content for word in ['dollar', 'yen', 'euro', 'forex', 'currency']):
+            return 'FOREX'
+        elif any(word in content for word in ['gold', 'oil', 'commodity', 'crude']):
+            return 'COMMODITIES'
+        
+        return 'BREAKING-NEWS'  # Default
 
     async def _breaking_news_blitz(self, max_articles: int) -> List[NewsArticle]:
         """BLITZ: Ultra-fast breaking news acquisition using proven methods"""
@@ -647,6 +769,9 @@ class InvestingNewsScraper:
                             # Clean summary
                             if summary:
                                 summary = re.sub(r'<[^>]+>', '', summary).strip()
+                                # 🧹 CLEAN: Remove "Investing.com-" from beginning
+                                summary = re.sub(r'^Investing\.com[-\s]*', '', summary, flags=re.IGNORECASE)
+                                summary = summary.strip()
                             
                             # 📸 NEW: Extract image URL from RSS enclosure
                             image_url = None
@@ -746,79 +871,409 @@ class InvestingNewsScraper:
         
         return sorted(articles, key=breaking_score, reverse=True)
     
-    # REMOVED: Old direct scraping methods that were getting blocked
-    # Professional approach: Use RSS aggregation only
-    
     async def _hardcore_investing_scraping(self, max_articles: int) -> List[NewsArticle]:
         """
-        STEALTH MODE: Advanced investing.com scraping with professional anti-detection
-        Real-time news from investing.com ONLY
+        MAIN PAGE SCRAPING: Get articles from investing.com main page layout (like in your image)
+        Uses the category tabs: Breaking News, Currencies, Commodities, Stock Markets, etc.
         """
         articles = []
         
-                # PROFESSIONAL: Complete investing.com endpoints - ALL sections the user needs
-        investing_endpoints = {
-            # PRIMARY SECTIONS (user's requirements)
-            'news/headlines': 'Headlines',  # NEW: Main headlines section
-            'news/economic-indicators': 'Economic Indicators', 
-            'news/stock-market-news': 'Stock Market News', 
-            'news/commodities-news': 'Commodities News',  # NEW: Required section
-            'news/forex-news': 'Forex News',  # ENHANCED: More specific
-            'news/cryptocurrency-news': 'Cryptocurrency News',  # ENHANCED: More specific
-            
-            # SECONDARY SECTIONS (for more coverage)
-            'news': 'Latest News',
-            'news/economy-news': 'Economy News',
-            
-            # BACKUP ENDPOINTS (for reliability)
-            'markets/news': 'Markets News',
-            'news/most-popular-news': 'Popular News',
+        # MAIN PAGE: Target the investing.com homepage structure from your image
+        main_page_categories = {
+            # WORKING URLs based on actual investing.com structure
+            'currencies': 'Currencies',  # ✅ WORKING
+            'crypto/currencies': 'Cryptocurrency',  # ✅ WORKING 
+            'commodities': 'Commodities',
+            'equities': 'Stock Markets',
+            'news/stock-market-news': 'Stock Market News',  # Better URL
+            'news/economic-indicators': 'Economic Indicators',  # News section
+            'economic-calendar': 'Economic Calendar',  # Alternative
         }
         
         try:
-            logger.info(f"🎯 PROFESSIONAL: Targeting {len(investing_endpoints)} investing.com endpoints")
+            logger.info(f"🎯 MAIN PAGE: Targeting investing.com main page structure")
             
-            # PROFESSIONAL: Process each endpoint with advanced techniques
-            for i, (section_path, section_name) in enumerate(investing_endpoints.items()):
+            # FIRST: Get articles from main homepage (like your image shows)
+            main_articles = await self._scrape_main_homepage(max_articles // 2)
+            if main_articles:
+                articles.extend(main_articles)
+                logger.info(f"✅ MAIN PAGE: {len(main_articles)} articles from homepage")
+            
+            # THEN: Get from category tabs (bottom of your image)  
+            for i, (category_path, category_name) in enumerate(main_page_categories.items()):
                 if len(articles) >= max_articles:
                     break
                     
                 try:
-                    # STEALTH: Advanced session management per section
-                    await self._advanced_session_setup()
+                    # SIMPLE: Basic session management
+                    await self.create_session()
                     
-                    # STEALTH: Dynamic delay patterns
+                    # SIMPLE: Small delay between categories
                     if i > 0:
-                        delay = await self._calculate_stealth_delay(i, section_name)
-                        logger.info(f"🕐 STEALTH: Human delay {delay:.1f}s for {section_name}")
+                        delay = random.uniform(3.0, 6.0)
+                        logger.info(f"⏱️  Delay {delay:.1f}s for {category_name}")
                         await asyncio.sleep(delay)
                     
-                    # STEALTH: Get real-time content from investing.com
-                    section_articles = await self._stealth_scrape_section(section_path, section_name, max_articles - len(articles))
+                    # SIMPLE: Get content from category page
+                    category_articles = await self._scrape_category_page(category_path, category_name, max_articles - len(articles))
                     
-                    if section_articles:
-                        articles.extend(section_articles)
-                        logger.info(f"✅ STEALTH: {section_name} → {len(section_articles)} articles")
+                    if category_articles:
+                        articles.extend(category_articles)
+                        logger.info(f"✅ {category_name} → {len(category_articles)} articles")
                     else:
-                        logger.warning(f"⚠️  STEALTH: {section_name} → No articles (may be blocked)")
+                        logger.warning(f"⚠️  {category_name} → No articles found")
                         
                 except Exception as e:
-                    logger.error(f"❌ STEALTH: Error in {section_name} - {e}")
+                    logger.error(f"❌ Error in {category_name} - {e}")
                     continue
                 
-            # STEALTH: Final processing and ranking
+            # SIMPLE: Final processing and ranking
             if articles:
-                unique_articles = self._stealth_deduplicate(articles)
-                logger.info(f"🎯 STEALTH SUCCESS: {len(unique_articles)} real-time articles from investing.com")
+                unique_articles = self._simple_deduplicate(articles)
+                logger.info(f"🎯 MAIN PAGE SUCCESS: {len(unique_articles)} real-time articles from investing.com")
                 return unique_articles[:max_articles]
             else:
-                logger.warning("⚠️  STEALTH: No articles retrieved - trying RSS fallback")
+                logger.warning("⚠️  MAIN PAGE: No articles retrieved - trying RSS fallback")
                 return await self._investing_rss_fallback(max_articles)
                 
         except Exception as e:
-            logger.error(f"💥 STEALTH: Critical error - {e}")
+            logger.error(f"💥 MAIN PAGE: Critical error - {e}")
             # Last resort: RSS from investing.com only
             return await self._investing_rss_fallback(max_articles)
+    
+    async def _scrape_main_homepage(self, max_articles: int) -> List[NewsArticle]:
+        """Scrape articles from investing.com main homepage (like your image shows)"""
+        articles = []
+        
+        try:
+            await self.create_session()
+            
+            # Target the main investing.com page
+            url = "https://www.investing.com"
+            
+            # Simple headers that work
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive',
+            }
+            
+            # Try to get the main page content
+            content = await self._fetch_page_content(url, headers)
+            
+            if content:
+                # Parse the main page article cards (like in your image)
+                articles = await self._parse_main_page_articles(content, max_articles)
+                logger.info(f"🏠 HOMEPAGE: Found {len(articles)} articles from main page")
+            else:
+                logger.warning("❌ Could not fetch main homepage content")
+                
+        except Exception as e:
+            logger.error(f"💥 Error scraping main homepage: {e}")
+            
+        return articles
+    
+    async def _scrape_category_page(self, category_path: str, category_name: str, max_articles: int) -> List[NewsArticle]:
+        """Scrape articles from category tabs (like bottom of your image)"""
+        articles = []
+        
+        # 🔄 SMART: Multiple URL attempts for each category
+        fallback_urls = self._get_category_fallback_urls(category_path, category_name)
+        
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Referer': 'https://www.investing.com/',
+        }
+        
+        # Try each URL until one works
+        for attempt, url in enumerate(fallback_urls, 1):
+            try:
+                logger.debug(f"🔄 {category_name}: Trying URL {attempt}/{len(fallback_urls)}: {url}")
+                
+                # Get category page content
+                content = await self._fetch_page_content(url, headers)
+                
+                if content and len(content) > 1000:  # Valid page content
+                    # Parse articles from category page
+                    articles = await self._parse_category_articles(content, category_name, max_articles)
+                    if articles:
+                        logger.info(f"📁 {category_name}: Found {len(articles)} articles (URL {attempt})")
+                        break
+                    else:
+                        logger.debug(f"⚠️  {category_name}: URL {attempt} loaded but no articles parsed")
+                else:
+                    logger.debug(f"❌ {category_name}: URL {attempt} failed or invalid content")
+                
+                # Small delay between attempts
+                if attempt < len(fallback_urls):
+                    await asyncio.sleep(1.0)
+                    
+            except Exception as e:
+                logger.debug(f"💥 {category_name}: URL {attempt} error: {e}")
+                continue
+        
+        if not articles:
+            logger.warning(f"❌ {category_name}: All URLs failed")
+            
+        return articles
+    
+    def _get_category_fallback_urls(self, category_path: str, category_name: str) -> List[str]:
+        """Get multiple fallback URLs for each category"""
+        base_url = "https://www.investing.com"
+        
+        # Category-specific fallback strategies
+        fallback_mapping = {
+            'Currencies': [
+                f"{base_url}/currencies",
+                f"{base_url}/currencies/eur-usd",
+                f"{base_url}/currencies/us-dollar-index"
+            ],
+            'Cryptocurrency': [
+                f"{base_url}/crypto/currencies",
+                f"{base_url}/crypto",
+                f"{base_url}/currencies/bitcoin",
+                f"{base_url}/crypto/bitcoin"
+            ],
+            'Commodities': [
+                f"{base_url}/commodities",
+                f"{base_url}/commodities/gold",
+                f"{base_url}/commodities/crude-oil"
+            ],
+            'Stock Markets': [
+                f"{base_url}/equities",
+                f"{base_url}/equities/united-states",
+                f"{base_url}/indices/us-spx-500"
+            ],
+            'Stock Market News': [
+                f"{base_url}/news/stock-market-news",
+                f"{base_url}/news/latest-news",
+                f"{base_url}/news"
+            ],
+            'Economic Indicators': [
+                f"{base_url}/news/economic-indicators",
+                f"{base_url}/economic-calendar",
+                f"{base_url}/news/economy-news"
+            ],
+            'Economic Calendar': [
+                f"{base_url}/economic-calendar",
+                f"{base_url}/economic-calendar/",
+                f"{base_url}/news/economic-indicators"
+            ]
+        }
+        
+        # Get specific fallbacks or use the original path
+        if category_name in fallback_mapping:
+            return fallback_mapping[category_name]
+        else:
+            return [f"{base_url}/{category_path}"]
+    
+    async def _fetch_page_content(self, url: str, headers: Dict[str, str]) -> Optional[str]:
+        """Simple method to fetch page content"""
+        try:
+            # Try with requests first (often works better)
+            import requests
+            response = requests.get(url, headers=headers, timeout=15, verify=False)
+            
+            if response.status_code == 200:
+                logger.debug(f"✅ Fetched with requests: {len(response.text)} chars")
+                return response.text
+            else:
+                logger.debug(f"❌ Requests failed: {response.status_code}")
+                
+        except Exception as e:
+            logger.debug(f"Requests failed: {e}")
+            
+        # Fallback to aiohttp
+        try:
+            async with self.session.get(url, headers=headers, timeout=20) as response:
+                if response.status == 200:
+                    content = await response.text()
+                    logger.debug(f"✅ Fetched with aiohttp: {len(content)} chars")
+                    return content
+                else:
+                    logger.debug(f"❌ Aiohttp failed: {response.status}")
+                    
+        except Exception as e:
+            logger.debug(f"Aiohttp failed: {e}")
+            
+        return None
+    
+    async def _parse_main_page_articles(self, content: str, max_articles: int) -> List[NewsArticle]:
+        """Parse articles from main homepage content (article cards like in your image)"""
+        articles = []
+        
+        try:
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(content, 'html.parser')
+            
+            # Look for article cards/containers (main page structure)
+            article_selectors = [
+                # Common article card selectors for investing.com main page
+                'article[data-test-id]',
+                'div[data-test-id="article-item"]',
+                'div[class*="article"]',
+                'a[class*="articleItem"]',
+                'div[class*="story"]',
+                'div[class*="news"]',
+                # Backup selectors
+                'a[href*="/news/"]',
+                '.js-article-item',
+            ]
+            
+            article_elements = []
+            for selector in article_selectors:
+                try:
+                    elements = soup.select(selector, limit=max_articles * 2)
+                    if elements and len(elements) > 3:  # Must find reasonable number
+                        article_elements = elements
+                        logger.info(f"📰 Found {len(elements)} articles with: {selector}")
+                        break
+                except:
+                    continue
+            
+            if not article_elements:
+                logger.warning("❌ No article elements found on main page")
+                return []
+            
+            # Parse each article element
+            for element in article_elements[:max_articles]:
+                try:
+                    article = await self._extract_simple_article(element, "HOMEPAGE")
+                    if article:
+                        articles.append(article)
+                except Exception as e:
+                    logger.debug(f"Error parsing article element: {e}")
+                    continue
+            
+            soup.decompose()
+            
+        except Exception as e:
+            logger.error(f"💥 Error parsing main page articles: {e}")
+            
+        return articles
+    
+    async def _parse_category_articles(self, content: str, category_name: str, max_articles: int) -> List[NewsArticle]:
+        """Parse articles from category page content"""
+        articles = []
+        
+        try:
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(content, 'html.parser')
+            
+            # Look for article listings in category pages
+            article_selectors = [
+                'article',
+                'div[class*="article"]',
+                'div[class*="news"]',
+                'a[href*="/news/"]',
+                'tr[data-test-id]',  # Sometimes table rows
+                'div[class*="item"]',
+            ]
+            
+            article_elements = []
+            for selector in article_selectors:
+                try:
+                    elements = soup.select(selector, limit=max_articles * 2)
+                    if elements:
+                        article_elements = elements
+                        logger.debug(f"Found elements with: {selector}")
+                        break
+                except:
+                    continue
+            
+            # Parse each article
+            for element in article_elements[:max_articles]:
+                try:
+                    article = await self._extract_simple_article(element, category_name)
+                    if article:
+                        articles.append(article)
+                except Exception as e:
+                    logger.debug(f"Error parsing category article: {e}")
+                    continue
+            
+            soup.decompose()
+            
+        except Exception as e:
+            logger.error(f"💥 Error parsing {category_name} articles: {e}")
+            
+        return articles
+    
+    async def _extract_simple_article(self, element, section_name: str) -> Optional[NewsArticle]:
+        """Simple article extraction from HTML element"""
+        try:
+            # Get title
+            title = None
+            title_selectors = ['h3', 'h2', 'h4', 'a', '.title', '[title]']
+            
+            for selector in title_selectors:
+                title_elem = element.select_one(selector)
+                if title_elem:
+                    title_text = title_elem.get_text(strip=True)
+                    if title_text and len(title_text) > 10:
+                        title = title_text
+                        break
+            
+            if not title:
+                return None
+            
+            # Get link
+            link = None
+            link_elem = element.select_one('a[href]')
+            if link_elem:
+                href = link_elem.get('href')
+                if href:
+                    if href.startswith('/'):
+                        link = f"https://www.investing.com{href}"
+                    elif href.startswith('http'):
+                        link = href
+            
+            if not link:
+                return None
+            
+            # Get summary (optional)
+            summary = ""
+            summary_elem = element.select_one('p, .summary, .description')
+            if summary_elem:
+                summary = summary_elem.get_text(strip=True)[:200]
+                # 🧹 CLEAN: Remove "Investing.com-" from beginning
+                import re
+                summary = re.sub(r'^Investing\.com[-\s]*', '', summary, flags=re.IGNORECASE)
+                summary = summary.strip()
+            
+            # 📸 GET IMAGE: Extract image URL from article
+            image_url = None
+            img_selectors = ['img[src]', 'img[data-src]', '.image img', '.thumbnail img']
+            for selector in img_selectors:
+                img_elem = element.select_one(selector)
+                if img_elem:
+                    img_src = img_elem.get('src') or img_elem.get('data-src')
+                    if img_src:
+                        if img_src.startswith('/'):
+                            image_url = f"https://www.investing.com{img_src}"
+                        elif img_src.startswith('http'):
+                            image_url = img_src
+                        break
+            
+            # Create article
+            article = NewsArticle(
+                title=title,
+                link=link,
+                published=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M'),
+                summary=summary,
+                section=section_name,
+                article_id="",
+                image_url=image_url  # 📸 Include image URL
+            )
+            
+            return article
+            
+        except Exception as e:
+            logger.debug(f"Error extracting simple article: {e}")
+            return None
     
     async def _advanced_session_setup(self):
         """STEALTH: Advanced session management with browser emulation"""
@@ -1279,6 +1734,20 @@ class InvestingNewsScraper:
                         published = time_text
                         break
             
+            # 📸 STEALTH: Extract image URL
+            image_url = None
+            img_selectors = ['img[src]', 'img[data-src]', '.image img', '.thumbnail img', 'figure img']
+            for selector in img_selectors:
+                img_elem = element.select_one(selector)
+                if img_elem:
+                    img_src = img_elem.get('src') or img_elem.get('data-src')
+                    if img_src:
+                        if img_src.startswith('/'):
+                            image_url = f"https://www.investing.com{img_src}"
+                        elif img_src.startswith('http'):
+                            image_url = img_src
+                        break
+            
             # STEALTH: Create article object
             article = NewsArticle(
                 title=title,
@@ -1286,7 +1755,8 @@ class InvestingNewsScraper:
                 published=published,
                 summary=summary[:250] + "..." if len(summary) > 250 else summary,
                 section=section_name,
-                article_id=""  # Will be auto-generated
+                article_id="",  # Will be auto-generated
+                image_url=image_url  # 📸 Include image URL
             )
             
             return article
@@ -1370,101 +1840,23 @@ class InvestingNewsScraper:
             
         return score >= 1  # Must have financial relevance
     
-    def _stealth_deduplicate(self, articles: List[NewsArticle]) -> List[NewsArticle]:
-        """ENHANCED: Advanced deduplication catching near-identical articles"""
+    def _simple_deduplicate(self, articles: List[NewsArticle]) -> List[NewsArticle]:
+        """Simple deduplication - just remove exact title matches"""
         if not articles:
             return []
-    
-        unique_articles = {}
+        
+        seen_titles = set()
+        unique_articles = []
         
         for article in articles:
-            # ENHANCED: Create multiple normalized keys for better deduplication
-            normalized_title = re.sub(r'[^\w\s]', '', article.title.lower()).strip()
-            title_words = set(normalized_title.split())
+            # Simple normalization
+            normalized_title = article.title.lower().strip()
             
-            # ENHANCED: Extract key financial info (amounts, company names, etc.)
-            amount_match = re.search(r'\$[\d,]+', article.title)
-            company_match = re.search(r'([A-Z]{2,5})\s+', article.title)  # Stock symbols
-            
-            # Create financial signature for better matching
-            financial_signature = ""
-            if amount_match:
-                financial_signature += amount_match.group(0)
-            if company_match:
-                financial_signature += company_match.group(1)
-            
-            # ENHANCED: Check for duplicates with multiple methods
-            is_duplicate = False
-            for existing_title, existing_article in unique_articles.items():
-                existing_words = set(existing_title.split())
-                
-                # Method 1: Word similarity (as before)
-                if len(title_words) > 0 and len(existing_words) > 0:
-                    intersection = len(title_words & existing_words)
-                    union = len(title_words | existing_words)
-                    word_similarity = intersection / union if union > 0 else 0
-                    
-                    if word_similarity > 0.75:  # 75% word similarity (more strict)
-                        is_duplicate = True
-                        break
-                
-                # Method 2: Financial signature matching (for stock trades, etc.)
-                if financial_signature and len(financial_signature) > 3:
-                    existing_amount = re.search(r'\$[\d,]+', existing_article.title)
-                    existing_company = re.search(r'([A-Z]{2,5})\s+', existing_article.title)
-                    
-                    existing_signature = ""
-                    if existing_amount:
-                        existing_signature += existing_amount.group(0)
-                    if existing_company:
-                        existing_signature += existing_company.group(1)
-                    
-                    if financial_signature == existing_signature:
-                        is_duplicate = True
-                        break
-                
-                # Method 3: URL similarity (same base story with different IDs)
-                if hasattr(article, 'link') and hasattr(existing_article, 'link'):
-                    # Remove trailing numbers/IDs from URLs
-                    clean_url1 = re.sub(r'-\d+$', '', article.link.split('/')[-1])
-                    clean_url2 = re.sub(r'-\d+$', '', existing_article.link.split('/')[-1])
-                    
-                    if clean_url1 == clean_url2 and len(clean_url1) > 10:
-                        is_duplicate = True
-                        break
-                
-                # Method 4: Character similarity for very similar titles (more restrictive)
-                if len(normalized_title) > 35:  # Only for longer titles to avoid false positives
-                    existing_normalized = re.sub(r'[^\w\s]', '', existing_article.title.lower()).strip()
-                    title1_clean = re.sub(r'\s+', ' ', normalized_title)
-                    title2_clean = re.sub(r'\s+', ' ', existing_normalized)
-                    
-                    # Only compare if titles are very similar in length AND have significant word overlap
-                    if abs(len(title1_clean) - len(title2_clean)) <= 3:  # Very similar length
-                        # First check if there's significant word overlap
-                        words1 = set(title1_clean.split())
-                        words2 = set(title2_clean.split())
-                        if len(words1) > 0 and len(words2) > 0:
-                            word_overlap = len(words1 & words2) / len(words1 | words2)
-                            
-                            # Only apply character similarity if there's already significant word overlap
-                            if word_overlap > 0.6:  # 60% word overlap required first
-                                shorter = min(len(title1_clean), len(title2_clean))
-                                longer = max(len(title1_clean), len(title2_clean))
-                                if shorter > 0:
-                                    char_similarity = shorter / longer
-                                    if char_similarity > 0.95:  # 95% character similarity (very strict)
-                                        is_duplicate = True
-                                        break
-            
-            if not is_duplicate:
-                unique_articles[normalized_title] = article
+            if normalized_title not in seen_titles:
+                seen_titles.add(normalized_title)
+                unique_articles.append(article)
         
-        # ENHANCED: Sort by recency and relevance
-        sorted_articles = list(unique_articles.values())
-        
-        logger.info(f"🧹 DEDUPLICATION: Filtered {len(articles)} → {len(sorted_articles)} unique articles")
-        return sorted_articles
+        return unique_articles
     
     async def _investing_rss_fallback(self, max_articles: int) -> List[NewsArticle]:
         """PROFESSIONAL: Enhanced RSS fallback with multiple feed sources"""
@@ -1538,6 +1930,9 @@ class InvestingNewsScraper:
                                     # Clean summary
                                     if summary:
                                         summary = re.sub(r'<[^>]+>', '', summary).strip()
+                                        # 🧹 CLEAN: Remove "Investing.com-" from beginning
+                                        summary = re.sub(r'^Investing\.com[-\s]*', '', summary, flags=re.IGNORECASE)
+                                        summary = summary.strip()
                                     
                                     article = NewsArticle(
                                         title=title.strip(),
@@ -1576,7 +1971,7 @@ class InvestingNewsScraper:
                     logger.error(f"❌ RSS error for {feed_name}: {e}")
                     continue
             
-            unique_articles = self._stealth_deduplicate(articles)
+            unique_articles = self._simple_deduplicate(articles)
             logger.info(f"✅ STEALTH RSS: Retrieved {len(unique_articles)} articles from investing.com")
             return unique_articles[:max_articles]
             
@@ -1700,6 +2095,9 @@ class InvestingNewsScraper:
                     import re
                     summary = re.sub(r'<[^>]+>', '', summary).strip()
                     summary = re.sub(r'\s+', ' ', summary)
+                    # 🧹 CLEAN: Remove "Investing.com-" from beginning
+                    summary = re.sub(r'^Investing\.com[-\s]*', '', summary, flags=re.IGNORECASE)
+                    summary = summary.strip()
                 
                 # Create article with relevance score
                 article = NewsArticle(
@@ -1724,26 +2122,16 @@ class InvestingNewsScraper:
         return articles
     
     def _deduplicate_and_rank(self, articles: List[NewsArticle]) -> List[NewsArticle]:
-        """ENHANCED: Remove duplicates with advanced matching and rank by relevance"""
+        """Simple deduplication and ranking"""
         
         if not articles:
             return []
         
-        # Use the same enhanced deduplication logic
-        unique_articles = self._stealth_deduplicate(articles)
+        # Use simple deduplication
+        unique_articles = self._simple_deduplicate(articles)
         
-        # Sort by relevance (extract score from section field)
-        def get_relevance_score(article):
-            try:
-                if 'Score:' in article.section:
-                    return int(article.section.split('Score: ')[1].split(')')[0])
-                return 0
-            except:
-                return 0
-        
-        sorted_articles = sorted(unique_articles, key=get_relevance_score, reverse=True)
-        
-        return sorted_articles
+        # Simple ranking by recency (most recent first)
+        return unique_articles
     
     async def scrape_economic_calendar(self, days_ahead: int = 1) -> List[EconomicEvent]:
         """

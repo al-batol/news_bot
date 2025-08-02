@@ -44,7 +44,7 @@ LOG_LEVEL = "WARNING"         # Reduce logging
 
 ### Step 1: Upload Files
 1. Upload your entire project to PythonAnywhere
-2. Install requirements: `pip3 install --user -r requirements_free.txt`
+2. Install requirements: `pip3 install -r requirements_free.txt`
 
 ### Step 2: Set Environment Variables
 ```bash
