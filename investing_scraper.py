@@ -35,6 +35,7 @@ import warnings
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import urllib3
+import feedparser
 
 # Suppress SSL warnings for stealth mode
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -187,6 +188,8 @@ class InvestingNewsScraper:
             'interest rate decision': 'قرار أسعار الفائدة',
             'fomc': 'لجنة السوق المفتوحة الفيدرالية',
             'inflation': 'التضخم',
+            'inflation gauge': 'مؤشر التضخم',
+            'mi inflation gauge': 'مؤشر التضخم الشهري',
             'trade balance': 'الميزان التجاري',
             'consumer confidence': 'ثقة المستهلك',
             'business confidence': 'ثقة الشركات',
@@ -553,6 +556,130 @@ class InvestingNewsScraper:
         
         logger.error("❌ Professional RSS system failed")
         return []
+
+    async def scrape_coindesk_news(self, max_articles: int = 10) -> List[NewsArticle]:
+        """
+        🪙 COINDESK RSS SCRAPER: Fetch crypto news from CoinDesk RSS feed
+        Extracts title, description, and media (photos only) from CoinDesk feed
+        """
+        logger.info("🪙 COINDESK RSS: Fetching crypto news from CoinDesk...")
+        
+        try:
+            from config_free import Config
+            url = Config.COINDESK_RSS_URL
+            
+            # Use professional headers for CoinDesk
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+                'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive'
+            }
+            
+            # Add small delay for politeness
+            await asyncio.sleep(random.uniform(1, 2))
+            
+            # Fetch RSS feed
+            if not self.session:
+                await self.create_session()
+            
+            timeout = aiohttp.ClientTimeout(total=15)
+            async with self.session.get(url, headers=headers, timeout=timeout) as response:
+                if response.status == 200:
+                    content = await response.text()
+                    articles = await self._parse_coindesk_rss(content, max_articles)
+                    
+                    if articles:
+                        logger.info(f"✅ COINDESK SUCCESS: Retrieved {len(articles)} articles from CoinDesk RSS!")
+                        return articles
+                    else:
+                        logger.warning("⚠️ COINDESK: No articles parsed from RSS feed")
+                else:
+                    logger.error(f"❌ COINDESK ERROR: HTTP {response.status}")
+        
+        except Exception as e:
+            logger.error(f"💥 COINDESK RSS ERROR: {e}")
+        
+        return []
+
+    async def _parse_coindesk_rss(self, rss_content: str, max_articles: int) -> List[NewsArticle]:
+        """Parse CoinDesk RSS content and extract articles with media"""
+        articles = []
+        
+        try:
+            # Parse RSS feed
+            feed = feedparser.parse(rss_content)
+            
+            if not feed.entries:
+                logger.warning("⚠️ COINDESK: No entries found in RSS feed")
+                return articles
+            
+            logger.info(f"📡 COINDESK: Found {len(feed.entries)} entries in RSS feed")
+            
+            for entry in feed.entries[:max_articles]:
+                try:
+                    # Extract basic information
+                    title = entry.get('title', '').strip()
+                    link = entry.get('link', '').strip()
+                    published = entry.get('published', '')
+                    
+                    # Extract description
+                    description = ''
+                    if hasattr(entry, 'summary'):
+                        description = entry.summary
+                    elif hasattr(entry, 'description'):
+                        description = entry.description
+                    elif hasattr(entry, 'content') and entry.content:
+                        description = entry.content[0].get('value', '')
+                    
+                    # Clean HTML from description
+                    if description:
+                        soup = BeautifulSoup(description, 'html.parser')
+                        description = soup.get_text().strip()
+                    
+                    # Extract media URL (photos only)
+                    media_url = None
+                    if hasattr(entry, 'media_content') and entry.media_content:
+                        for media in entry.media_content:
+                            media_type = media.get('type', '').lower()
+                            media_medium = media.get('medium', '').lower()
+                            media_url_candidate = media.get('url', '')
+                            
+                            # Only accept images, not videos
+                            if (media_type.startswith('image') or media_medium == 'image') and media_url_candidate:
+                                media_url = media_url_candidate
+                                break
+                    
+                    # Skip if missing essential data
+                    if not title or not link:
+                        continue
+                    
+                    # Create article
+                    article = NewsArticle(
+                        title=title,
+                        link=link,
+                        published=published,
+                        summary=description[:500] if description else title,  # Limit summary length
+                        section='CRYPTOCURRENCY',  # CoinDesk is crypto-focused
+                        article_id=hashlib.md5(f"{title}_{link}".encode()).hexdigest()[:12],
+                        image_url=media_url
+                    )
+                    
+                    articles.append(article)
+                    logger.debug(f"✅ COINDESK: Parsed article: {title[:50]}...")
+                    
+                except Exception as e:
+                    logger.error(f"💥 COINDESK: Error parsing entry: {e}")
+                    continue
+            
+            logger.info(f"✅ COINDESK: Successfully parsed {len(articles)} articles")
+            return articles
+            
+        except Exception as e:
+            logger.error(f"💥 COINDESK RSS PARSING ERROR: {e}")
+            return articles
 
     async def _professional_rss_system(self, max_articles: int) -> List[NewsArticle]:
         """
@@ -2269,17 +2396,40 @@ class InvestingNewsScraper:
         """Convert English economic event name to Arabic"""
         event_lower = event_name.lower()
         
-        # Direct mapping
+        # 🔍 ENHANCED: More specific patterns first, then general ones
+        specific_patterns = [
+            ('mi inflation gauge', 'مؤشر التضخم الشهري الأسترالي'),
+            ('inflation gauge', 'مؤشر التضخم'),
+            ('unemployment rate', 'معدل البطالة'),
+            ('non farm payrolls', 'فرص العمل الأمريكية'),
+            ('nonfarm payrolls', 'فرص العمل الأمريكية'),
+            ('jobless claims', 'طلبات إعانة البطالة'),
+            ('core cpi', 'مؤشر أسعار المستهلك الأساسي'),
+            ('cpi', 'مؤشر أسعار المستهلك'),
+            ('retail sales', 'مبيعات التجزئة'),
+            ('interest rate decision', 'قرار أسعار الفائدة'),
+            ('manufacturing pmi', 'مؤشر مديري المشتريات الصناعي'),
+            ('services pmi', 'مؤشر مديري المشتريات الخدمي'),
+            ('chicago pmi', 'مؤشر مديري المشتريات من شيكاغو'),
+            ('ism manufacturing', 'مؤشر مديري المشتريات الصناعي'),
+        ]
+        
+        # Check specific patterns first
+        for pattern, translation in specific_patterns:
+            if pattern in event_lower:
+                return translation
+        
+        # Direct mapping from dictionary
         for english_term, arabic_term in self.economic_terms_arabic.items():
             if english_term in event_lower:
                 return arabic_term
         
-        # Fallback patterns
+        # Enhanced fallback patterns
         if 'unemployment' in event_lower:
             return 'معدل البطالة'
         elif 'payroll' in event_lower or 'jobs' in event_lower:
             return 'تقرير الوظائف الأمريكي'
-        elif 'cpi' in event_lower or 'inflation' in event_lower:
+        elif 'inflation' in event_lower:
             return 'مؤشر التضخم'
         elif 'pmi' in event_lower:
             return 'مؤشر مديري المشتريات'

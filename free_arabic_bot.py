@@ -419,10 +419,15 @@ class FreeArabicNewsBot:
             # Get economic events
             events = await self.scraper.scrape_economic_calendar()
             
-            for event in events:
+            # 📅 FILTER: Only process events that are relevant for today
+            today_events = self._filter_today_events(events)
+            logger.info(f"📅 Found {len(today_events)} events for today out of {len(events)} total")
+            
+            for event in today_events:
                 try:
-                    # Create different keys for before/after event states
-                    event_base_key = f"{event.event_name}_{event.time}_{event.country}"
+                    # Create different keys for before/after event states with date
+                    current_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                    event_base_key = f"{event.event_name}_{event.time}_{event.country}_{current_date}"
                     upcoming_key = f"{event_base_key}_upcoming"
                     released_key = f"{event_base_key}_released"
                     
@@ -446,15 +451,39 @@ class FreeArabicNewsBot:
                         event_key = released_key
                         
                     else:
-                        # Upcoming event - send "ترقبوا اليوم" message
+                        # Upcoming event - send "ترقبوا اليوم" message (ONLY if today)
                         if self.database.is_article_seen(upcoming_key):
                             continue  # Already sent upcoming message
-                            
+                        
+                        # 📅 CHECK: Only send if event is TODAY
+                        current_date = datetime.now(timezone.utc).date()
+                        is_today = True  # For simulated events, assume today
+                        
+                        # For real events, check if they're actually today
+                        if hasattr(event, 'event_date') and event.event_date:
+                            try:
+                                if isinstance(event.event_date, str):
+                                    event_date = datetime.strptime(event.event_date, '%Y-%m-%d').date()
+                                else:
+                                    event_date = event.event_date
+                                is_today = (event_date == current_date)
+                            except:
+                                is_today = True  # Default to today if can't parse
+                        
                         message = await self.formatter.format_economic_announcement(
-                            event_name_arabic=event.event_name_arabic,
+                            event_name_english=event.event_name,  # 🇬🇧 Original English title
+                            event_name_arabic=event.event_name_arabic,  # 🇸🇦 Arabic translation
                             country_flag=self.scraper.get_country_flag(event.country),
-                            event_time=event.time
+                            event_time=event.time,
+                            is_today=is_today,  # ✅ Only show TODAY events
+                            previous=event.previous,  # 📈 Previous value
+                            forecast=event.forecast   # 🔮 Forecast value
                         )
+                        
+                        # Skip if message is None (not today)
+                        if not message:
+                            continue
+                            
                         event_key = upcoming_key
                     
                     # Send message with image if available
@@ -530,6 +559,50 @@ class FreeArabicNewsBot:
             logger.error(f"Error analyzing economic impact: {e}")
             return "كما هو متوقع للدولار الأمريكي"
     
+    def _filter_today_events(self, events: List[EconomicEvent]) -> List[EconomicEvent]:
+        """📅 Filter events to only include those relevant for today and translate properly"""
+        today_events = []
+        current_date = datetime.now(timezone.utc).date()
+        
+        for event in events:
+            try:
+                # 🌍 TRANSLATE: Properly translate event names using scraper's dictionary
+                translated_name = self.scraper._get_arabic_event_name(event.event_name)
+                # Update the event with proper Arabic translation
+                event.event_name_arabic = translated_name
+                
+                # For simulated events (no specific date), always include
+                if not hasattr(event, 'event_date') or not event.event_date:
+                    today_events.append(event)
+                    continue
+                
+                # For real calendar events, check if they're for today
+                if hasattr(event, 'event_date') and event.event_date:
+                    try:
+                        # Parse event date (could be various formats)
+                        if isinstance(event.event_date, str):
+                            event_date = datetime.strptime(event.event_date, '%Y-%m-%d').date()
+                        elif hasattr(event.event_date, 'date'):
+                            event_date = event.event_date.date()
+                        else:
+                            event_date = event.event_date
+                        
+                        # Only include events for today
+                        if event_date == current_date:
+                            today_events.append(event)
+                        else:
+                            logger.debug(f"📅 Skipping event for {event_date}: {event.event_name}")
+                            
+                    except Exception as e:
+                        logger.debug(f"📅 Error parsing event date: {e}, including event anyway")
+                        today_events.append(event)
+                        
+            except Exception as e:
+                logger.debug(f"📅 Error filtering event: {e}, including event anyway")
+                today_events.append(event)
+        
+        return today_events
+    
     def _is_event_released(self, event: EconomicEvent) -> bool:
         """Check if economic event has been released based on time and actual data"""
         try:
@@ -565,34 +638,36 @@ class FreeArabicNewsBot:
             return bool(event.actual)  # Fallback to checking actual data existence
     
     async def check_for_news(self):
-        """🚀 ENHANCED: Check for new articles with professional scraping (NEWS ONLY - every 3 minutes)"""
+        """🚀 ENHANCED: Check for new articles with configurable scraping modes (NEWS ONLY - every 3 minutes)"""
         try:
-            logger.info("📰 PROFESSIONAL: Checking for breaking financial news...")
+            logger.info(f"📰 PROFESSIONAL: Checking for news (Mode: {Config.SCRAPING_MODE})...")
             
-            # 🚀 ENHANCED: Get new articles with professional anti-detection scraping
+            # 🚀 ENHANCED: Get new articles based on SCRAPING_MODE configuration
             articles = []
-            for attempt in range(Config.MAX_RETRIES):
-                try:
-                    # 🎯 USE ENHANCED FEATURES: Breaking news priority + more articles
-                    raw_articles = await self.scraper.scrape_investing_news(
-                        max_articles=Config.MAX_ARTICLES_PER_SCRAPE * 2,  # Get more for better selection
-                        breaking_news_priority=True  # 🔥 Prioritize breaking news
-                    )
-                    
-                    if raw_articles:
-                        # 🧠 SMART CLASSIFICATION: Fix article sections using URL + content analysis
-                        articles = self.scraper.fix_article_sections(raw_articles)
-                        
-                        # 📊 PROFESSIONAL: Report section coverage
-                        coverage = self.scraper.verify_section_coverage(articles)
-                        covered_sections = [section for section, count in coverage.items() if count > 0]
-                        logger.info(f"📊 SECTION COVERAGE: {len(covered_sections)}/6 sections - {', '.join(covered_sections)}")
-                        
-                        break
-                except Exception as e:
-                    logger.error(f"⚠️ Investing.com fetch attempt {attempt + 1} failed: {e}")
-                    if attempt < Config.MAX_RETRIES - 1:
-                        await asyncio.sleep(10)
+            
+            # Mode 1: Investing.com only
+            if Config.SCRAPING_MODE == 1:
+                logger.info("🏛️ INVESTING.COM ONLY MODE")
+                articles = await self._fetch_investing_articles()
+            
+            # Mode 2: CoinDesk only
+            elif Config.SCRAPING_MODE == 2:
+                logger.info("🪙 COINDESK ONLY MODE")
+                articles = await self._fetch_coindesk_articles()
+            
+            # Mode 3: Both sources
+            elif Config.SCRAPING_MODE == 3:
+                logger.info("🌐 BOTH SOURCES MODE")
+                investing_articles = await self._fetch_investing_articles()
+                coindesk_articles = await self._fetch_coindesk_articles()
+                articles = investing_articles + coindesk_articles
+                logger.info(f"📊 COMBINED: {len(investing_articles)} from Investing.com + {len(coindesk_articles)} from CoinDesk")
+            
+            else:
+                logger.error(f"❌ Invalid SCRAPING_MODE: {Config.SCRAPING_MODE}. Using default (both sources)")
+                investing_articles = await self._fetch_investing_articles()
+                coindesk_articles = await self._fetch_coindesk_articles()
+                articles = investing_articles + coindesk_articles
             
             if articles:
                 posted = await self.post_articles(articles)
@@ -613,6 +688,56 @@ class FreeArabicNewsBot:
                 
         except Exception as e:
             logger.error(f"💥 Error checking for news: {e}")
+
+    async def _fetch_investing_articles(self) -> List:
+        """🏛️ Fetch articles from Investing.com with retry logic"""
+        articles = []
+        for attempt in range(Config.MAX_RETRIES):
+            try:
+                # 🎯 USE ENHANCED FEATURES: Breaking news priority + more articles
+                raw_articles = await self.scraper.scrape_investing_news(
+                    max_articles=Config.MAX_ARTICLES_PER_SCRAPE * 2,  # Get more for better selection
+                    breaking_news_priority=True  # 🔥 Prioritize breaking news
+                )
+                
+                if raw_articles:
+                    # 🧠 SMART CLASSIFICATION: Fix article sections using URL + content analysis
+                    articles = self.scraper.fix_article_sections(raw_articles)
+                    
+                    # 📊 PROFESSIONAL: Report section coverage
+                    coverage = self.scraper.verify_section_coverage(articles)
+                    covered_sections = [section for section, count in coverage.items() if count > 0]
+                    logger.info(f"📊 INVESTING COVERAGE: {len(covered_sections)}/6 sections - {', '.join(covered_sections)}")
+                    
+                    break
+            except Exception as e:
+                logger.error(f"⚠️ Investing.com fetch attempt {attempt + 1} failed: {e}")
+                if attempt < Config.MAX_RETRIES - 1:
+                    await asyncio.sleep(10)
+        
+        return articles
+
+    async def _fetch_coindesk_articles(self) -> List:
+        """🪙 Fetch articles from CoinDesk with retry logic"""
+        articles = []
+        for attempt in range(Config.MAX_RETRIES):
+            try:
+                # 🪙 Fetch CoinDesk articles
+                coindesk_articles = await self.scraper.scrape_coindesk_news(
+                    max_articles=Config.MAX_ARTICLES_PER_SCRAPE
+                )
+                
+                if coindesk_articles:
+                    articles = coindesk_articles
+                    logger.info(f"🪙 COINDESK SUCCESS: Retrieved {len(articles)} crypto articles")
+                    break
+                    
+            except Exception as e:
+                logger.error(f"⚠️ CoinDesk fetch attempt {attempt + 1} failed: {e}")
+                if attempt < Config.MAX_RETRIES - 1:
+                    await asyncio.sleep(10)
+        
+        return articles
     
 
     async def economic_calendar_task(self):

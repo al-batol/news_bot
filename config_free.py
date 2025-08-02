@@ -26,6 +26,12 @@ class Config:
     OPENAI_API_KEY = ''
     UNSPLASH_ACCESS_KEY = ''
     
+    # SCRAPING MODE CONFIGURATION
+    # 1 = Scrape only investing.com (all related RSS)
+    # 2 = Scrape only CoinDesk
+    # 3 = Scrape both investing.com and CoinDesk
+    SCRAPING_MODE = int(os.getenv('SCRAPING_MODE', '2'))  # Default: Both sources
+    
     # Investing.com scraping configuration (replaces RSS feeds)
     INVESTING_NEWS_SECTIONS = [
         'headlines',
@@ -35,6 +41,9 @@ class Config:
         'stock-market-news',
         'cryptocurrency-news'
     ]
+    
+    # CoinDesk RSS configuration
+    COINDESK_RSS_URL = 'https://www.coindesk.com/arc/outboundfeeds/rss/'
     
     # Resource optimization settings for 400MB RAM, better performance
     SCRAPER_CONFIG = {

@@ -182,10 +182,16 @@ class CryptoArabicFormatter:
             # Fallback to simple format
             return await self._format_simple_news(translation, market_analysis)
     
-    async def format_economic_announcement(self, event_name_arabic: str, country_flag: str = "🇺🇸", event_time: str = None) -> str:
+    async def format_economic_announcement(self, event_name_english: str, event_name_arabic: str, country_flag: str = "🇺🇸", event_time: str = None, is_today: bool = False, previous: str = None, forecast: str = None) -> str:
         """
         Format upcoming economic event announcement with enhanced emojis
+        Shows both English original title and Arabic translation
+        Only show if event is TODAY
         """
+        # 📅 Only show events that are TODAY
+        if not is_today:
+            return None  # Don't send events that are not today
+        
         # Enhanced emojis for different event types
         if 'بطالة' in event_name_arabic:
             emoji = "💼"  # Briefcase for unemployment
@@ -202,16 +208,54 @@ class CryptoArabicFormatter:
         else:
             emoji = "📈"  # Default economic chart
         
-        # Build announcement message with better formatting
-        message = f"⏰ ترقبوا اليوم سيصدر {emoji}\n\n"
-        message += f"{country_flag} {event_name_arabic}"
+        # Convert time to Saudi Arabia timezone if provided
+        saudi_time = None
+        if event_time and event_time not in ["TBD", "All Day", ""]:
+            saudi_time = self._convert_to_saudi_time(event_time)
         
-        if event_time:
-            message += f"\n🕐 الموعد: {event_time}"
+        # Build announcement message - TODAY events only
+        message = f"⏰ ترقبوا اليوم سيصدر {emoji}\n\n"
+        message += f"{country_flag} **{event_name_english}**\n"
+        message += f"📊 {event_name_arabic}"
+        
+        if saudi_time:
+            message += f"\n🕐 الموعد بتوقيت السعودية: {saudi_time}"
+        
+        # Add Previous and Forecast if available
+        if previous:
+            message += f"\n📈 السابق: {previous}"
+        if forecast:
+            message += f"\n🔮 المتوقع: {forecast}"
         
         message += f"\n\n💡 سنقوم بنشر النتائج فور صدورها"
         
         return message
+    
+    def _convert_to_saudi_time(self, utc_time_str: str) -> str:
+        """Convert UTC time to Saudi Arabia time (UTC+3)"""
+        try:
+            from datetime import datetime, timezone, timedelta
+            
+            # Parse the time string
+            if ':' in utc_time_str:
+                hour, minute = map(int, utc_time_str.split(':'))
+            else:
+                hour = int(utc_time_str) if utc_time_str.isdigit() else 13
+                minute = 0
+            
+            # Create UTC datetime for today
+            utc_dt = datetime.now(timezone.utc).replace(hour=hour, minute=minute, second=0, microsecond=0)
+            
+            # Convert to Saudi time (UTC+3)
+            saudi_tz = timezone(timedelta(hours=3))
+            saudi_dt = utc_dt.astimezone(saudi_tz)
+            
+            # Format as HH:MM
+            return saudi_dt.strftime('%H:%M')
+            
+        except Exception as e:
+            # Fallback to original time
+            return utc_time_str
     
     async def format_economic_data_release(self, event_name_arabic: str, country: str, country_flag: str, 
                                          previous: str = None, forecast: str = None, actual: str = None,
