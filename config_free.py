@@ -14,7 +14,7 @@ class Config:
     
     # Telegram Configuration (ONLY REQUIRED)
     TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '7452324631:AAHFMFgb5s2Ef5YRTRDNxFNcb4ik-ETz_Tc')
-    TELEGRAM_CHANNEL_ID = os.getenv('TELEGRAM_CHANNEL_ID', '-1001870604395')
+    TELEGRAM_CHANNEL_ID = os.getenv('TELEGRAM_CHANNEL_ID', '--1001870604395')
     
     # AI TRANSLATION WITH GROQ (FREE API)
     USE_AI_TRANSLATION = True   # Enable Groq API for better Arabic translation

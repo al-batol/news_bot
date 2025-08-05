@@ -84,8 +84,8 @@ class CryptoArabicFormatter:
                 'en': "Breaking:"
             },
             'follow_us_updates': {
-                'ar': "تابعنا لكل جديد : @news_crypto_911",
-                'en': "Follow us for updates : @news_crypto_911"
+                'ar': "<a href=\"https://t.me/crypto0omazen\">🚀 انضم لقناة التوصيات</a>\n<a href=\"https://t.me/dr0chart_news\">📰 انضم لقناة الاخبار</a>",
+                'en': "Follow us for updates : <a href=\"https://t.me/news_crypto_911\">@news_crypto_911</a>"
             }
         }
         

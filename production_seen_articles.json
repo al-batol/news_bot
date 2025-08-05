@@ -1,175 +1,28 @@
 {
   "seen_articles": [
-    "d0f2d6129b67",
-    "cbdb6112dfb6",
-    "aa9ccc61573d",
-    "2c78d68ca22f",
-    "1de16975b6aa",
-    "b7e34c7579fd",
-    "88c9511f2f4b",
-    "d2ef02ebb9ef",
-    "2bd6589c3abc",
-    "1ae5213778b3",
     "cb6c9fb115f0",
-    "26c3a43ee497",
-    "4834518061f6",
-    "5e25c5a41bb2",
-    "74dcbec2b05a",
-    "df9984b031ae",
-    "7dbbd16e878c",
-    "104c689b36c3",
-    "13bcee3a74af",
-    "c9f056e7c7d8",
-    "4aa2d97316ff",
-    "31eebb4a899a",
-    "d2020a12acd2",
-    "3a2ef37a7404"
+    "b7e34c7579fd",
+    "c9f056e7c7d8"
   ],
   "article_metadata": {
-    "31eebb4a899a": {
-      "title": "BNB Falls Below $750 as Crypto Market Sell-Off Erases Corporate-Fueled Optimism",
-      "link": "https://www.coindesk.com/markets/2025/08/05/bnb-falls-below-usd750-as-crypto-market-sell-off-erases-corporate-fueled-optimism",
-      "timestamp": "Tue, 05 Aug 2025 16:11:49 +0000",
-      "seen_at": "2025-08-05T17:56:01.248451+00:00"
-    },
-    "d0f2d6129b67": {
-      "title": "Coinbase Adds Embedded Wallets to Development Platform to Simplify Web3 Onboarding",
-      "link": "https://www.coindesk.com/tech/2025/08/05/coinbase-adds-embedded-wallets-to-development-platform-to-simplify-web3-onboarding",
-      "timestamp": "Tue, 05 Aug 2025 16:00:00 +0000",
-      "seen_at": "2025-08-05T17:56:07.998340+00:00"
-    },
-    "aa9ccc61573d": {
-      "title": "PEPE Sinks 32% From July High as Traders Capitulate on Tariff Jitters",
-      "link": "https://www.coindesk.com/markets/2025/08/05/pepe-sinks-32-from-july-high-as-traders-capitulate-on-tariff-jitters",
-      "timestamp": "Tue, 05 Aug 2025 15:58:22 +0000",
-      "seen_at": "2025-08-05T17:56:14.712156+00:00"
-    },
-    "4834518061f6": {
-      "title": "Cardano Drops 3% as Market Sell-Off Persists, Midnight Airdrop Sparks Volatility",
-      "link": "https://www.coindesk.com/markets/2025/08/05/cardano-drops-3-as-market-sell-off-persists-midnight-airdrop-sparks-volatility",
-      "timestamp": "Tue, 05 Aug 2025 15:53:18 +0000",
-      "seen_at": "2025-08-05T17:56:21.437902+00:00"
-    },
-    "88c9511f2f4b": {
-      "title": "NEAR Plunges 5% Before Staging Sharp Recovery Rally",
-      "link": "https://www.coindesk.com/markets/2025/08/05/near-plunges-5-before-staging-sharp-recovery-rally",
-      "timestamp": "Tue, 05 Aug 2025 15:49:14 +0000",
-      "seen_at": "2025-08-05T17:56:28.472310+00:00"
-    },
-    "104c689b36c3": {
-      "title": "Does the Fed Need to Cut Now? Bitcoin Crumbles Back Below $113K After ISM Services PMI",
-      "link": "https://www.coindesk.com/markets/2025/08/05/does-the-fed-need-to-cut-now-bitcoin-crumbles-back-below-usd113-000-after-ism-services-pmi",
-      "timestamp": "Tue, 05 Aug 2025 15:17:50 +0000",
-      "seen_at": "2025-08-05T17:56:35.511438+00:00"
-    },
-    "1de16975b6aa": {
-      "title": "ATOM Holds Ground Above $4.27 After 3% Rebound From Key Support",
-      "link": "https://www.coindesk.com/markets/2025/08/05/atom-holds-ground-above-usd4-27-after-3-rebound-from-key-support",
-      "timestamp": "Tue, 05 Aug 2025 15:11:28 +0000",
-      "seen_at": "2025-08-05T17:56:42.593695+00:00"
-    },
-    "2c78d68ca22f": {
-      "title": "XRP Analysis: $3 Becomes Make-or-Break Level for the Ripple Linked Token",
-      "link": "https://www.coindesk.com/markets/2025/08/05/xrp-analysis-usd3-becomes-make-or-break-level-for-the-ripple-linked-token",
-      "timestamp": "Tue, 05 Aug 2025 15:09:19 +0000",
-      "seen_at": "2025-08-05T17:56:49.631331+00:00"
-    },
-    "5e25c5a41bb2": {
-      "title": "SEC says certain liquid staking activities fall outside of securities laws",
-      "link": "https://cointelegraph.com/news/sec-certain-liquid-staking-activities-securities-laws?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 18:33:23 +0100",
-      "seen_at": "2025-08-05T17:59:58.752348+00:00"
-    },
-    "26c3a43ee497": {
-      "title": "Cango posts ‘massive’ July Bitcoin haul, boosting corporate treasury",
-      "link": "https://cointelegraph.com/news/cango-posts-massive-july-bitcoin-haul-boosting-corporate-treasury?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 17:26:42 +0100",
-      "seen_at": "2025-08-05T18:00:05.942097+00:00"
-    },
-    "d2ef02ebb9ef": {
-      "title": "Bitcoin slumps, but LTC, CRO, ENA, and MNT remain strong on the charts",
-      "link": "https://cointelegraph.com/news/bitcoin-slumps-but-ltc-cro-ena-and-mnt-remain-strong-on-the-charts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 17:14:32 +0100",
-      "seen_at": "2025-08-05T18:00:12.987233+00:00"
-    },
-    "df9984b031ae": {
-      "title": "Bitcoin options point to growing caution: BTC price to $110K next?",
-      "link": "https://cointelegraph.com/news/bitcoin-btc-options-point-to-growing-caution-110k-ahead?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 16:20:00 +0100",
-      "seen_at": "2025-08-05T18:00:21.944920+00:00"
-    },
-    "1ae5213778b3": {
-      "title": "Insiders, outsiders and experimenters, revisited",
-      "link": "https://cointelegraph.com/news/insiders-outsiders-experimenters-revisited?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 16:00:00 +0100",
-      "seen_at": "2025-08-05T18:00:29.074598+00:00"
-    },
-    "d2020a12acd2": {
-      "title": "Bitcoin analysis warns BTC price &#039;going lower&#039; first as $113K slips",
-      "link": "https://cointelegraph.com/news/bitcoin-analysis-warns-btc-price-going-lower-first-114k-slips?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 15:39:43 +0100",
-      "seen_at": "2025-08-05T18:00:36.004917+00:00"
-    },
-    "3a2ef37a7404": {
-      "title": "This open-source LLM could redefine AI research, and it’s 100% public",
-      "link": "https://cointelegraph.com/explained/this-open-source-llm-could-redefine-ai-research-and-its-100-public?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 15:05:00 +0100",
-      "seen_at": "2025-08-05T18:00:42.662712+00:00"
-    },
-    "7dbbd16e878c": {
-      "title": "Top 5 cities where you can pay rent entirely in Bitcoin",
-      "link": "https://cointelegraph.com/news/top-5-cities-where-you-can-pay-rent-entirely-in-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 14:56:10 +0100",
-      "seen_at": "2025-08-05T18:00:49.373674+00:00"
-    },
     "b7e34c7579fd": {
       "title": "سولانا تبدأ شحن هاتف Seeker إلى أكثر من 50 دولة",
       "link": "https://ar.cointelegraph.com/news/solana-mobile-device-seeker-ships-50-countries?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
       "timestamp": "Tue, 05 Aug 2025 17:55:05 +0400",
-      "seen_at": "2025-08-05T18:08:53.372762+00:00"
+      "seen_at": "2025-08-05T18:51:02.257756+00:00"
     },
     "cb6c9fb115f0": {
       "title": "لجنة تداول السلع الآجلة الأمريكية تسعى للسماح بتداول العملات المشفرة الفورية في البورصات المسجلة",
       "link": "https://ar.cointelegraph.com/news/cftc-spot-crypto-contracts-trading-initiative?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
       "timestamp": "Tue, 05 Aug 2025 17:50:42 +0400",
-      "seen_at": "2025-08-05T18:09:02.434568+00:00"
+      "seen_at": "2025-08-05T18:54:33.644327+00:00"
     },
     "c9f056e7c7d8": {
       "title": "مستشار ترامب للبيتكوين ديفيد بيلي يسعى لإنشاء لجنة عمل سياسي بقيمة 200 مليون دولار",
       "link": "https://ar.cointelegraph.com/news/david-bailey-bitcoin-pac-crypto-political-push?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
       "timestamp": "Tue, 05 Aug 2025 17:37:35 +0400",
-      "seen_at": "2025-08-05T18:09:12.527359+00:00"
-    },
-    "2bd6589c3abc": {
-      "title": "BitMine تتجاوز حاجز 3 مليارات دولار من الإيثر مع صعود ETH بنسبة 6%",
-      "link": "https://ar.cointelegraph.com/news/bitmines-eth-holdings-at-3-billion-ether-price-rally?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 17:27:58 +0400",
-      "seen_at": "2025-08-05T18:09:30.526883+00:00"
-    },
-    "13bcee3a74af": {
-      "title": "CFTC تتعرض لضغوط للتحقيق مع المرشح براين كوينتينز بسبب علاقاته مع Kalshi",
-      "link": "https://ar.cointelegraph.com/news/cftc-nominee-brian-quintenz-probed-kalshi-ties?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 14:05:51 +0400",
-      "seen_at": "2025-08-05T18:09:42.369645+00:00"
-    },
-    "cbdb6112dfb6": {
-      "title": "سايلور: شركة Strategy ضاعفت مقتنياتها من البيتكوين منذ فوز ترامب بالانتخابات",
-      "link": "https://ar.cointelegraph.com/news/strategy-doubled-bitcoin-stash-since-trump-election?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 13:59:35 +0400",
-      "seen_at": "2025-08-05T18:14:17.268274+00:00"
-    },
-    "4aa2d97316ff": {
-      "title": "وول ستريت جورنال: ترامب يأمر بالتحقيق في مزاعم استبعاد القطاعين السياسي والرقمي من الخدمات المصرفية",
-      "link": "https://ar.cointelegraph.com/news/trump-order-probe-crypto-political-debanking-report?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 13:54:43 +0400",
-      "seen_at": "2025-08-05T18:14:24.483326+00:00"
-    },
-    "74dcbec2b05a": {
-      "title": "مفوّضة هيئة الأوراق المالية والبورصات الأميركية (SEC) هيستر بيرس تدافع عن خصوصية المعاملات مع اقتراب صدور حكم Tornado Cash",
-      "link": "https://ar.cointelegraph.com/news/hester-peirce-defends-crypto-privacy-tornado-cash-trial?utm_source=rss_feed&utm_medium=feed&utm_campaign=rss_partner_inbound",
-      "timestamp": "Tue, 05 Aug 2025 13:44:10 +0400",
-      "seen_at": "2025-08-05T18:14:31.533731+00:00"
+      "seen_at": "2025-08-05T19:12:24.049330+00:00"
     }
   },
-  "last_updated": "2025-08-05T18:14:31.533779+00:00"
+  "last_updated": "2025-08-05T19:12:24.049336+00:00"
 }

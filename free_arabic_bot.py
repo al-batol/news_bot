@@ -279,10 +279,11 @@ class FreeArabicNewsBot:
                             endpoint = f"{self.base_url}/sendPhoto"
                             logger.info(f"📸 Sending message with image: {image_url}")
                         else:
-                            # Send as text message (as before)
+                            # Send as text message with HTML parse mode
                             data = {
                                 'chat_id': self.channel_id,
                                 'text': text,
+                                'parse_mode': 'HTML',
                                 'disable_web_page_preview': True
                             }
                             endpoint = f"{self.base_url}/sendMessage"
@@ -363,9 +364,9 @@ class FreeArabicNewsBot:
             section_emoji = self._get_section_emoji(getattr(article, 'section', ''))
             
             if Config.ENABLE_ARABIC:
-                return f"عاجل: {section_emoji} {flag} {article.title}\n\nتابعنا لكل جديد : @news_crypto_911"
+                return f"عاجل: {section_emoji} {flag} {article.title}\n\n <a href=\"https://t.me/crypto0omazen\">🚀 انضم لقناة التوصيات</a>\n<a href=\"https://t.me/dr0chart_news\">📰 انضم لقناة الاخبار</a>"
             else:
-                return f"🚨 {section_emoji} {flag} BREAKING: {article.title}\n\nFollow us: @news_crypto_911"
+                return f"🚨 {section_emoji} {flag} BREAKING: {article.title}\n\nFollow us: <a href=\"https://t.me/news_crypto_911\">@news_crypto_911</a>"
     
     async def post_articles(self, articles):
         """Post filtered articles to Telegram channel"""
@@ -1063,8 +1064,9 @@ class FreeArabicNewsBot:
             # Send startup message based on language mode
             if Config.ENABLE_ARABIC:
                 startup_message = (
-                    f"🚀 بوت الأخبار المالية العربي!\n\n"
-                    f"تابعنا لكل جديد : @news_crypto_911"
+                f"🚀 بوت الأخبار المالية العربي!\n\n"
+                f"<a href=\"https://t.me/crypto0omazen\">🚀 انضم لقناة التوصيات</a>\n"
+                f"<a href=\"https://t.me/dr0chart_news\">📰 انضم لقناة الاخبار</a>"
                 )
             else:
                 startup_message = (
@@ -1072,7 +1074,7 @@ class FreeArabicNewsBot:
                     f"📈 Real-time financial market updates\n"
                     f"🔥 Breaking news priority\n"
                     f"🎯 Professional market analysis\n\n"
-                    f"Follow us for real-time updates: @news_crypto_911"
+                    f"Follow us for real-time updates: <a href=\"https://t.me/news_crypto_911\">@news_crypto_911</a>"
                 )
             
             # Try to send startup message
