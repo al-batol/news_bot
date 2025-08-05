@@ -1,0 +1,82 @@
+2025-08-02 17:37:16,281 - error_handler - INFO - setup_logging:283 - Logging configured successfully
+2025-08-02 17:37:16,319 - investing_scraper - INFO - __init__:95 - ✅ Initialized fake-useragent for realistic traffic simulation
+2025-08-02 17:37:16,319 - database - INFO - load_database:31 - Database file not found, starting with empty database
+2025-08-02 17:37:16,456 - ai_translator - INFO - __init__:25 - AI Translator initialized with Groq API (Arabic optimized)
+2025-08-02 17:37:16,457 - __main__ - INFO - __init__:48 - AI Translator initialized with Groq API (FREE)
+2025-08-02 17:37:16,457 - __main__ - INFO - __init__:58 - Google Translator initialized as fallback
+2025-08-02 17:37:16,490 - __main__ - INFO - __init__:84 - 🪙 CoinDesk Mode: Bot started at 2025-08-03 03:37:16 +03 (KSA timezone)
+2025-08-02 17:37:16,490 - __main__ - INFO - __init__:101 - Free Arabic News Bot initialized
+2025-08-02 17:37:16,490 - __main__ - INFO - run:873 - Starting FREE Arabic Financial News Bot...
+2025-08-02 17:37:16,490 - __main__ - INFO - run:884 - Bot configuration: {'environment': 'free', 'channel_id': '-1002294392721', 'scrape_interval': 180, 'ai_translation': True, 'images_enabled': False, 'max_articles': 8, 'investing_sections': 6, 'relevant_keywords': 57, 'memory_optimization': True}
+2025-08-02 17:37:17,247 - __main__ - INFO - send_message:265 - Message sent successfully
+2025-08-02 17:37:17,247 - __main__ - INFO - run:904 - Startup message sent successfully
+2025-08-02 17:37:17,248 - __main__ - INFO - run:910 - 📊 ECONOMIC CALENDAR: Started separate task (1h 2m intervals)
+2025-08-02 17:37:17,248 - __main__ - INFO - run:914 - 📊 ECONOMIC CALENDAR: Started separate task (1h 2m intervals)
+2025-08-02 17:37:17,248 - __main__ - INFO - check_for_news:743 - 📰 PROFESSIONAL: Checking for news (Mode: 2)...
+2025-08-02 17:37:17,248 - __main__ - INFO - check_for_news:755 - 🪙 COINDESK ONLY MODE
+2025-08-02 17:37:17,248 - investing_scraper - INFO - scrape_coindesk_news:565 - 🪙 COINDESK RSS: Fetching crypto news from CoinDesk...
+2025-08-02 17:37:17,248 - __main__ - INFO - economic_calendar_task:857 - 📊 ECONOMIC CALENDAR: Checking for economic events...
+2025-08-02 17:37:17,248 - __main__ - INFO - check_economic_calendar:487 - Checking economic calendar...
+2025-08-02 17:37:17,248 - investing_scraper - INFO - _scrape_real_calendar:2389 - 🎯 SCRAPING REAL DATA: Getting actual economic events from investing.com/economic-calendar
+2025-08-02 17:37:17,287 - investing_scraper - INFO - create_session:304 - 🔧 Created session: safari_desktop with TLS fingerprinting
+2025-08-02 17:37:17,287 - __main__ - INFO - economic_calendar_task:857 - 📊 ECONOMIC CALENDAR: Checking for economic events...
+2025-08-02 17:37:17,287 - __main__ - INFO - check_economic_calendar:487 - Checking economic calendar...
+2025-08-02 17:37:17,288 - investing_scraper - INFO - _scrape_real_calendar:2389 - 🎯 SCRAPING REAL DATA: Getting actual economic events from investing.com/economic-calendar
+2025-08-02 17:37:18,822 - investing_scraper - INFO - _fetch_calendar_data:2649 - ✅ Successfully fetched calendar data
+2025-08-02 17:37:18,942 - investing_scraper - INFO - _parse_calendar_events:2743 - ✅ Found 2 events using selector: tr.js-event-item
+2025-08-02 17:37:18,945 - investing_scraper - INFO - _parse_calendar_events:2768 - ✅ Parsed 1 important economic events
+2025-08-02 17:37:18,946 - investing_scraper - INFO - _scrape_real_calendar:2403 - ✅ REAL DATA: Found 1 real economic events
+2025-08-02 17:37:18,946 - __main__ - INFO - check_economic_calendar:494 - 📅 Found 1 events for today out of 1 total
+2025-08-02 17:37:19,551 - __main__ - INFO - send_message:265 - Message sent successfully
+2025-08-02 17:37:19,553 - __main__ - INFO - check_economic_calendar:570 - Posted economic event: MI Inflation Gauge (MoM)  (Jul)
+2025-08-02 17:37:19,798 - investing_scraper - INFO - _fetch_calendar_data:2649 - ✅ Successfully fetched calendar data
+2025-08-02 17:37:19,914 - investing_scraper - INFO - _parse_calendar_events:2743 - ✅ Found 2 events using selector: tr.js-event-item
+2025-08-02 17:37:19,916 - investing_scraper - INFO - _parse_calendar_events:2768 - ✅ Parsed 1 important economic events
+2025-08-02 17:37:19,916 - investing_scraper - INFO - _scrape_real_calendar:2403 - ✅ REAL DATA: Found 1 real economic events
+2025-08-02 17:37:19,916 - __main__ - INFO - check_economic_calendar:494 - 📅 Found 1 events for today out of 1 total
+2025-08-02 17:37:19,916 - __main__ - INFO - economic_calendar_task:862 - 📊 ECONOMIC CALENDAR: Waiting 3720 seconds (1h 2m) until next economic calendar check...
+2025-08-02 17:37:19,921 - investing_scraper - INFO - _extract_coindesk_descriptions:759 - ✅ COINDESK MANUAL: Extracted 25 descriptions from raw RSS
+2025-08-02 17:37:19,978 - investing_scraper - INFO - _parse_coindesk_rss:623 - 📡 COINDESK: Found 25 entries in RSS feed
+2025-08-02 17:37:19,980 - investing_scraper - INFO - _parse_coindesk_rss:728 - ✅ COINDESK: Successfully parsed 8 articles
+2025-08-02 17:37:19,980 - investing_scraper - INFO - scrape_coindesk_news:595 - ✅ COINDESK SUCCESS: Retrieved 8 articles from CoinDesk RSS!
+2025-08-02 17:37:19,981 - __main__ - INFO - _fetch_coindesk_articles:842 - 🪙 COINDESK SUCCESS: Retrieved 8 crypto articles
+2025-08-02 17:37:19,985 - __main__ - INFO - post_articles:440 - 🪙 COINDESK ONLY: Using 2 fresh articles from 8 total (KSA timezone: 03:37:16 +03)
+2025-08-02 17:37:19,985 - __main__ - INFO - send_message:250 - 📸 Sending message with image: https://cdn.sanity.io/images/s3y3vcno/production/090e5c77bf9a39a85f3ba365ccf65e1cbecb6a4f-3781x2129.jpg?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip
+2025-08-02 17:37:20,586 - __main__ - INFO - send_message:265 - Message sent successfully
+2025-08-02 17:37:20,588 - __main__ - INFO - post_articles:471 - Posted Arabic article: SEC’s Crypto Task Force Will Tour U.S. to Hear Fro...
+2025-08-02 17:37:25,553 - __main__ - INFO - economic_calendar_task:862 - 📊 ECONOMIC CALENDAR: Waiting 3720 seconds (1h 2m) until next economic calendar check...
+2025-08-02 17:37:26,589 - __main__ - INFO - send_message:250 - 📸 Sending message with image: https://cdn.sanity.io/images/s3y3vcno/production/6e0794b53fab4b04d9e3fdbc0f3d1a70cdf36125-1920x1283.jpg?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip
+2025-08-02 17:37:27,198 - __main__ - INFO - send_message:265 - Message sent successfully
+2025-08-02 17:37:27,199 - __main__ - INFO - post_articles:471 - Posted Arabic article: Arkham Says $3.5B LuBian Bitcoin Theft Went Undete...
+2025-08-02 17:37:33,199 - __main__ - INFO - check_for_news:778 - ✅ Posted 2 new Arabic articles from 8 found
+2025-08-02 17:37:33,200 - __main__ - INFO - check_for_news:782 - 🆕 NEW ARTICLES POSTED:
+2025-08-02 17:37:33,200 - __main__ - INFO - check_for_news:786 -    🔥 CRYPTOCURRENCY: ‘Chokepoint 3.0’ Has Arrived? a16z Warns of Anti-Crypto Bank...
+2025-08-02 17:37:33,200 - __main__ - INFO - check_for_news:786 -    🔥 CRYPTOCURRENCY: Why Michael Saylor Calls Strategy's STRC Preferred Stock His...
+2025-08-02 17:37:33,200 - investing_scraper - INFO - cleanup_cache:2544 - 🧹 Cleaned up memory cache
+2025-08-02 17:37:33,200 - __main__ - INFO - run:923 - 📰 NEWS: Waiting 180 seconds (3m) until next news check...
+2025-08-02 17:40:33,200 - __main__ - INFO - check_for_news:743 - 📰 PROFESSIONAL: Checking for news (Mode: 2)...
+2025-08-02 17:40:33,200 - __main__ - INFO - check_for_news:755 - 🪙 COINDESK ONLY MODE
+2025-08-02 17:40:33,200 - investing_scraper - INFO - scrape_coindesk_news:565 - 🪙 COINDESK RSS: Fetching crypto news from CoinDesk...
+2025-08-02 17:40:35,431 - investing_scraper - INFO - _extract_coindesk_descriptions:759 - ✅ COINDESK MANUAL: Extracted 25 descriptions from raw RSS
+2025-08-02 17:40:35,473 - investing_scraper - INFO - _parse_coindesk_rss:623 - 📡 COINDESK: Found 25 entries in RSS feed
+2025-08-02 17:40:35,475 - investing_scraper - INFO - _parse_coindesk_rss:728 - ✅ COINDESK: Successfully parsed 8 articles
+2025-08-02 17:40:35,475 - investing_scraper - INFO - scrape_coindesk_news:595 - ✅ COINDESK SUCCESS: Retrieved 8 articles from CoinDesk RSS!
+2025-08-02 17:40:35,475 - __main__ - INFO - _fetch_coindesk_articles:842 - 🪙 COINDESK SUCCESS: Retrieved 8 crypto articles
+2025-08-02 17:40:35,477 - __main__ - INFO - post_articles:440 - 🪙 COINDESK ONLY: Using 0 fresh articles from 8 total (KSA timezone: 03:37:16 +03)
+2025-08-02 17:40:35,477 - __main__ - INFO - check_for_news:778 - ✅ Posted 0 new Arabic articles from 8 found
+2025-08-02 17:40:35,477 - __main__ - INFO - check_for_news:788 - ♻️  All 8 articles were duplicates (already seen)
+2025-08-02 17:40:35,477 - investing_scraper - INFO - cleanup_cache:2544 - 🧹 Cleaned up memory cache
+2025-08-02 17:40:35,477 - __main__ - INFO - run:923 - 📰 NEWS: Waiting 180 seconds (3m) until next news check...
+2025-08-02 17:43:35,476 - __main__ - INFO - check_for_news:743 - 📰 PROFESSIONAL: Checking for news (Mode: 2)...
+2025-08-02 17:43:35,477 - __main__ - INFO - check_for_news:755 - 🪙 COINDESK ONLY MODE
+2025-08-02 17:43:35,477 - investing_scraper - INFO - scrape_coindesk_news:565 - 🪙 COINDESK RSS: Fetching crypto news from CoinDesk...
+2025-08-02 17:43:37,513 - investing_scraper - INFO - _extract_coindesk_descriptions:759 - ✅ COINDESK MANUAL: Extracted 25 descriptions from raw RSS
+2025-08-02 17:43:37,554 - investing_scraper - INFO - _parse_coindesk_rss:623 - 📡 COINDESK: Found 25 entries in RSS feed
+2025-08-02 17:43:37,556 - investing_scraper - INFO - _parse_coindesk_rss:728 - ✅ COINDESK: Successfully parsed 8 articles
+2025-08-02 17:43:37,556 - investing_scraper - INFO - scrape_coindesk_news:595 - ✅ COINDESK SUCCESS: Retrieved 8 articles from CoinDesk RSS!
+2025-08-02 17:43:37,556 - __main__ - INFO - _fetch_coindesk_articles:842 - 🪙 COINDESK SUCCESS: Retrieved 8 crypto articles
+2025-08-02 17:43:37,558 - __main__ - INFO - post_articles:440 - 🪙 COINDESK ONLY: Using 0 fresh articles from 8 total (KSA timezone: 03:37:16 +03)
+2025-08-02 17:43:37,558 - __main__ - INFO - check_for_news:778 - ✅ Posted 0 new Arabic articles from 8 found
+2025-08-02 17:43:37,558 - __main__ - INFO - check_for_news:788 - ♻️  All 8 articles were duplicates (already seen)
+2025-08-02 17:43:37,558 - investing_scraper - INFO - cleanup_cache:2544 - 🧹 Cleaned up memory cache
+2025-08-02 17:43:37,558 - __main__ - INFO - run:923 - 📰 NEWS: Waiting 180 seconds (3m) until next news check...

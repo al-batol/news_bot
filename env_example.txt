@@ -1,0 +1,40 @@
+# Production Environment Configuration
+# Copy this file to .env and fill in your actual values
+
+# Telegram Bot Configuration (REQUIRED)
+TELEGRAM_BOT_TOKEN=7452324631:AAHFMFgb5s2Ef5YRTRDNxFNcb4ik-ETz_Tc
+TELEGRAM_CHANNEL_ID=-1002294392721
+
+# OpenAI Configuration for Advanced Translation (OPTIONAL)
+# Get your API key from: https://platform.openai.com/api-keys
+OPENAI_API_KEY=your_openai_api_key_here
+USE_AI_TRANSLATION=True
+
+# Unsplash Configuration for Images (OPTIONAL)
+# Get your access key from: https://unsplash.com/developers
+UNSPLASH_ACCESS_KEY=your_unsplash_access_key_here
+USE_IMAGES=True
+
+# Bot Configuration
+SCRAPE_INTERVAL_SECONDS=120
+MAX_ARTICLES_PER_SCRAPE=5
+MESSAGE_DELAY_SECONDS=3
+IMAGE_PROBABILITY=0.3
+
+# Environment Settings
+ENVIRONMENT=production
+DEBUG=False
+LOG_LEVEL=INFO
+LOG_FILE=logs/production_bot.log
+
+# Database Settings
+DATABASE_FILE=production_seen_articles.json
+MAX_DATABASE_SIZE=10000
+
+# Error Handling
+MAX_RETRIES=3
+RETRY_DELAY=5
+MAX_MESSAGES_PER_MINUTE=20
+
+# Image Settings
+MAX_IMAGE_SIZE_MB=10 
